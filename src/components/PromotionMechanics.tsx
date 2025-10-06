@@ -1,59 +1,78 @@
 import { Gift, Trophy, Users, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+
+const mechanics = [
+  {
+    icon: Gift,
+    title: "Compre e Ganhe",
+    description: "Incentive a compra e recompense seus clientes com validação automática de cupons."
+  },
+  {
+    icon: Trophy,
+    title: "Sorteios Inteligentes",
+    description: "Realize sorteios de forma segura e transparente, com algoritmos que garantem a lisura do processo."
+  },
+  {
+    icon: Users,
+    title: "Programa de Pontos",
+    description: "Crie programas de fidelidade e gamificação com acúmulo e resgate de benefícios."
+  },
+  {
+    icon: TrendingUp,
+    title: "Promoções Personalizadas",
+    description: "Desenvolvemos mecânicas sob medida para os objetivos específicos da sua campanha."
+  }
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  })
+};
 
 const PromotionMechanics = () => {
-  const mechanics = [
-    {
-      icon: Gift,
-      title: "Compre e Ganhe",
-      description: "Validação automática de compras qualificadas."
-    },
-    {
-      icon: Trophy,
-      title: "Sorteios Inteligentes",
-      description: "Algoritmos seguros e transparentes para seleção de ganhadores."
-    },
-    {
-      icon: Users,
-      title: "Programa de Pontos",
-      description: "Gamificação com acúmulo e resgate de benefícios."
-    },
-    {
-      icon: TrendingUp,
-      title: "Promoções Personalizadas",
-      description: "Mecânicas sob medida para cada objetivo de campanha."
-    }
-  ];
-
   return (
-    <section className="py-24 px-6 bg-card/50">
+    <section className="py-24 px-6">
       <div className="container mx-auto">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Mecânicas de{" "}
-            <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-              Promoção
-            </span>
+          <h2 className="text-4xl md:text-5xl font-black">
+            Mecânicas de <span className="text-primary">Promoção</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Diversas estratégias promocionais para engajar clientes e aumentar resultados.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Crie engajamento e impulsione resultados com estratégias promocionais flexíveis e fáceis de gerenciar.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {mechanics.map((mechanic, index) => (
-            <Card 
-              key={index} 
-              className="bg-background border-border hover:border-accent/50 transition-all hover:scale-105 group"
+            <motion.div
+              key={index}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={cardVariants}
             >
-              <CardContent className="p-6 space-y-4">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent/20 to-secondary/20 flex items-center justify-center group-hover:from-accent/30 group-hover:to-secondary/30 transition-all">
-                  <mechanic.icon className="w-7 h-7 text-accent" />
-                </div>
-                <h3 className="text-xl font-bold">{mechanic.title}</h3>
-                <p className="text-muted-foreground">{mechanic.description}</p>
-              </CardContent>
-            </Card>
+              <Card className="bg-card h-full border-2 border-transparent hover:border-accent transition-colors duration-300">
+                <CardContent className="p-8 space-y-6">
+                  <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center">
+                    <mechanic.icon className="w-8 h-8 text-accent" />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-2xl font-bold">{mechanic.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{mechanic.description}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

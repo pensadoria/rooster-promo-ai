@@ -3,33 +3,30 @@ import heroImage from "@/assets/hero-image.png";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 px-6">
-      <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <section className="py-28 px-6">
+      <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div className="space-y-8">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            A tecnologia que{" "}
-            <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-              revoluciona
-            </span>{" "}
-            suas promoções.
-          </h1>
+          <h1 
+            className="text-5xl md:text-6xl font-black leading-tight"
+            dangerouslySetInnerHTML={{ __html: "Marketing promocional,<br />simplificado e eficiente." }}
+          />
           
           <p className="text-xl text-muted-foreground leading-relaxed">
-            A Rooster automatiza todo o processo — da leitura do cupom à análise de resultados — com IA e OCR integrados.
+            Da leitura do cupom à análise de resultados, nossa IA automatiza todo o processo para você. Crie campanhas de alto impacto em minutos.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
-              variant="secondary" 
+              variant="primary" 
               size="lg"
-              className="hover:scale-105 transition-transform text-lg"
+              className="text-lg"
             >
-              Quero conhecer a Rooster
+              Agendar Demonstração
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="text-lg border-2 hover:bg-card"
+              className="text-lg"
             >
               Ver como funciona
             </Button>
@@ -37,11 +34,12 @@ const Hero = () => {
         </div>
 
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-accent/20 blur-3xl rounded-full"></div>
+          <div className="absolute -inset-8 bg-primary/10 blur-3xl rounded-full" />
           <img 
             src={heroImage} 
-            alt="IA da Rooster lendo nota fiscal" 
-            className="relative z-10 w-full h-auto rounded-2xl"
+            alt="Dashboard da Rooster mostrando análise de cupons" 
+            className="relative w-full h-auto"
+            loading="lazy"
           />
         </div>
       </div>

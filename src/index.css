@@ -2,79 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 100% 5%;
+    --background: 210 97% 13%;
     --foreground: 0 0% 100%;
-
-    --card: 0 100% 8%;
+    --card: 210 90% 18%;
     --card-foreground: 0 0% 100%;
-
-    --popover: 0 100% 8%;
+    --popover: 210 90% 18%;
     --popover-foreground: 0 0% 100%;
-
-    --primary: 0 100% 27%;
+    --primary: 0 100% 50%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 100% 50%;
+    --secondary: 222 97% 44%;
     --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 50% 15%;
-    --muted-foreground: 0 10% 70%;
-
-    --accent: 45 100% 60%;
-    --accent-foreground: 0 100% 5%;
-
-    --destructive: 0 84.2% 60.2%;
+    --muted: 210 15% 65%;
+    --muted-foreground: 210 15% 65%;
+    --accent: 19 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 0 50% 20%;
-    --input: 0 50% 20%;
-    --ring: 0 100% 50%;
-
-    --radius: 0.75rem;
-    
-    --gradient-primary: linear-gradient(135deg, hsl(0 100% 27%), hsl(0 100% 50%));
-    --gradient-dark: linear-gradient(180deg, hsl(0 100% 5%), hsl(0 100% 8%));
-    --gradient-accent: linear-gradient(135deg, hsl(0 100% 50%), hsl(45 100% 60%));
-    
-    --shadow-glow: 0 0 40px hsl(0 100% 50% / 0.3);
-    --shadow-card: 0 10px 30px -10px hsl(0 100% 27% / 0.4);
-    
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 0 100% 5%;
-    --foreground: 0 0% 100%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 210 97% 23%;
+    --input: 210 97% 23%;
+    --ring: 222 97% 44%;
+    --radius: 0.5rem;
   }
 }
 
@@ -85,5 +34,17 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-black;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
   }
 }

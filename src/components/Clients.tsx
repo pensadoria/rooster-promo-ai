@@ -1,33 +1,39 @@
-const Clients = () => {
-  const clients = [
-    "Unilever", "Royal Canin", "Ana Maria", "BRF",
-    "Technomotion", "Ética", "CadBIM", "HUB"
-  ];
+import { motion } from "framer-motion";
 
+const clients = [
+  "Unilever", "Royal Canin", "Ana Maria", "BRF",
+  "Technomotion", "Ética", "CadBIM", "HUB"
+];
+
+const Clients = () => {
   return (
-    <section id="clients" className="py-24 px-6">
+    <motion.section 
+      id="clients" 
+      className="py-24 px-6"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.7 }}
+    >
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Alguns de Nossos{" "}
-          <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-            Clientes
-          </span>
+        <h2 className="text-4xl md:text-5xl font-black text-center mb-16">
+          Empresas que <span className="text-primary">Confiam</span> na Rooster
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 items-center">
           {clients.map((client, index) => (
             <div
               key={index}
-              className="flex items-center justify-center p-8 bg-card/30 rounded-xl border border-border hover:border-secondary/30 transition-all hover:scale-105"
+              className="text-center"
             >
-              <span className="text-xl font-semibold text-muted-foreground">
+              <span className="text-2xl font-bold text-muted-foreground transition-colors hover:text-white">
                 {client}
               </span>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
