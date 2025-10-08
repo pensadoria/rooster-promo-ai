@@ -2,20 +2,36 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#01203f]/95 backdrop-blur-lg">
+      <div className="container mx-auto px-6 py-6 flex items-center justify-between">
+        {/* Logo */}
         <div className="flex items-center gap-3">
-          <span className="text-2xl font-black text-white tracking-wider">ROOSTER</span>
+          <div className="w-8 h-8 rounded bg-red-600 flex items-center justify-center">
+            <span className="text-white font-bold text-sm">R</span>
+          </div>
         </div>
 
+        {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-muted-foreground hover:text-white transition-colors">Recursos</a>
-          <a href="#pricing" className="text-muted-foreground hover:text-white transition-colors">Preços</a>
-          <a href="#login" className="text-muted-foreground hover:text-white transition-colors">Entrar</a>
+          <a href="#platform" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+            Plataforma
+          </a>
+          <a href="#cases" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+            Cases
+          </a>
+          <a href="#roi" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+            ROI
+          </a>
+          <a href="#contact" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+            Contato
+          </a>
         </nav>
 
-        <Button variant="primary" className="hidden sm:inline-flex">
-          Agendar Demonstração
+        {/* CTA Button */}
+        <Button
+          className="bg-red-600 hover:bg-red-700 text-white rounded-xl px-6 h-12 font-semibold text-sm"
+        >
+          Falar com especialista
         </Button>
       </div>
     </header>
