@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const features = [
@@ -43,22 +44,26 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
           >
-            <Button
-              size="lg"
-              className="bg-red-600 hover:bg-red-700 text-white text-lg px-8 h-[60px] rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
-            >
-              Criar minha campanha
-              <svg width="16" height="18" viewBox="0 0 16 18" fill="none" className="ml-2">
-                <path d="M1 9H15M15 9L8 2M15 9L8 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 h-[64px] rounded-xl font-semibold"
-            >
-              Ver cases
-            </Button>
+            <Link to="/demonstracao">
+              <Button
+                size="lg"
+                className="bg-red-600 hover:bg-red-700 text-white text-lg px-8 h-[60px] rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
+              >
+                Criar minha campanha
+                <svg width="16" height="18" viewBox="0 0 16 18" fill="none" className="ml-2">
+                  <path d="M1 9H15M15 9L8 2M15 9L8 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Button>
+            </Link>
+            <a href="#cases">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 h-[64px] rounded-xl font-semibold"
+              >
+                Ver cases
+              </Button>
+            </a>
           </motion.div>
 
           {/* Feature badges */}

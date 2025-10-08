@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTAFinal = () => {
   return (
@@ -21,12 +22,14 @@ const CTAFinal = () => {
           Fale com nosso time e acelere suas próximas campanhas.
         </p>
 
-        <Button
-          className="bg-white hover:bg-white/95 text-red-600 h-[60px] px-8 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all"
-        >
-          Falar com especialista
-          <ArrowRight className="ml-2 w-5 h-5" />
-        </Button>
+        <Link to="/demonstracao">
+          <Button
+            className="bg-white hover:bg-white/95 text-red-600 h-[60px] px-8 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all"
+          >
+            Falar com especialista
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </Link>
       </div>
     </motion.section>
   );

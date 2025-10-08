@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CasesSection = () => {
   const cases = [
@@ -70,10 +71,10 @@ const CasesSection = () => {
                 <p className="text-gray-600 leading-relaxed">
                   {caseItem.description}
                 </p>
-                <button className="flex items-center gap-2 text-red-600 font-semibold hover:gap-3 transition-all duration-300 group/link">
+                <Link to="/demonstracao" className="flex items-center gap-2 text-red-600 font-semibold hover:gap-3 transition-all duration-300 group/link">
                   Ver case completo
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
