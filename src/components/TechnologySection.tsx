@@ -1,12 +1,11 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { BarChart, TrendingUp, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 const TechnologySection = () => {
   const prefersReducedMotion = useReducedMotion();
   const [activeDemo, setActiveDemo] = useState<string | null>(null);
-  const railRef = useRef<HTMLDivElement>(null);
 
   const features = [
     {
@@ -37,30 +36,6 @@ const TechnologySection = () => {
       demo: "ocr"
     }
   ];
-
-  useEffect(() => {
-    const rail = railRef.current;
-    if (!rail) return;
-
-    const handleScroll = () => {
-      // Scroll snapping behavior is handled by CSS
-    };
-
-    rail.addEventListener('scroll', handleScroll);
-    return () => rail.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollLeft = () => {
-    if (railRef.current) {
-      railRef.current.scrollBy({ left: -400, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (railRef.current) {
-      railRef.current.scrollBy({ left: 400, behavior: 'smooth' });
-    }
-  };
 
   return (
     <section 
@@ -124,40 +99,10 @@ const TechnologySection = () => {
           </div>
         </motion.div>
 
-        {/* Cards Rail with scroll-snap */}
-        <div className="relative group/rail">
-          {/* Left Arrow - Desktop */}
-          <button
-            onClick={scrollLeft}
-            aria-label="Scroll para a esquerda"
-            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-white backdrop-blur-sm rounded-full border border-gray-200 opacity-0 group-hover/rail:opacity-100 transition-opacity duration-300 hover:bg-gray-50 shadow-lg"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-gray-700">
-              <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-
-          {/* Right Arrow - Desktop */}
-          <button
-            onClick={scrollRight}
-            aria-label="Scroll para a direita"
-            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-white backdrop-blur-sm rounded-full border border-gray-200 opacity-0 group-hover/rail:opacity-100 transition-opacity duration-300 hover:bg-gray-50 shadow-lg"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-gray-700">
-              <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-
-          <div
-            ref={railRef}
-            role="group"
-            aria-roledescription="carrossel"
-            className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide lg:px-12"
-            style={{
-              scrollSnapType: 'x mandatory',
-              scrollBehavior: 'smooth',
-            }}
-          >
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Column - Cards Stack */}
+          <div className="space-y-6">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.id}
@@ -171,10 +116,10 @@ const TechnologySection = () => {
                 }}
                 role="group"
                 aria-label={`${feature.title} - ${feature.description}`}
-                className="flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center group/card"
+                className="group/card"
               >
                 <div
-                  className="relative h-[300px] rounded-[24px] border border-white/[0.08] backdrop-blur-md p-6 md:p-7 overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:border-white/[0.13] hover:shadow-[0_16px_44px_rgba(0,0,0,0.27)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF2A00]"
+                  className="relative h-[280px] rounded-[24px] border border-white/[0.08] backdrop-blur-md p-6 md:p-7 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:border-white/[0.13] hover:shadow-[0_16px_44px_rgba(0,0,0,0.27)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF2A00]"
                   style={{
                     background: feature.gradient,
                     boxShadow: '0 12px 36px rgba(0, 0, 0, 0.2)',
@@ -303,6 +248,73 @@ const TechnologySection = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Right Column - Overlapping Images */}
+          <div className="relative h-[600px] lg:h-[700px]">
+            {/* Image 1 - Laptop with graphs (background, top-left) */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="absolute top-0 left-0 w-[75%] z-10"
+            >
+              <div 
+                className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
+                style={{
+                  aspectRatio: '16/10',
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                }}
+              >
+                <div className="w-full h-full flex items-center justify-center p-8">
+                  <div className="text-center text-white space-y-4">
+                    <svg 
+                      className="w-20 h-20 mx-auto opacity-80" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    <p className="text-sm font-medium opacity-90">Dashboard Rooster</p>
+                    <p className="text-xs opacity-70">Gráficos em tempo real</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Image 2 - People smiling (foreground, bottom-right) */}
+            <motion.div
+              initial={{ opacity: 0, x: 30, y: 30 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="absolute bottom-0 right-0 w-[70%] z-20"
+            >
+              <div 
+                className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
+                style={{
+                  aspectRatio: '4/3',
+                  background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                }}
+              >
+                <div className="w-full h-full flex items-center justify-center p-8">
+                  <div className="text-center text-white space-y-4">
+                    <svg 
+                      className="w-20 h-20 mx-auto opacity-80" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <p className="text-sm font-medium opacity-90">Equipe Feliz</p>
+                    <p className="text-xs opacity-70">Resultados reais</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* CTA Button */}
@@ -340,16 +352,8 @@ const TechnologySection = () => {
         </motion.div>
       </div>
 
-      {/* Custom scrollbar hide */}
+      {/* Reduced motion support */}
       <style>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        
         @media (prefers-reduced-motion: reduce) {
           * {
             animation-duration: 0.01ms !important;
