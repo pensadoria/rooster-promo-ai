@@ -1,13 +1,44 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Calculator as CalcIcon, Check, TrendingUp, Clock, AlertCircle, ArrowRight, Info } from "lucide-react";
+import {
+  Calculator as CalcIcon,
+  TrendingUp,
+  Clock,
+  AlertCircle,
+  ArrowRight,
+  Sparkles,
+  X,
+  CheckCircle2,
+  TrendingDown,
+  Zap
+} from "lucide-react";
 import { Link } from "react-router-dom";
+
+// Counter Animation Hook
+function useAnimatedCounter(value: number, duration: number = 2000) {
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, { duration });
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    motionValue.set(value);
+  }, [motionValue, value]);
+
+  useEffect(() => {
+    const unsubscribe = springValue.on("change", (latest) => {
+      setDisplayValue(Math.round(latest));
+    });
+    return unsubscribe;
+  }, [springValue]);
+
+  return displayValue;
+}
 
 const Calculator = () => {
   const [formData, setFormData] = useState({
@@ -21,10 +52,77 @@ const Calculator = () => {
   });
 
   const [showResults, setShowResults] = useState(false);
+  const [results, setResults] = useState({
+    custoOperacionalAtual: 0,
+    fraudesAtuais: 0,
+    perdasPremiosAtuais: 0,
+    totalPerdendo: 0,
+    custoOperacionalNovo: 0,
+    fraudesNovo: 0,
+    perdasPremiosNovo: 0,
+    totalComAutomacao: 0,
+    economiaAnual: 0,
+    roiPercentual: 0,
+    horasAtuais: 0,
+    horasNovas: 0
+  });
+
+  const animatedEconomia = useAnimatedCounter(showResults ? results.economiaAnual : 0);
+  const animatedROI = useAnimatedCounter(showResults ? results.roiPercentual : 0);
 
   const handleCalculate = () => {
-    // Aqui você pode adicionar a lógica de cálculo
+    if (!formData.campanhasAno || !formData.participantesCampanha ||
+        !formData.ticketMedio || !formData.valorPremios ||
+        !formData.horasValidacao || !formData.valorHora) {
+      alert("Por favor, preencha todos os campos antes de calcular.");
+      return;
+    }
+
+    const campanhas = parseFloat(formData.campanhasAno);
+    const participantes = parseFloat(formData.participantesCampanha);
+    const ticket = parseFloat(formData.ticketMedio);
+    const premios = parseFloat(formData.valorPremios);
+    const horas = parseFloat(formData.horasValidacao);
+    const custoHora = parseFloat(formData.valorHora);
+
+    // SITUAÇÃO ATUAL
+    const custoOperacionalAtual = campanhas * horas * custoHora;
+    const fraudesAtuais = campanhas * participantes * ticket * 0.15;
+    const perdasPremiosAtuais = premios * campanhas * 0.20;
+    const totalPerdendo = custoOperacionalAtual + fraudesAtuais + perdasPremiosAtuais;
+    const horasAtuais = campanhas * horas;
+
+    // COM AUTOMAÇÃO
+    const custoOperacionalNovo = campanhas * horas * 0.2 * custoHora;
+    const fraudesNovo = campanhas * participantes * ticket * 0.03;
+    const perdasPremiosNovo = premios * campanhas * 0.05;
+    const totalComAutomacao = custoOperacionalNovo + fraudesNovo + perdasPremiosNovo;
+    const horasNovas = campanhas * horas * 0.2;
+
+    const economiaAnual = totalPerdendo - totalComAutomacao;
+    const roiPercentual = ((economiaAnual / totalPerdendo) * 100);
+
+    setResults({
+      custoOperacionalAtual,
+      fraudesAtuais,
+      perdasPremiosAtuais,
+      totalPerdendo,
+      custoOperacionalNovo,
+      fraudesNovo,
+      perdasPremiosNovo,
+      totalComAutomacao,
+      economiaAnual,
+      roiPercentual,
+      horasAtuais,
+      horasNovas
+    });
+
     setShowResults(true);
+
+    // Scroll suave para os resultados
+    setTimeout(() => {
+      document.getElementById('results-hero')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   };
 
   const handleClear = () => {
@@ -41,373 +139,536 @@ const Calculator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#011E36]">
       <Header />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0a1628] via-[#0d1d35] to-[#01203f] pt-32 pb-16 px-6">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="space-y-8"
-            >
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 backdrop-blur-sm">
-                <CalcIcon className="w-4 h-4 text-white" />
-                <span className="text-sm font-medium text-white">Simulação de Economia</span>
-              </div>
-
-              {/* Heading */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
-                Simule o impacto da automação nas suas campanhas
-              </h1>
-
-              {/* Description */}
-              <p className="text-xl text-white/90 leading-relaxed">
-                Use nossa calculadora para entender como eficiência e dados podem transformar sua operação promocional.
-              </p>
-
-              {/* Trust Badges */}
-              <div className="flex flex-wrap gap-6">
-                <div className="flex items-center gap-2 text-white/80">
-                  <Check className="w-3.5 h-3.5" />
-                  <span className="text-sm">Simulação baseada em dados reais</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/80">
-                  <Check className="w-3.5 h-3.5" />
-                  <span className="text-sm">Estimativas ilustrativas</span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right Column - Illustration */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white p-8">
-                <div className="aspect-square bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <CalcIcon className="w-20 h-20 mx-auto text-red-600" />
-                    <p className="text-gray-600 font-semibold">Calculadora de Economia</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Calculator Section */}
-      <section className="py-32 px-6 bg-gray-50">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Left Side - Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white border border-gray-100 rounded-2xl p-12 shadow-sm"
-            >
-              <h2 className="text-3xl font-bold text-[#01203f] mb-8">
-                Dados da sua operação
-              </h2>
-
-              <form className="space-y-6">
-                {/* First Row */}
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="campanhasAno" className="text-[#01203f] font-semibold">
-                      Campanhas por ano
-                    </Label>
-                    <Input
-                      id="campanhasAno"
-                      placeholder="Ex: 3"
-                      value={formData.campanhasAno}
-                      onChange={(e) => setFormData({ ...formData, campanhasAno: e.target.value })}
-                      className="h-[60px] rounded-xl border-2"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="participantesCampanha" className="text-[#01203f] font-semibold">
-                      Participantes por campanha
-                    </Label>
-                    <Input
-                      id="participantesCampanha"
-                      placeholder="Ex: 500"
-                      value={formData.participantesCampanha}
-                      onChange={(e) => setFormData({ ...formData, participantesCampanha: e.target.value })}
-                      className="h-[60px] rounded-xl border-2"
-                    />
-                  </div>
-                </div>
-
-                {/* Second Row */}
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="ticketMedio" className="text-[#01203f] font-semibold">
-                      Valor médio por venda (R$)
-                    </Label>
-                    <Input
-                      id="ticketMedio"
-                      placeholder="Ex: 20"
-                      value={formData.ticketMedio}
-                      onChange={(e) => setFormData({ ...formData, ticketMedio: e.target.value })}
-                      className="h-[60px] rounded-xl border-2"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="valorPremios" className="text-[#01203f] font-semibold">
-                      Investimento em prêmios (R$)
-                    </Label>
-                    <Input
-                      id="valorPremios"
-                      placeholder="Ex: 5000"
-                      value={formData.valorPremios}
-                      onChange={(e) => setFormData({ ...formData, valorPremios: e.target.value })}
-                      className="h-[60px] rounded-xl border-2"
-                    />
-                  </div>
-                </div>
-
-                {/* Method Selection */}
-                <div className="space-y-2">
-                  <Label htmlFor="metodoValidacao" className="text-[#01203f] font-semibold">
-                    Como você valida hoje?
-                  </Label>
-                  <Select value={formData.metodoValidacao} onValueChange={(value) => setFormData({ ...formData, metodoValidacao: value })}>
-                    <SelectTrigger className="h-[58px] rounded-xl border-2">
-                      <SelectValue placeholder="Selecione..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="manual">Verificação Manual</SelectItem>
-                      <SelectItem value="planilha">Planilhas</SelectItem>
-                      <SelectItem value="sistema-basico">Sistema Básico</SelectItem>
-                      <SelectItem value="outro">Outro</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {/* Third Row */}
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="horasValidacao" className="text-[#01203f] font-semibold">
-                      Horas gastas por campanha
-                    </Label>
-                    <Input
-                      id="horasValidacao"
-                      placeholder="Ex: 40"
-                      value={formData.horasValidacao}
-                      onChange={(e) => setFormData({ ...formData, horasValidacao: e.target.value })}
-                      className="h-[60px] rounded-xl border-2"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="valorHora" className="text-[#01203f] font-semibold">
-                      Custo por hora da equipe (R$)
-                    </Label>
-                    <Input
-                      id="valorHora"
-                      placeholder="Ex: 35"
-                      value={formData.valorHora}
-                      onChange={(e) => setFormData({ ...formData, valorHora: e.target.value })}
-                      className="h-[60px] rounded-xl border-2"
-                    />
-                  </div>
-                </div>
-
-                {/* Buttons */}
-                <div className="flex gap-4 pt-4">
-                  <Button
-                    type="button"
-                    onClick={handleCalculate}
-                    className="flex-1 bg-red-600 hover:bg-red-700 text-white h-[60px] rounded-xl text-lg font-semibold"
-                  >
-                    Calcular economia
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                  <Button
-                    type="button"
-                    onClick={handleClear}
-                    variant="outline"
-                    className="h-[60px] px-8 rounded-xl text-lg"
-                  >
-                    Limpar
-                  </Button>
-                </div>
-              </form>
-            </motion.div>
-
-            {/* Right Side - Results */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white border border-gray-100 rounded-2xl p-12 shadow-sm"
-            >
-              <h2 className="text-3xl font-bold text-[#01203f] mb-8">
-                Sua economia estimada
-              </h2>
-
-              {/* Warning Banner */}
-              <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-8">
-                <div className="flex gap-3">
-                  <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm text-yellow-800 leading-relaxed">
-                    Esses valores são estimativas ilustrativas, baseadas em parâmetros médios do setor. O objetivo é demonstrar cenários de eficiência — não garantias de resultado.
-                  </p>
-                </div>
-              </div>
-
-              {showResults ? (
-                <>
-                  {/* Metrics */}
-                  <div className="grid grid-cols-3 gap-6 mb-12">
-                    <div className="text-center space-y-4">
-                      <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                        <span className="text-2xl font-black text-white">60%</span>
-                      </div>
-                      <p className="text-sm font-semibold text-[#01203f] leading-tight">
-                        Eficiência estimada
-                      </p>
-                    </div>
-                    <div className="text-center space-y-4">
-                      <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
-                        <span className="text-2xl font-black text-white">80%</span>
-                      </div>
-                      <p className="text-sm font-semibold text-[#01203f] leading-tight">
-                        Redução de tempo
-                      </p>
-                    </div>
-                    <div className="text-center space-y-4">
-                      <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                        <span className="text-2xl font-black text-white">+20%</span>
-                      </div>
-                      <p className="text-sm font-semibold text-[#01203f] leading-tight">
-                        Potencial de engajamento
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Comparison */}
-                  <div className="space-y-6">
-                    {/* Current Scenario */}
-                    <div className="border-2 border-gray-200 rounded-xl p-6">
-                      <div className="flex items-center gap-3 mb-6">
-                        <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center">
-                          <div className="w-2 h-2 rounded-full bg-red-500" />
-                        </div>
-                        <h3 className="text-xl font-bold text-[#01203f]">Situação atual</h3>
-                      </div>
-                      <div className="grid grid-cols-3 gap-4 text-center">
-                        <div>
-                          <p className="text-2xl font-bold text-red-500 mb-1">R$ 200.000</p>
-                          <p className="text-sm text-gray-600">Fraudes</p>
-                        </div>
-                        <div>
-                          <p className="text-2xl font-bold text-red-500 mb-1">120h</p>
-                          <p className="text-sm text-gray-600">Horas</p>
-                        </div>
-                        <div>
-                          <p className="text-2xl font-bold text-red-500 mb-1">R$ 3.500</p>
-                          <p className="text-sm text-gray-600">Perdas</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* With Automation */}
-                    <div className="border-2 border-green-200 rounded-xl p-6 bg-green-50/30">
-                      <div className="flex items-center gap-3 mb-6">
-                        <TrendingUp className="w-5 h-5 text-green-600" />
-                        <h3 className="text-xl font-bold text-[#01203f]">Com automação</h3>
-                      </div>
-                      <div className="grid grid-cols-3 gap-4 text-center">
-                        <div>
-                          <p className="text-2xl font-bold text-green-600 mb-1">R$ 60.000</p>
-                          <p className="text-sm text-gray-600">Fraudes</p>
-                        </div>
-                        <div>
-                          <p className="text-2xl font-bold text-green-600 mb-1">20h</p>
-                          <p className="text-sm text-gray-600">Horas</p>
-                        </div>
-                        <div>
-                          <p className="text-2xl font-bold text-green-600 mb-1">R$ 800</p>
-                          <p className="text-sm text-gray-600">Perdas</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Disclaimer */}
-                  <div className="mt-8 bg-gray-50 border border-gray-200 rounded-xl p-4">
-                    <div className="flex gap-3">
-                      <Info className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        Os resultados apresentados são apenas uma simulação e podem variar conforme o tipo de campanha e operação.
-                      </p>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <div className="flex flex-col items-center justify-center py-20 text-center">
-                  <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-6">
-                    <CalcIcon className="w-10 h-10 text-gray-400" />
-                  </div>
-                  <p className="text-gray-500 text-lg">
-                    Preencha os campos ao lado e clique em "Calcular economia" para ver seus resultados
-                  </p>
-                </div>
-              )}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Calculate Section */}
-      <section className="bg-[#01203f] py-32 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
+      {/* Form Section */}
+      <section className="pt-24 pb-12 px-6">
+        <div className="container mx-auto max-w-4xl">
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-12 space-y-4"
           >
-            <h2 className="text-4xl md:text-5xl font-black text-white">
-              Por que simular sua economia?
-            </h2>
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-              Compreender o retorno sobre investimento em automação ajuda empresas a visualizar ganhos de tempo e redução de custos. A Rooster oferece ferramentas que tornam essa análise acessível, técnica e sem complicação.
+            <div className="inline-block">
+              <span className="text-[#FF0000] text-sm font-bold tracking-widest uppercase">
+                Calculadora de ROI
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-black text-white leading-tight">
+              Descubra quanto você pode ganhar
+            </h1>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              Simule a economia anual com automação Rooster
             </p>
+          </motion.div>
+
+          {/* Form Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8"
+          >
+            <form className="space-y-6">
+              {/* Row 1 */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="campanhasAno" className="text-white font-semibold">
+                    Campanhas por ano
+                  </Label>
+                  <Input
+                    id="campanhasAno"
+                    type="number"
+                    placeholder="Ex: 2"
+                    value={formData.campanhasAno}
+                    onChange={(e) => setFormData({ ...formData, campanhasAno: e.target.value })}
+                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="participantesCampanha" className="text-white font-semibold">
+                    Participantes por campanha
+                  </Label>
+                  <Input
+                    id="participantesCampanha"
+                    type="number"
+                    placeholder="Ex: 600"
+                    value={formData.participantesCampanha}
+                    onChange={(e) => setFormData({ ...formData, participantesCampanha: e.target.value })}
+                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                  />
+                </div>
+              </div>
+
+              {/* Row 2 */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="ticketMedio" className="text-white font-semibold">
+                    Valor médio por venda (R$)
+                  </Label>
+                  <Input
+                    id="ticketMedio"
+                    type="number"
+                    placeholder="Ex: 255"
+                    value={formData.ticketMedio}
+                    onChange={(e) => setFormData({ ...formData, ticketMedio: e.target.value })}
+                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="valorPremios" className="text-white font-semibold">
+                    Investimento em prêmios (R$)
+                  </Label>
+                  <Input
+                    id="valorPremios"
+                    type="number"
+                    placeholder="Ex: 10000"
+                    value={formData.valorPremios}
+                    onChange={(e) => setFormData({ ...formData, valorPremios: e.target.value })}
+                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                  />
+                </div>
+              </div>
+
+              {/* Method */}
+              <div className="space-y-2">
+                <Label htmlFor="metodoValidacao" className="text-white font-semibold">
+                  Como você valida hoje?
+                </Label>
+                <Select value={formData.metodoValidacao} onValueChange={(value) => setFormData({ ...formData, metodoValidacao: value })}>
+                  <SelectTrigger className="h-14 rounded-xl border-white/20 bg-white/10 text-white focus:border-[#FF0000] focus:bg-white/15">
+                    <SelectValue placeholder="Selecione..." />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="manual">Sistema Básico</SelectItem>
+                    <SelectItem value="planilha">Planilhas</SelectItem>
+                    <SelectItem value="sistema-basico">Verificação Manual</SelectItem>
+                    <SelectItem value="outro">Outro</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Row 3 */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="horasValidacao" className="text-white font-semibold">
+                    Horas gastas por campanha
+                  </Label>
+                  <Input
+                    id="horasValidacao"
+                    type="number"
+                    placeholder="Ex: 60"
+                    value={formData.horasValidacao}
+                    onChange={(e) => setFormData({ ...formData, horasValidacao: e.target.value })}
+                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="valorHora" className="text-white font-semibold">
+                    Custo por hora da equipe (R$)
+                  </Label>
+                  <Input
+                    id="valorHora"
+                    type="number"
+                    placeholder="Ex: 45"
+                    value={formData.valorHora}
+                    onChange={(e) => setFormData({ ...formData, valorHora: e.target.value })}
+                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                  />
+                </div>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button
+                  type="button"
+                  onClick={handleCalculate}
+                  className="flex-1 bg-[#FF0000] hover:bg-[#FF5001] text-white h-14 rounded-full text-base font-bold shadow-lg hover:shadow-xl transition-all"
+                >
+                  Calcular economia
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Button
+                  type="button"
+                  onClick={handleClear}
+                  variant="outline"
+                  className="h-14 px-8 rounded-full text-base border-white/30 text-white hover:bg-white/10"
+                >
+                  Limpar
+                </Button>
+              </div>
+            </form>
           </motion.div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-[#ff5001] to-[#ff3000] py-32 px-6">
-        <div className="container mx-auto max-w-4xl text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-            Quer entender como a automação pode funcionar no seu caso?
-          </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Fale com nosso time técnico e descubra como otimizar suas campanhas promocionais com dados reais.
-          </p>
-          <Link to="/demonstracao">
-            <Button className="bg-white hover:bg-white/95 text-[#ff5001] h-[60px] px-10 rounded-xl text-lg font-bold shadow-lg">
-              Conversar com especialista
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+      {/* Results Hero - Appears after calculation */}
+      {showResults && (
+        <>
+          <section id="results-hero" className="py-16 px-6 bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 relative overflow-hidden">
+            {/* Animated background */}
+            <div className="absolute inset-0 opacity-20">
+              <motion.div
+                animate={{
+                  backgroundPosition: ['0% 0%', '100% 100%'],
+                }}
+                transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0)',
+                  backgroundSize: '40px 40px'
+                }}
+              />
+            </div>
 
-      <Footer />
+            <div className="container mx-auto max-w-4xl relative z-10">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="text-center space-y-6"
+              >
+                {/* Sparkle Icon */}
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="inline-block"
+                >
+                  <Sparkles className="w-16 h-16 text-white mx-auto" />
+                </motion.div>
+
+                {/* Main Message */}
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
+                  🎉 Você está ganhando
+                </h2>
+
+                {/* Animated Counter */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 100, delay: 0.3 }}
+                  className="py-8"
+                >
+                  <p className="text-6xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-2xl">
+                    R$ {animatedEconomia.toLocaleString('pt-BR')}
+                  </p>
+                  <p className="text-2xl md:text-3xl font-bold text-white/90 mt-4">
+                    por ano com a Rooster!
+                  </p>
+                </motion.div>
+
+                {/* ROI Badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  className="inline-block bg-white/20 backdrop-blur-sm border-2 border-white/40 rounded-full px-8 py-3"
+                >
+                  <p className="text-white font-bold text-lg">
+                    ROI de {animatedROI}% • Economia real e mensurável
+                  </p>
+                </motion.div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* Comparison Section */}
+          <section className="py-20 px-6 bg-[#011E36]">
+            <div className="container mx-auto max-w-6xl">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
+                  Comparativo: Antes x Com Rooster
+                </h3>
+                <p className="text-white/60 text-lg">
+                  Veja o impacto real da automação
+                </p>
+              </motion.div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* ANTES */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-red-500/20 to-red-600/20 backdrop-blur-sm border-2 border-red-500/30 rounded-3xl p-8 relative overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl" />
+
+                  <div className="relative z-10 space-y-6">
+                    {/* Header */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center">
+                        <X className="w-6 h-6 text-red-400" />
+                      </div>
+                      <div>
+                        <h4 className="text-2xl font-black text-white">Antes</h4>
+                        <p className="text-red-300 text-sm">Você está perdendo</p>
+                      </div>
+                    </div>
+
+                    {/* Metrics */}
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-white/70 text-sm">Custo operacional</span>
+                        <span className="text-white font-bold text-lg">
+                          R$ {results.custoOperacionalAtual.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-white/70 text-sm">Perdas com fraudes</span>
+                        <span className="text-white font-bold text-lg">
+                          R$ {results.fraudesAtuais.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-white/70 text-sm">Prêmios indevidos</span>
+                        <span className="text-white font-bold text-lg">
+                          R$ {results.perdasPremiosAtuais.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                        </span>
+                      </div>
+
+                      <div className="border-t-2 border-red-400/30 pt-4 mt-4">
+                        <div className="flex justify-between items-center">
+                          <span className="text-white font-semibold">Total Anual</span>
+                          <span className="text-red-400 font-black text-2xl">
+                            R$ {results.totalPerdendo.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Hours */}
+                      <div className="bg-red-500/10 rounded-xl p-4 flex items-center gap-3">
+                        <Clock className="w-5 h-5 text-red-400" />
+                        <span className="text-white text-sm">
+                          {results.horasAtuais.toFixed(0)} horas gastas por ano
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Animated Bar */}
+                    <div className="mt-6">
+                      <div className="h-3 bg-red-500/20 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: '100%' }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1.5, ease: "easeOut" }}
+                          className="h-full bg-gradient-to-r from-red-500 to-red-600"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* COM ROOSTER */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-emerald-500/20 to-teal-600/20 backdrop-blur-sm border-2 border-emerald-500/30 rounded-3xl p-8 relative overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl" />
+
+                  <div className="relative z-10 space-y-6">
+                    {/* Header */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                        <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                      </div>
+                      <div>
+                        <h4 className="text-2xl font-black text-white">Com Rooster</h4>
+                        <p className="text-emerald-300 text-sm">Você vai ganhar</p>
+                      </div>
+                    </div>
+
+                    {/* Metrics */}
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-white/70 text-sm">Custo operacional</span>
+                        <span className="text-white font-bold text-lg">
+                          R$ {results.custoOperacionalNovo.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-white/70 text-sm">Perdas com fraudes</span>
+                        <span className="text-white font-bold text-lg">
+                          R$ {results.fraudesNovo.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-white/70 text-sm">Prêmios indevidos</span>
+                        <span className="text-white font-bold text-lg">
+                          R$ {results.perdasPremiosNovo.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                        </span>
+                      </div>
+
+                      <div className="border-t-2 border-emerald-400/30 pt-4 mt-4">
+                        <div className="flex justify-between items-center">
+                          <span className="text-white font-semibold">Total Anual</span>
+                          <span className="text-emerald-400 font-black text-2xl">
+                            R$ {results.totalComAutomacao.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Hours */}
+                      <div className="bg-emerald-500/10 rounded-xl p-4 flex items-center gap-3">
+                        <Clock className="w-5 h-5 text-emerald-400" />
+                        <span className="text-white text-sm">
+                          {results.horasNovas.toFixed(0)} horas gastas (economia de {(results.horasAtuais - results.horasNovas).toFixed(0)}h)
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Animated Bar - Shorter */}
+                    <div className="mt-6">
+                      <div className="h-3 bg-emerald-500/20 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${(results.totalComAutomacao / results.totalPerdendo) * 100}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1.5, ease: "easeOut" }}
+                          className="h-full bg-gradient-to-r from-emerald-500 to-teal-600"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Key Benefits */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="grid md:grid-cols-3 gap-6 mt-12"
+              >
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                    <TrendingUp className="w-8 h-8 text-white" />
+                  </div>
+                  <h5 className="text-white font-bold text-xl mb-2">{results.roiPercentual.toFixed(0)}%</h5>
+                  <p className="text-white/60 text-sm">Eficiência estimada</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                    <Clock className="w-8 h-8 text-white" />
+                  </div>
+                  <h5 className="text-white font-bold text-xl mb-2">80%</h5>
+                  <p className="text-white/60 text-sm">Redução de tempo</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                    <TrendingDown className="w-8 h-8 text-white" />
+                  </div>
+                  <h5 className="text-white font-bold text-xl mb-2">80%</h5>
+                  <p className="text-white/60 text-sm">Redução de fraudes</p>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* Social Proof - Testimonial */}
+          <section className="py-16 px-6 bg-[#01203F]">
+            <div className="container mx-auto max-w-4xl">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12"
+              >
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                  {/* Avatar */}
+                  <div className="flex-shrink-0">
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center text-white text-2xl font-black">
+                      JM
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 text-center md:text-left">
+                    <p className="text-white text-xl md:text-2xl font-bold mb-4 leading-relaxed">
+                      "Economizei R$ 30 mil no primeiro trimestre. A Rooster transformou nossa operação."
+                    </p>
+                    <div className="space-y-1">
+                      <p className="text-white/90 font-semibold">João Martins</p>
+                      <p className="text-white/60 text-sm">Gerente de Marketing, Varejo SP</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Client Logos */}
+                <div className="mt-8 pt-8 border-t border-white/10">
+                  <p className="text-white/40 text-sm text-center mb-6">Empresas que confiam na Rooster</p>
+                  <div className="flex flex-wrap justify-center gap-6">
+                    {['Lojas Americanas', 'Magazine Luiza', 'Casas Bahia', 'Renner'].map((client, idx) => (
+                      <div key={idx} className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
+                        <span className="text-white font-black text-lg">{client.charAt(0)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* Warning */}
+      {showResults && (
+        <section className="py-8 px-6 bg-[#011E36]">
+          <div className="container mx-auto max-w-4xl">
+            <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-2xl p-4">
+              <div className="flex gap-3">
+                <AlertCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                <p className="text-yellow-200/90 text-sm leading-relaxed">
+                  <strong>Aviso:</strong> Esses valores são estimativas ilustrativas, baseadas em parâmetros médios do setor. O objetivo é demonstrar cenários de eficiência — não garantias de resultado.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA Final - Fixed Button */}
+      {showResults && (
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-[#FF0000] to-[#FF5001] shadow-2xl"
+        >
+          <div className="container mx-auto max-w-6xl px-6 py-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="text-center md:text-left">
+                <p className="text-white font-black text-xl md:text-2xl mb-1">
+                  🚀 Pronto para começar?
+                </p>
+                <p className="text-white/90 text-sm md:text-base">
+                  Agende sua demonstração e veja a Rooster em ação
+                </p>
+              </div>
+              <Link to="/demonstracao">
+                <Button className="bg-white hover:bg-white/90 text-[#FF0000] h-14 px-8 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition-all whitespace-nowrap">
+                  Agendar demonstração
+                  <Zap className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      )}
+
+      <div className={showResults ? "pb-32" : ""}>
+        <Footer />
+      </div>
     </div>
   );
 };

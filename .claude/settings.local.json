@@ -8,7 +8,8 @@
       "mcp__playwright__browser_navigate",
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_evaluate",
-      "mcp__playwright__browser_close"
+      "mcp__playwright__browser_close",
+      "Read(//c/Users/marbe/OneDrive/Imagens/Capturas de tela/**)"
     ],
     "deny": [],
     "ask": []
