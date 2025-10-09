@@ -145,61 +145,138 @@ const MissionCasesSection = () => {
               </p>
             </div>
 
-            {/* Client Grid - Desktop */}
-            <div className="hidden md:grid md:grid-cols-3 gap-4">
-              {clients.map((client, idx) => (
-                <motion.div
-                  key={client.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 cursor-pointer"
-                >
-                  {/* Content */}
-                  <div className="space-y-3 text-center">
-                    {/* Logo Placeholder - Circle with first letter */}
-                    <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center">
-                      <span className="text-white font-black text-2xl">
-                        {client.name.charAt(0)}
-                      </span>
-                    </div>
-
-                    {/* Client Name */}
-                    <h3 className="text-white font-bold text-base leading-tight">
-                      {client.name}
-                    </h3>
-
-                    {/* Industry */}
-                    <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full">
-                      <span className="text-white/70 text-xs font-medium">
-                        {client.industry}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Hover Glow */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-[#FF0000]/5 to-transparent transition-opacity duration-300 rounded-xl pointer-events-none" />
-                </motion.div>
-              ))}
-
-              {/* Ver mais */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.4, delay: clients.length * 0.05 }}
-                className="group relative bg-white/5 backdrop-blur-sm border border-white/10 border-dashed rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 cursor-pointer flex items-center justify-center"
+            {/* Client Grid - Desktop with Vertical Scroll */}
+            <div className="hidden md:block">
+              <div 
+                className="relative h-[600px] overflow-hidden rounded-2xl"
+                style={{
+                  maskImage: 'linear-gradient(to bottom, transparent 0%, black 140px, black calc(100% - 140px), transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 140px, black calc(100% - 140px), transparent 100%)'
+                }}
               >
-                <div className="text-center space-y-2">
-                  <div className="w-12 h-12 mx-auto rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                    <ArrowRight className="w-6 h-6 text-white" />
+                <style>{`
+                  @keyframes scroll-up {
+                    from {
+                      transform: translateY(0);
+                    }
+                    to {
+                      transform: translateY(-50%);
+                    }
+                  }
+
+                  .scroll-container {
+                    animation: scroll-up 20s linear infinite;
+                  }
+
+                  .scroll-container:hover {
+                    animation-play-state: paused;
+                  }
+
+                  @media (prefers-reduced-motion: reduce) {
+                    .scroll-container {
+                      animation: none;
+                    }
+                  }
+                `}</style>
+                
+                <div className="scroll-container">
+                  {/* Primeira lista de clientes */}
+                  <div className="grid grid-cols-3 gap-5 mb-5">
+                    {clients.map((client) => (
+                      <div
+                        key={`first-${client.id}`}
+                        className="group relative bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] rounded-[22px] p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_8px_30px_rgba(255,0,0,0.15)] cursor-pointer"
+                        tabIndex={0}
+                      >
+                        {/* Content */}
+                        <div className="space-y-3 text-center">
+                          {/* Logo Placeholder - Circle with first letter */}
+                          <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center">
+                            <span className="text-white font-black text-2xl">
+                              {client.name.charAt(0)}
+                            </span>
+                          </div>
+
+                          {/* Client Name */}
+                          <h3 className="text-white font-bold text-base leading-tight">
+                            {client.name}
+                          </h3>
+
+                          {/* Industry */}
+                          <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full">
+                            <span className="text-white/70 text-xs font-medium">
+                              {client.industry}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Hover Glow */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-[#FF0000]/5 to-transparent transition-opacity duration-300 rounded-[22px] pointer-events-none" />
+                      </div>
+                    ))}
+
+                    {/* Ver mais */}
+                    <div className="group relative bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] border-dashed rounded-[22px] p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-[1.04] cursor-pointer flex items-center justify-center">
+                      <div className="text-center space-y-2">
+                        <div className="w-12 h-12 mx-auto rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                          <ArrowRight className="w-6 h-6 text-white" />
+                        </div>
+                        <p className="text-white font-semibold text-sm">
+                          Ver todos
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-white font-semibold text-sm">
-                    Ver todos
-                  </p>
+
+                  {/* Segunda lista de clientes (duplicada para loop contínuo) */}
+                  <div className="grid grid-cols-3 gap-5">
+                    {clients.map((client) => (
+                      <div
+                        key={`second-${client.id}`}
+                        className="group relative bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] rounded-[22px] p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_8px_30px_rgba(255,0,0,0.15)] cursor-pointer"
+                        tabIndex={0}
+                      >
+                        {/* Content */}
+                        <div className="space-y-3 text-center">
+                          {/* Logo Placeholder - Circle with first letter */}
+                          <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center">
+                            <span className="text-white font-black text-2xl">
+                              {client.name.charAt(0)}
+                            </span>
+                          </div>
+
+                          {/* Client Name */}
+                          <h3 className="text-white font-bold text-base leading-tight">
+                            {client.name}
+                          </h3>
+
+                          {/* Industry */}
+                          <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full">
+                            <span className="text-white/70 text-xs font-medium">
+                              {client.industry}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Hover Glow */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-[#FF0000]/5 to-transparent transition-opacity duration-300 rounded-[22px] pointer-events-none" />
+                      </div>
+                    ))}
+
+                    {/* Ver mais (duplicado) */}
+                    <div className="group relative bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] border-dashed rounded-[22px] p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-[1.04] cursor-pointer flex items-center justify-center">
+                      <div className="text-center space-y-2">
+                        <div className="w-12 h-12 mx-auto rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                          <ArrowRight className="w-6 h-6 text-white" />
+                        </div>
+                        <p className="text-white font-semibold text-sm">
+                          Ver todos
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Client Grid - Mobile (Horizontal Carousel) */}
@@ -211,7 +288,7 @@ const MissionCasesSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  className="snap-start flex-shrink-0 w-[70vw] max-w-[240px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all"
+                  className="snap-start flex-shrink-0 w-[70vw] max-w-[240px] bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] rounded-[22px] p-6 hover:bg-white/10 transition-all"
                 >
                   <div className="space-y-3 text-center">
                     <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center">
@@ -237,7 +314,7 @@ const MissionCasesSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.4, delay: clients.length * 0.05 }}
-                className="snap-start flex-shrink-0 w-[70vw] max-w-[240px] bg-white/5 backdrop-blur-sm border border-white/10 border-dashed rounded-xl p-6 flex items-center justify-center"
+                className="snap-start flex-shrink-0 w-[70vw] max-w-[240px] bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] border-dashed rounded-[22px] p-6 flex items-center justify-center"
               >
                 <div className="text-center space-y-2">
                   <div className="w-12 h-12 mx-auto rounded-full bg-white/10 flex items-center justify-center">
