@@ -14,16 +14,16 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#platform" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+          <a href="/#platform" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
             Plataforma
           </a>
-          <a href="#cases" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+          <a href="/#cases" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
             Cases
           </a>
-          <a href="#roi" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
-            ROI
-          </a>
-          <a href="#contact" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+          <Link to="/calculadora" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+            Calculadora
+          </Link>
+          <a href="/#contact" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
             Contato
           </a>
         </nav>

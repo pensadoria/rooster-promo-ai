@@ -24,7 +24,7 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-7xl lg:text-[72px] font-black leading-tight text-white"
           >
-            Promoções ágeis. Resultados reais.
+            Crie promoções que vendem, em minutos.
           </motion.h1>
 
           {/* Subtitle */}
@@ -32,9 +32,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-xl md:text-2xl text-white/90 max-w-[590px] mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-white/90 max-w-[680px] mx-auto leading-relaxed"
           >
-            A plataforma que acelera o crescimento do seu negócio com tecnologia e simplicidade.
+            A plataforma que transforma seu marketing promocional em resultados reais.
+            <br />
+            Sem complicação, sem planilhas, só crescimento.
           </motion.p>
 
           {/* CTA Buttons */}
