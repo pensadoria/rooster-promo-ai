@@ -1,14 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const features = [
-    "Sem cartão de crédito",
-    "Setup em minutos",
-    "Resultados imediatos"
-  ];
 
   return (
     <section className="relative min-h-[924px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a1628] via-[#0d1d35] to-[#01203f] pt-24">
@@ -67,31 +61,6 @@ const Hero = () => {
               </Button>
             </a>
           </motion.div>
-
-          {/* Feature badges */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-6 pt-8"
-          >
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-2 text-white/80">
-                <Check className="w-3.5 h-3.5 text-white/80" />
-                <span className="text-sm">{feature}</span>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Trust badge */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-sm text-white/60 pt-4"
-          >
-            Confiado por 800+ empresas que crescem rápido
-          </motion.p>
         </div>
       </div>
     </section>

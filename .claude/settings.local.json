@@ -3,7 +3,8 @@
     "allow": [
       "mcp__figma-dev-mode-mcp-server__get_screenshot",
       "mcp__figma-dev-mode-mcp-server__get_code",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Read(//c/Users/marbe/Downloads/**)"
     ],
     "deny": [],
     "ask": []

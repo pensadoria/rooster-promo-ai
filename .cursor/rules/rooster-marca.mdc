@@ -1,0 +1,96 @@
+---
+alwaysApply: true
+{
+  "identity_rules": {
+    "brand": "Rooster",
+    "description": "A Rooster é uma plataforma de promoções que ajuda pequenos e médios varejistas a criarem campanhas que vendem — com sites automáticos, leitura de notas via IA e resultados em tempo real. A marca combina tecnologia e simplicidade para transformar o marketing promocional em uma experiência ágil, clara e impactante.",
+    "mission": "Simplificar o marketing promocional de forma rápida, segura e eficiente.",
+    "tone_of_voice": "Ágil, próxima, confiante e prática. Use frases curtas e diretas, evite jargões técnicos. Priorize clareza, benefício e ação. Transmita energia e confiança, como uma plataforma que resolve de forma simples.",
+    "visual_style": {
+      "style": "Minimalista tech e humano. Fundo escuro, contrastes vibrantes, glassmorphism moderado, ícones flat lineares e microanimações sutis.",
+      "layout": "Grid-based, espaçamento generoso, hierarquia clara e mobile-first.",
+      "components": "Bordas 2xl, sombras suaves, botões contrastantes e responsivos."
+    },
+    "colors": {
+      "primary": "#01203F",
+      "accent": "#FF0000",
+      "secondary": "#0344DC",
+      "highlight": "#FF5001",
+      "neutral_light": "#FFFFFF",
+      "neutral_dark": "#1E1E1E",
+      "avoid_combinations": [
+        "vermelho + laranja",
+        "azul escuro + preto",
+        "vermelho + azul claro"
+      ],
+      "preferred_combinations": [
+        "azul escuro + branco",
+        "branco + vermelho",
+        "azul escuro + laranja",
+        "branco + azul claro"
+      ]
+    },
+    "typography": {
+      "font_family": "Inter",
+      "title_weight": "Black (900)",
+      "subtitle_weight": "Bold (700)",
+      "body_weight": "Regular (400)",
+      "line_height": {
+        "titles": "80%–110%",
+        "paragraphs": "135%"
+      },
+      "max_characters_per_line": 75
+    },
+    "logo_usage": {
+      "composition": "Ícone (Rook) + Wordmark sempre juntos, salvo uso isolado do Rook em contextos reduzidos (app, favicon).",
+      "grid_proportions": "Espaço entre ícone e wordmark = 2x (1/3 da altura do wordmark). Espaço entre logo e tagline = 3x (1/3 da altura do wordmark).",
+      "background_variations": {
+        "fundo_azul": "corpo branco + crina vermelha (principal)",
+        "fundo_vermelho": "corpo branco + crina azul escuro",
+        "fundo_branco": "corpo azul escuro + crina vermelha"
+      },
+      "forbidden": "Não distorcer, girar, aplicar efeitos, separar ou empilhar elementos."
+    },
+    "copywriting_rules": {
+      "principles": [
+        "Comece sempre com o benefício principal.",
+        "Use verbos de ação: 'Crie', 'Transforme', 'Acompanhe', 'Acelere'.",
+        "Frases curtas (até 12 palavras).",
+        "Finalize com chamada à ação clara."
+      ],
+      "microcopy_examples": [
+        "Crie sua promoção em minutos — sem complicação.",
+        "Sua oferta relâmpago está pronta para atrair clientes.",
+        "Publique sua promoção e veja os resultados em tempo real."
+      ]
+    },
+    "interface_guidelines": {
+      "cta_color": "#FF0000",
+      "cta_hover": "#FF5001",
+      "cta_text_color": "#FFFFFF",
+      "buttons": "Chamativos, legíveis, com contraste e cantos arredondados.",
+      "animations": "Microtransições suaves (fade-in, hover glow, motion leve).",
+      "background": "Escuro, com uso moderado de glassmorphism e gradientes sutis."
+    },
+    "assistant_rules": {
+      "assistant_name": "Rook",
+      "voice": "Clara, empática e orientadora. Sempre ajuda passo a passo com linguagem humana e positiva.",
+      "tone_examples": [
+        "Tudo pronto para lançar sua promoção?",
+        "Quer ver como ficou o resultado?",
+        "Perfeito! Vamos ajustar os últimos detalhes."
+      ]
+    },
+    "core_principles": [
+      "Simplificar sempre.",
+      "Falar com energia e proximidade.",
+      "Manter contraste e legibilidade.",
+      "Usar o vermelho apenas para ações.",
+      "Evitar ruído visual e excesso de informação."
+    ]
+  },
+  "goal": "Gerar outputs consistentes com a identidade visual e verbal da Rooster — seja texto, design ou interface — mantendo tom ágil, claro e confiável."
+}
+
+
+---

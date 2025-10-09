@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Award, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CasesSection = () => {
@@ -79,6 +79,70 @@ const CasesSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-24 mx-auto max-w-3xl"
+        >
+          <div className="relative group">
+            {/* Glassmorphism Card */}
+            <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden">
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FF5001]/5 via-transparent to-transparent pointer-events-none" />
+              
+              {/* Content */}
+              <div className="relative grid md:grid-cols-2 gap-10 md:gap-16">
+                {/* Projetos Entregues */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="flex items-center gap-5 group/stat"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center shadow-lg group-hover/stat:scale-110 transition-transform duration-300">
+                      <Award className="w-7 h-7 text-white" strokeWidth={2.5} />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-5xl md:text-6xl font-black text-white mb-1 tracking-tight">+30</div>
+                    <div className="text-white/80 text-base font-medium">Projetos entregues</div>
+                  </div>
+                </motion.div>
+
+                {/* Divider - Hidden on mobile */}
+                <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-20 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+
+                {/* Usuários Impactados */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  className="flex items-center gap-5 group/stat"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center shadow-lg group-hover/stat:scale-110 transition-transform duration-300">
+                      <Users className="w-7 h-7 text-white" strokeWidth={2.5} />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-5xl md:text-6xl font-black text-white mb-1 tracking-tight">+1M</div>
+                    <div className="text-white/80 text-base font-medium">Usuários impactados</div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Subtle glow effect on hover */}
+            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#FF0000]/20 to-[#FF5001]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
