@@ -4,7 +4,11 @@
       "mcp__figma-dev-mode-mcp-server__get_screenshot",
       "mcp__figma-dev-mode-mcp-server__get_code",
       "Bash(npm run dev:*)",
-      "Read(//c/Users/marbe/Downloads/**)"
+      "Read(//c/Users/marbe/Downloads/**)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_close"
     ],
     "deny": [],
     "ask": []

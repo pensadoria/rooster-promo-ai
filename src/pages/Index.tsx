@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import CasesSection from "@/components/CasesSection";
+import MissionCasesSection from "@/components/MissionCasesSection";
 import TechnologySection from "@/components/TechnologySection";
 import ComparisonSection from "@/components/ComparisonSection";
 import ROICalculator from "@/components/ROICalculator";
@@ -12,7 +12,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <Hero />
-      <CasesSection />
+      <MissionCasesSection />
       <TechnologySection />
       <ComparisonSection />
       <ROICalculator />
