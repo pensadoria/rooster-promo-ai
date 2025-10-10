@@ -14,7 +14,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-white/70 max-w-md leading-relaxed">
-              A plataforma que transforma o marketing promocional em algo simples, ágil e sem burocracia. A rooster usa tecnologia premiafy e foi desenvolvido pela "Pensadoria"
+              A Rooster usa tecnologia Premiafy e tem seus direitos reservados pela Pensadoria
             </p>
             <a 
               href="mailto:comercial@pensadoria.com.br" 
