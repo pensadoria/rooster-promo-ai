@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Check, Lightbulb, Rocket, Target, Users, Zap, Sparkles, TrendingUp } from "lucide-react";
+import historyDashboard from "@/assets/history-dashboard.png";
 
 const History = () => {
   // Helper function to render description with Premiafy highlighted
@@ -151,7 +152,16 @@ const History = () => {
                           </p>
 
                           {/* Image Placeholder Left */}
-                          {event.imageSpace && (
+                          {event.imageSpace && event.year === "2020" && (
+                            <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
+                              <img 
+                                src={historyDashboard} 
+                                alt="Dashboard de analytics mostrando evolução de cupons e gestão de promoções"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          )}
+                          {event.imageSpace && event.year !== "2020" && (
                             <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                               <span className="text-white/40 text-sm font-medium">
                                 Espaço para imagem
@@ -189,7 +199,16 @@ const History = () => {
                           </p>
 
                           {/* Image Placeholder Right */}
-                          {event.imageSpace && (
+                          {event.imageSpace && event.year === "2020" && (
+                            <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
+                              <img 
+                                src={historyDashboard} 
+                                alt="Dashboard de analytics mostrando evolução de cupons e gestão de promoções"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          )}
+                          {event.imageSpace && event.year !== "2020" && (
                             <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                               <span className="text-white/40 text-sm font-medium">
                                 Espaço para imagem
@@ -260,7 +279,16 @@ const History = () => {
                     </p>
 
                     {/* Image Placeholder Mobile */}
-                    {event.imageSpace && (
+                    {event.imageSpace && event.year === "2020" && (
+                      <div className="mt-4 aspect-video rounded-2xl overflow-hidden border border-white/10">
+                        <img 
+                          src={historyDashboard} 
+                          alt="Dashboard de analytics mostrando evolução de cupons e gestão de promoções"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    {event.imageSpace && event.year !== "2020" && (
                       <div className="mt-4 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                         <span className="text-white/40 text-sm font-medium">
                           Espaço para imagem
