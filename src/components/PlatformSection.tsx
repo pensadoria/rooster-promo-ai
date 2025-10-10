@@ -201,21 +201,6 @@ const PlatformSection = () => {
                     <p className="text-white/70 text-base leading-relaxed">
                       {process.description}
                     </p>
-
-                    {/* Stats */}
-                    <div className="flex gap-4 pt-2">
-                      {process.stats.map((stat, statIdx) => (
-                        <div key={statIdx} className="flex items-baseline gap-2">
-                          <span className="text-white/50 text-sm">{stat.label}:</span>
-                          <span className="text-white font-bold text-lg">{stat.value}</span>
-                          {stat.trend && (
-                            <span className="text-[#00FF88] text-sm font-semibold">
-                              {stat.trend}
-                            </span>
-                          )}
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
 
