@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Check, Lightbulb, Rocket, Target, Users, Zap, Sparkles, TrendingUp } from "lucide-react";
 import historyDashboard from "@/assets/history-dashboard.png";
+import ideaBirth from "@/assets/idea-birth.png";
 
 const History = () => {
   // Helper function to render description with Premiafy highlighted
@@ -161,7 +162,16 @@ const History = () => {
                               />
                             </div>
                           )}
-                          {event.imageSpace && event.year !== "2020" && (
+                          {event.imageSpace && event.year === "2021" && (
+                            <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
+                              <img 
+                                src={ideaBirth} 
+                                alt="Representação visual do nascimento de uma ideia inovadora com tecnologia e IA"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          )}
+                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && (
                             <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                               <span className="text-white/40 text-sm font-medium">
                                 Espaço para imagem
@@ -208,7 +218,16 @@ const History = () => {
                               />
                             </div>
                           )}
-                          {event.imageSpace && event.year !== "2020" && (
+                          {event.imageSpace && event.year === "2021" && (
+                            <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
+                              <img 
+                                src={ideaBirth} 
+                                alt="Representação visual do nascimento de uma ideia inovadora com tecnologia e IA"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          )}
+                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && (
                             <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                               <span className="text-white/40 text-sm font-medium">
                                 Espaço para imagem
@@ -288,7 +307,16 @@ const History = () => {
                         />
                       </div>
                     )}
-                    {event.imageSpace && event.year !== "2020" && (
+                    {event.imageSpace && event.year === "2021" && (
+                      <div className="mt-4 aspect-video rounded-2xl overflow-hidden border border-white/10">
+                        <img 
+                          src={ideaBirth} 
+                          alt="Representação visual do nascimento de uma ideia inovadora com tecnologia e IA"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    {event.imageSpace && event.year !== "2020" && event.year !== "2021" && (
                       <div className="mt-4 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                         <span className="text-white/40 text-sm font-medium">
                           Espaço para imagem
