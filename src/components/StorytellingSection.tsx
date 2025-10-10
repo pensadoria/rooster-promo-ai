@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { AlertCircle, Lightbulb, Rocket, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import EggAnimation from "./EggAnimation";
 
 const StorytellingSection = () => {
   const timelineRef = useRef(null);
@@ -77,9 +78,19 @@ const StorytellingSection = () => {
             Como a Rooster nasceu
           </h2>
 
-          <p className="text-xl text-[#01203F]/70 leading-relaxed">
+          <p className="text-xl text-[#01203F]/70 leading-relaxed mb-8">
             Uma jornada de simplicidade, inovação e confiança para transformar o marketing promocional.
           </p>
+
+          {/* Animated Egg */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <EggAnimation />
+          </motion.div>
         </motion.div>
 
         {/* Timeline Horizontal */}
