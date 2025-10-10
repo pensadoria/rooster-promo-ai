@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { BarChart, TrendingUp, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import dashboardImage from "@/assets/dashboard-analytics.png";
 
 const TechnologySection = () => {
   const prefersReducedMotion = useReducedMotion();
@@ -266,19 +267,12 @@ const TechnologySection = () => {
                   background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                 }}
               >
-                <div className="w-full h-full flex items-center justify-center p-8">
-                  <div className="text-center text-white space-y-4">
-                    <svg 
-                      className="w-20 h-20 mx-auto opacity-80" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                    <p className="text-sm font-medium opacity-90">Dashboard Rooster</p>
-                    <p className="text-xs opacity-70">Gráficos em tempo real</p>
-                  </div>
+                <div className="w-full h-full overflow-hidden">
+                  <img 
+                    src={dashboardImage}
+                    alt="Dashboard de Analytics com gráficos de cupons e promoções"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </motion.div>
