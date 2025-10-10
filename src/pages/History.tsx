@@ -1,9 +1,33 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Check, Lightbulb, Rocket, Target, Users, Zap } from "lucide-react";
+import { Check, Lightbulb, Rocket, Target, Users, Zap, Sparkles, TrendingUp } from "lucide-react";
 
 const History = () => {
+  // Helper function to render description with Premiafy highlighted
+  const renderDescription = (year: string, description: string) => {
+    if (year === "2021-2022") {
+      return (
+        <>
+          Lançamos a <span className="font-black text-[#FFD700]">Premiafy</span>: a primeira plataforma completa de promoções com IA para grandes marcas. Sites automáticos, OCR instantâneo, dashboards enterprise e arquitetura para alto volume. Unilever, Royal Canin, BRF e outras líderes confiaram na tecnologia.
+        </>
+      );
+    } else if (year === "2023") {
+      return (
+        <>
+          Trouxemos a mesma tecnologia da <span className="font-black text-[#FFD700]">Premiafy</span> para pequenos e médios varejistas. Rooster nasce com automação acessível, IA inteligente e zero complexidade. Marcas como Hellmans e Hub simplificaram suas campanhas.
+        </>
+      );
+    } else if (year === "2024") {
+      return (
+        <>
+          Mais de 30 projetos enterprise com <span className="font-black text-[#FFD700]">Premiafy</span>, +1M de usuários impactados. Rooster expandindo para centenas de PMEs. Integrando IA generativa em ambas as plataformas. E isso é só o começo.
+        </>
+      );
+    }
+    return description;
+  };
+
   const timelineEvents = [
     {
       year: "2020",
@@ -22,26 +46,26 @@ const History = () => {
       imageSpace: true
     },
     {
-      year: "2022",
-      title: "A Plataforma Ganhou Vida",
-      description: "Lançamos a Rooster: a primeira plataforma completa de promoções com IA. Sites automáticos, OCR instantâneo e dashboards inteligentes.",
+      year: "2021-2022",
+      title: "Premiafy - A Solução Enterprise",
+      description: "Lançamos a Premiafy: a primeira plataforma completa de promoções com IA para grandes marcas. Sites automáticos, OCR instantâneo, dashboards enterprise e arquitetura para alto volume. Unilever, Royal Canin, BRF e outras líderes confiaram na tecnologia.",
       icon: Rocket,
-      color: "#FF5001",
-      imageSpace: true
-    },
-    {
-      year: "2023",
-      title: "Crescimento Acelerado",
-      description: "Mais de 30 projetos entregues, +1M de usuários impactados. Marcas como Hellmans e Hub confiam na Rooster para suas campanhas mais importantes.",
-      icon: Zap,
       color: "#0344DC",
       imageSpace: true
     },
     {
+      year: "2023",
+      title: "Rooster - Democratizando a Tecnologia",
+      description: "Trouxemos a mesma tecnologia da Premiafy para pequenos e médios varejistas. Rooster nasce com automação acessível, IA inteligente e zero complexidade. Marcas como Hellmans e Hub simplificaram suas campanhas.",
+      icon: Sparkles,
+      color: "#FF5001",
+      imageSpace: true
+    },
+    {
       year: "2024",
-      title: "O Futuro Está Acontecendo",
-      description: "Expandindo recursos, integrando IA generativa e ajudando centenas de varejistas a criar campanhas que realmente vendem. E isso é só o começo.",
-      icon: Users,
+      title: "Crescimento Acelerado",
+      description: "Mais de 30 projetos enterprise com Premiafy, +1M de usuários impactados. Rooster expandindo para centenas de PMEs. Integrando IA generativa em ambas as plataformas. E isso é só o começo.",
+      icon: TrendingUp,
       color: "#FF2A00",
       imageSpace: true
     }
@@ -123,7 +147,7 @@ const History = () => {
                           </h3>
 
                           <p className="text-white/70 text-lg leading-relaxed">
-                            {event.description}
+                            {renderDescription(event.year, event.description)}
                           </p>
 
                           {/* Image Placeholder Left */}
@@ -161,7 +185,7 @@ const History = () => {
                           </h3>
 
                           <p className="text-white/70 text-lg leading-relaxed">
-                            {event.description}
+                            {renderDescription(event.year, event.description)}
                           </p>
 
                           {/* Image Placeholder Right */}
@@ -232,7 +256,7 @@ const History = () => {
                     </h3>
 
                     <p className="text-white/70 leading-relaxed">
-                      {event.description}
+                      {renderDescription(event.year, event.description)}
                     </p>
 
                     {/* Image Placeholder Mobile */}

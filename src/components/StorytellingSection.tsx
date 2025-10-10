@@ -19,21 +19,21 @@ const StorytellingSection = () => {
       color: "#FF2A00"
     },
     {
-      id: "insight",
-      icon: Lightbulb,
-      year: "2021",
-      title: "O Insight",
-      description: "E se pudéssemos automatizar tudo? IA para ler notas, sites gerados em minutos, métricas em tempo real.",
-      image: "💡",
+      id: "premiafy",
+      icon: Rocket,
+      year: "2021-2022",
+      title: "A Primeira Solução",
+      description: "Nasceu a Premiafy para grandes marcas como Unilever e Royal Canin. IA para ler notas, dashboards inteligentes e campanhas enterprise de alto volume.",
+      image: "🚀",
       color: "#0344DC"
     },
     {
-      id: "solucao",
-      icon: Rocket,
-      year: "2022",
-      title: "A Solução",
-      description: "Nasceu a Rooster: plataforma completa que transforma promoções complexas em campanhas automáticas, inteligentes e rentáveis.",
-      image: "🚀",
+      id: "rooster",
+      icon: Lightbulb,
+      year: "2023",
+      title: "Democratizando",
+      description: "Rooster traz essa mesma tecnologia para pequenos e médios varejistas. Automação acessível, sem complexidade, só resultados.",
+      image: "💡",
       color: "#FF5001"
     }
   ];
@@ -171,7 +171,17 @@ const StorytellingSection = () => {
                     </h3>
 
                     <p className="text-[#01203F]/70 leading-relaxed text-center">
-                      {step.description}
+                      {step.id === "premiafy" ? (
+                        <>
+                          Nasceu a <span className="font-black text-[#0344DC]">Premiafy</span> para grandes marcas como Unilever e Royal Canin. IA para ler notas, dashboards inteligentes e campanhas enterprise de alto volume.
+                        </>
+                      ) : step.id === "rooster" ? (
+                        <>
+                          Rooster traz essa mesma tecnologia da <span className="font-black text-[#0344DC]">Premiafy</span> para pequenos e médios varejistas. Automação acessível, sem complexidade, só resultados.
+                        </>
+                      ) : (
+                        step.description
+                      )}
                     </p>
 
                     {/* Icon at bottom */}

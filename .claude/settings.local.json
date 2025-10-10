@@ -12,7 +12,8 @@
       "Read(//c/Users/marbe/OneDrive/Imagens/Capturas de tela/**)",
       "mcp__playwright__browser_snapshot",
       "Bash(npx playwright screenshot:*)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "mcp__playwright__browser_tabs"
     ],
     "deny": [],
     "ask": []
