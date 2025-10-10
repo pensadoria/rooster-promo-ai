@@ -17,6 +17,9 @@ const Header = () => {
           <Link to="/" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
             Inicio
           </Link>
+          <Link to="/historia" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+            História
+          </Link>
           <Link to="/calculadora" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
             Calculadora
           </Link>
@@ -26,7 +29,7 @@ const Header = () => {
         </nav>
 
         {/* CTA Button */}
-        <Link to="/demonstracao">
+        <Link to="/contato">
           <Button
             className="bg-red-600 hover:bg-red-700 text-white rounded-xl px-6 h-12 font-semibold text-sm"
           >

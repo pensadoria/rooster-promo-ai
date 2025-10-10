@@ -11,18 +11,8 @@ interface ClientItem {
 }
 
 const clients: ClientItem[] = [
-  { id: "1", name: "Lojas Americanas", industry: "Varejo" },
-  { id: "2", name: "Casas Bahia", industry: "Varejo" },
-  { id: "3", name: "Magazine Luiza", industry: "E-commerce" },
-  { id: "4", name: "Riachuelo", industry: "Moda" },
-  { id: "5", name: "Renner", industry: "Moda" },
-  { id: "6", name: "Petz", industry: "Pet Shop" },
-  { id: "7", name: "Natura", industry: "Beleza" },
-  { id: "8", name: "O Boticário", industry: "Beleza" },
-  { id: "9", name: "Marisa", industry: "Moda" },
-  { id: "10", name: "C&A", industry: "Moda" },
-  { id: "11", name: "Leader", industry: "Farmácia" },
-  { id: "12", name: "Drogasil", industry: "Farmácia" },
+  { id: "1", name: "Hellmans", industry: "Alimentos" },
+  { id: "2", name: "Hub", industry: "Varejo" },
 ];
 
 const MissionCasesSection = () => {
@@ -88,9 +78,9 @@ const MissionCasesSection = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 pt-4">
-              <Link to="/demonstracao">
+              <Link to="/contato">
                 <button className="bg-[#FF0000] hover:bg-[#FF5001] text-white font-bold px-8 h-12 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105">
-                  Agendar demonstração
+                  Falar com especialista
                 </button>
               </Link>
               <Link to="/calculadora">
@@ -344,7 +334,7 @@ const MissionCasesSection = () => {
                     Agende uma demonstração e veja como funciona
                   </p>
                 </div>
-                <Link to="/demonstracao">
+                <Link to="/contato">
                   <button className="bg-[#FF0000] hover:bg-[#FF5001] text-white font-bold px-6 h-11 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 whitespace-nowrap flex items-center gap-2">
                     Falar com especialista
                     <ArrowRight className="w-4 h-4" />

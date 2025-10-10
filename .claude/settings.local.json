@@ -9,7 +9,10 @@
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_evaluate",
       "mcp__playwright__browser_close",
-      "Read(//c/Users/marbe/OneDrive/Imagens/Capturas de tela/**)"
+      "Read(//c/Users/marbe/OneDrive/Imagens/Capturas de tela/**)",
+      "mcp__playwright__browser_snapshot",
+      "Bash(npx playwright screenshot:*)",
+      "Bash(powershell:*)"
     ],
     "deny": [],
     "ask": []

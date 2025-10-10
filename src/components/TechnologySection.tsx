@@ -75,7 +75,7 @@ const TechnologySection = () => {
             className="text-[32px] md:text-[48px] leading-[1.1] font-extrabold tracking-tight"
             style={{ fontFamily: 'Inter, sans-serif', color: '#011E36' }}
           >
-            Tecnologia que simplifica — e vende.
+            Tecnologia que simplifica, <span style={{ color: '#FF2A00' }}>e vende</span>.
           </h2>
           
           {/* Subtitle */}
@@ -342,13 +342,6 @@ const TechnologySection = () => {
             Agendar demonstração
           </Button>
 
-          {/* Ghost button alternative */}
-          <Button
-            variant="outline"
-            className="px-6 py-3 rounded-full font-medium text-[14px] border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200"
-          >
-            Ver mais recursos
-          </Button>
         </motion.div>
       </div>
 

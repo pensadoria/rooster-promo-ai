@@ -22,7 +22,7 @@ const CTAFinal = () => {
           Fale com nosso time e acelere suas próximas campanhas.
         </p>
 
-        <Link to="/demonstracao">
+        <Link to="/contato">
           <Button
             className="bg-white hover:bg-white/95 text-red-600 h-[60px] px-8 rounded-xl text-lg font-bold shadow-lg hover:shadow-xl transition-all"
           >

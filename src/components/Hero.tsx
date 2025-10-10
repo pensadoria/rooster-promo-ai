@@ -33,14 +33,14 @@ const Hero = () => {
             Sem complicação, sem planilhas, só crescimento.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
+            className="flex justify-center items-center pt-4"
           >
-            <Link to="/demonstracao">
+            <Link to="/contato">
               <Button
                 size="lg"
                 className="bg-red-600 hover:bg-red-700 text-white text-lg px-8 h-[60px] rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all"
@@ -51,15 +51,6 @@ const Hero = () => {
                 </svg>
               </Button>
             </Link>
-            <a href="#cases">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 h-[64px] rounded-xl font-semibold"
-              >
-                Ver cases
-              </Button>
-            </a>
           </motion.div>
         </div>
       </div>

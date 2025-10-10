@@ -71,8 +71,8 @@ const CasesSection = () => {
                 <p className="text-gray-600 leading-relaxed">
                   {caseItem.description}
                 </p>
-                <Link to="/demonstracao" className="flex items-center gap-2 text-red-600 font-semibold hover:gap-3 transition-all duration-300 group/link">
-                  Ver case completo
+                <Link to="/contato" className="flex items-center gap-2 text-red-600 font-semibold hover:gap-3 transition-all duration-300 group/link">
+                  Saber mais
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

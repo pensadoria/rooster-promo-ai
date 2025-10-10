@@ -655,9 +655,9 @@ const Calculator = () => {
                   Agende sua demonstração e veja a Rooster em ação
                 </p>
               </div>
-              <Link to="/demonstracao">
+              <Link to="/contato">
                 <Button className="bg-white hover:bg-white/90 text-[#FF0000] h-14 px-8 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition-all whitespace-nowrap">
-                  Agendar demonstração
+                  Falar com especialista
                   <Zap className="ml-2 w-5 h-5" />
                 </Button>
               </Link>

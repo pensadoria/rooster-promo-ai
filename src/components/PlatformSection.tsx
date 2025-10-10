@@ -232,9 +232,9 @@ const PlatformSection = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="pt-4"
             >
-              <Link to="/demonstracao">
+              <Link to="/contato">
                 <button className="w-full sm:w-auto bg-[#FF0000] hover:bg-[#FF5001] text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-2">
-                  Ver demonstração da plataforma
+                  Falar com especialista
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>

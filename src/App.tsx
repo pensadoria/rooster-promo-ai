@@ -4,9 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Demo from "./pages/Demo";
 import Calculator from "./pages/Calculator";
 import Contact from "./pages/Contact";
+import History from "./pages/History";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -21,9 +21,9 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/demonstracao" element={<Demo />} />
           <Route path="/calculadora" element={<Calculator />} />
           <Route path="/contato" element={<Contact />} />
+          <Route path="/historia" element={<History />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
