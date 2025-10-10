@@ -1,13 +1,49 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import heroImage1 from "@/assets/hero-carousel-1.jpg";
+import heroImage2 from "@/assets/hero-carousel-2.jpg";
+import heroImage3 from "@/assets/hero-carousel-3.jpg";
 
 const Hero = () => {
+  const images = [heroImage1, heroImage2, heroImage3];
 
   return (
-    <section className="relative min-h-[924px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0a1628] via-[#0d1d35] to-[#01203f] pt-24">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,80,1,0.03)_0%,transparent_65%)]" />
+    <section className="relative min-h-[924px] flex items-center justify-center overflow-hidden pt-24">
+      {/* Background carousel */}
+      <div className="absolute inset-0">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+          className="w-full h-full"
+        >
+          <CarouselContent className="h-full">
+            {images.map((image, index) => (
+              <CarouselItem key={index} className="h-full">
+                <div className="relative w-full h-full">
+                  <img
+                    src={image}
+                    alt={`Hero background ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </div>
+      
+      {/* Blue overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628]/95 via-[#0d1d35]/90 to-[#01203f]/95" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-[1076px] mx-auto text-center space-y-8">
