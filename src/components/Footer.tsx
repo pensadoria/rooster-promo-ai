@@ -15,26 +15,6 @@ const Footer = () => {
             <p className="text-white/70 max-w-md leading-relaxed">
               A plataforma que transforma o marketing promocional em algo simples, ágil e sem burocracia.
             </p>
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-              >
-                <Linkedin className="w-5 h-5 text-white" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-              >
-                <Twitter className="w-5 h-5 text-white" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-              >
-                <Instagram className="w-5 h-5 text-white" />
-              </a>
-            </div>
           </div>
 
           {/* Produto Column */}
