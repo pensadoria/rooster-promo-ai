@@ -6,6 +6,7 @@ import historyDashboard from "@/assets/history-dashboard.png";
 import ideaBirth from "@/assets/idea-birth.png";
 import premiafyLogo from "@/assets/premiafy-logo.png";
 import roosterLogo from "@/assets/rooster-logo.png";
+import growthChart from "@/assets/growth-chart.png";
 
 const History = () => {
   // Helper function to render description with Premiafy highlighted
@@ -191,7 +192,16 @@ const History = () => {
                               />
                             </div>
                           )}
-                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && (
+                          {event.imageSpace && event.year === "2024" && (
+                            <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
+                              <img 
+                                src={growthChart} 
+                                alt="Gráfico mostrando crescimento acelerado e expansão"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          )}
+                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && event.year !== "2024" && (
                             <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                               <span className="text-white/40 text-sm font-medium">
                                 Espaço para imagem
@@ -265,7 +275,16 @@ const History = () => {
                               />
                             </div>
                           )}
-                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && (
+                          {event.imageSpace && event.year === "2024" && (
+                            <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
+                              <img 
+                                src={growthChart} 
+                                alt="Gráfico mostrando crescimento acelerado e expansão"
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          )}
+                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && event.year !== "2024" && (
                             <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                               <span className="text-white/40 text-sm font-medium">
                                 Espaço para imagem
@@ -372,7 +391,16 @@ const History = () => {
                         />
                       </div>
                     )}
-                    {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && (
+                    {event.imageSpace && event.year === "2024" && (
+                      <div className="mt-4 aspect-video rounded-2xl overflow-hidden border border-white/10">
+                        <img 
+                          src={growthChart} 
+                          alt="Gráfico mostrando crescimento acelerado e expansão"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && event.year !== "2024" && (
                       <div className="mt-4 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                         <span className="text-white/40 text-sm font-medium">
                           Espaço para imagem
