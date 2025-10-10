@@ -10,6 +10,10 @@ const Header = () => {
           <div className="w-8 h-8 rounded bg-red-600 flex items-center justify-center">
             <span className="text-white font-bold text-sm">R</span>
           </div>
+          {/* Space for horizontal logo */}
+          <div className="h-8 w-32 bg-transparent flex items-center">
+            {/* Logo horizontal will be placed here */}
+          </div>
         </Link>
 
         {/* Navigation */}
