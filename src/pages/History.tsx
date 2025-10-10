@@ -5,6 +5,7 @@ import { Check, Lightbulb, Rocket, Target, Users, Zap, Sparkles, TrendingUp } fr
 import historyDashboard from "@/assets/history-dashboard.png";
 import ideaBirth from "@/assets/idea-birth.png";
 import premiafyLogo from "@/assets/premiafy-logo.png";
+import roosterLogo from "@/assets/rooster-logo.png";
 
 const History = () => {
   // Helper function to render description with Premiafy highlighted
@@ -181,7 +182,16 @@ const History = () => {
                               />
                             </div>
                           )}
-                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && (
+                          {event.imageSpace && event.year === "2023" && (
+                            <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
+                              <img 
+                                src={roosterLogo} 
+                                alt="Logo Rooster - Plataforma de promoções para PMEs"
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                          )}
+                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && (
                             <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                               <span className="text-white/40 text-sm font-medium">
                                 Espaço para imagem
@@ -246,7 +256,16 @@ const History = () => {
                               />
                             </div>
                           )}
-                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && (
+                          {event.imageSpace && event.year === "2023" && (
+                            <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
+                              <img 
+                                src={roosterLogo} 
+                                alt="Logo Rooster - Plataforma de promoções para PMEs"
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                          )}
+                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && (
                             <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                               <span className="text-white/40 text-sm font-medium">
                                 Espaço para imagem
@@ -344,7 +363,16 @@ const History = () => {
                         />
                       </div>
                     )}
-                    {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && (
+                    {event.imageSpace && event.year === "2023" && (
+                      <div className="mt-4 aspect-video rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
+                        <img 
+                          src={roosterLogo} 
+                          alt="Logo Rooster - Plataforma de promoções para PMEs"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    )}
+                    {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && (
                       <div className="mt-4 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
                         <span className="text-white/40 text-sm font-medium">
                           Espaço para imagem
