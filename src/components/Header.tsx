@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import roosterIcon from "@/assets/rooster-icon.png";
 
 const Header = () => {
   return (
@@ -7,9 +8,11 @@ const Header = () => {
       <div className="container mx-auto px-6 py-6 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded bg-red-600 flex items-center justify-center">
-            <span className="text-white font-bold text-sm">R</span>
-          </div>
+          <img 
+            src={roosterIcon} 
+            alt="Rooster Logo" 
+            className="w-8 h-8 object-contain"
+          />
           {/* Space for horizontal logo */}
           <div className="h-8 w-32 bg-transparent flex items-center">
             {/* Logo horizontal will be placed here */}
