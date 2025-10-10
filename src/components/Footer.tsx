@@ -1,4 +1,5 @@
-import { Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -6,52 +7,40 @@ const Footer = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           {/* Brand Column */}
-          <div className="md:col-span-5 space-y-6">
+          <div className="md:col-span-6 space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded bg-red-600 flex items-center justify-center">
                 <span className="text-white font-bold text-sm">R</span>
               </div>
             </div>
             <p className="text-white/70 max-w-md leading-relaxed">
-              A plataforma que transforma o marketing promocional em algo simples, ágil e sem burocracia.
+              A plataforma que transforma o marketing promocional em algo simples, ágil e sem burocracia. A rooster usa tecnologia premiafy e foi desenvolvido pela "Pensadoria"
             </p>
+            <a 
+              href="mailto:comercial@pensadoria.com.br" 
+              className="flex items-center gap-2 text-white/70 hover:text-white transition-colors w-fit"
+            >
+              <Mail className="w-5 h-5" />
+              <span>comercial@pensadoria.com.br</span>
+            </a>
           </div>
 
-          {/* Produto Column */}
-          <div className="md:col-span-2 md:col-start-7">
-            <h3 className="font-bold text-white mb-6">Produto</h3>
-            <nav className="flex flex-col gap-3">
-              <a href="#" className="text-white/70 hover:text-white transition-colors">
-                Funcionalidades
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors">
-                Preços
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors">
-                API
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors">
-                Integrações
-              </a>
-            </nav>
-          </div>
-
-          {/* Suporte Column */}
+          {/* Menu Column */}
           <div className="md:col-span-2 md:col-start-10">
-            <h3 className="font-bold text-white mb-6">Suporte</h3>
+            <h3 className="font-bold text-white mb-6">Menu</h3>
             <nav className="flex flex-col gap-3">
-              <a href="#" className="text-white/70 hover:text-white transition-colors">
-                Central de Ajuda
-              </a>
-              <a href="#contact" className="text-white/70 hover:text-white transition-colors">
+              <Link to="/" className="text-white/70 hover:text-white transition-colors">
+                Inicio
+              </Link>
+              <Link to="/historia" className="text-white/70 hover:text-white transition-colors">
+                História
+              </Link>
+              <Link to="/calculadora" className="text-white/70 hover:text-white transition-colors">
+                Calculadora
+              </Link>
+              <Link to="/contato" className="text-white/70 hover:text-white transition-colors">
                 Contato
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors">
-                Status
-              </a>
-              <a href="#" className="text-white/70 hover:text-white transition-colors">
-                Blog
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
