@@ -14,10 +14,380 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          phone: string | null
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          phone?: string | null
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
+      forecast_metrics: {
+        Row: {
+          created_at: string | null
+          cv_horizon: string | null
+          cv_initial: string | null
+          cv_period: string | null
+          id: string
+          mae: number | null
+          mape: number | null
+          model_id: string
+          n_observacoes: number | null
+          observacoes: string | null
+          periodo_fim: string | null
+          periodo_inicio: string | null
+          product_id: string
+          r2: number | null
+          rmse: number | null
+          wmape: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          cv_horizon?: string | null
+          cv_initial?: string | null
+          cv_period?: string | null
+          id?: string
+          mae?: number | null
+          mape?: number | null
+          model_id: string
+          n_observacoes?: number | null
+          observacoes?: string | null
+          periodo_fim?: string | null
+          periodo_inicio?: string | null
+          product_id: string
+          r2?: number | null
+          rmse?: number | null
+          wmape?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          cv_horizon?: string | null
+          cv_initial?: string | null
+          cv_period?: string | null
+          id?: string
+          mae?: number | null
+          mape?: number | null
+          model_id?: string
+          n_observacoes?: number | null
+          observacoes?: string | null
+          periodo_fim?: string | null
+          periodo_inicio?: string | null
+          product_id?: string
+          r2?: number | null
+          rmse?: number | null
+          wmape?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forecast_metrics_model_id_fkey"
+            columns: ["model_id"]
+            isOneToOne: true
+            referencedRelation: "forecast_model_performance"
+            referencedColumns: ["model_id"]
+          },
+          {
+            foreignKeyName: "forecast_metrics_model_id_fkey"
+            columns: ["model_id"]
+            isOneToOne: true
+            referencedRelation: "forecast_models"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "forecast_metrics_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "forecast_products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      forecast_models: {
+        Row: {
+          acuracia: number | null
+          created_at: string | null
+          data_fim: string
+          data_inicio: string
+          id: string
+          modelo_serializado: string | null
+          nome: string
+          observacoes: string | null
+          parametros: Json | null
+          periodos_previsao: number | null
+          product_id: string
+          status: string | null
+          tipo_modelo: string | null
+          updated_at: string | null
+          versao: string | null
+        }
+        Insert: {
+          acuracia?: number | null
+          created_at?: string | null
+          data_fim: string
+          data_inicio: string
+          id?: string
+          modelo_serializado?: string | null
+          nome: string
+          observacoes?: string | null
+          parametros?: Json | null
+          periodos_previsao?: number | null
+          product_id: string
+          status?: string | null
+          tipo_modelo?: string | null
+          updated_at?: string | null
+          versao?: string | null
+        }
+        Update: {
+          acuracia?: number | null
+          created_at?: string | null
+          data_fim?: string
+          data_inicio?: string
+          id?: string
+          modelo_serializado?: string | null
+          nome?: string
+          observacoes?: string | null
+          parametros?: Json | null
+          periodos_previsao?: number | null
+          product_id?: string
+          status?: string | null
+          tipo_modelo?: string | null
+          updated_at?: string | null
+          versao?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forecast_models_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "forecast_products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      forecast_predictions: {
+        Row: {
+          created_at: string | null
+          data: string
+          erro_absoluto: number | null
+          holiday_effect: number | null
+          id: string
+          model_id: string
+          product_id: string
+          seasonal: number | null
+          tipo: string | null
+          trend: number | null
+          valor_real: number | null
+          yhat: number
+          yhat_lower: number | null
+          yhat_upper: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          data: string
+          erro_absoluto?: number | null
+          holiday_effect?: number | null
+          id?: string
+          model_id: string
+          product_id: string
+          seasonal?: number | null
+          tipo?: string | null
+          trend?: number | null
+          valor_real?: number | null
+          yhat: number
+          yhat_lower?: number | null
+          yhat_upper?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          data?: string
+          erro_absoluto?: number | null
+          holiday_effect?: number | null
+          id?: string
+          model_id?: string
+          product_id?: string
+          seasonal?: number | null
+          tipo?: string | null
+          trend?: number | null
+          valor_real?: number | null
+          yhat?: number
+          yhat_lower?: number | null
+          yhat_upper?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forecast_predictions_model_id_fkey"
+            columns: ["model_id"]
+            isOneToOne: false
+            referencedRelation: "forecast_model_performance"
+            referencedColumns: ["model_id"]
+          },
+          {
+            foreignKeyName: "forecast_predictions_model_id_fkey"
+            columns: ["model_id"]
+            isOneToOne: false
+            referencedRelation: "forecast_models"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "forecast_predictions_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "forecast_products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      forecast_products: {
+        Row: {
+          ativo: boolean | null
+          categoria: string | null
+          codigo_sku: string
+          created_at: string | null
+          descricao: string | null
+          id: string
+          nome: string | null
+          referencia: string
+          tipo: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          ativo?: boolean | null
+          categoria?: string | null
+          codigo_sku: string
+          created_at?: string | null
+          descricao?: string | null
+          id?: string
+          nome?: string | null
+          referencia: string
+          tipo?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          ativo?: boolean | null
+          categoria?: string | null
+          codigo_sku?: string
+          created_at?: string | null
+          descricao?: string | null
+          id?: string
+          nome?: string | null
+          referencia?: string
+          tipo?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      forecast_sales: {
+        Row: {
+          codigo_sku: string | null
+          created_at: string | null
+          data: string
+          empresa: string | null
+          id: string
+          local: string | null
+          product_id: string
+          quantidade: number
+          updated_at: string | null
+          valor_total: number | null
+          valor_unitario: number | null
+        }
+        Insert: {
+          codigo_sku?: string | null
+          created_at?: string | null
+          data: string
+          empresa?: string | null
+          id?: string
+          local?: string | null
+          product_id: string
+          quantidade?: number
+          updated_at?: string | null
+          valor_total?: number | null
+          valor_unitario?: number | null
+        }
+        Update: {
+          codigo_sku?: string | null
+          created_at?: string | null
+          data?: string
+          empresa?: string | null
+          id?: string
+          local?: string | null
+          product_id?: string
+          quantidade?: number
+          updated_at?: string | null
+          valor_total?: number | null
+          valor_unitario?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forecast_sales_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "forecast_products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      media_files: {
+        Row: {
+          id: number
+          name: string | null
+          url: string | null
+        }
+        Insert: {
+          id?: number
+          name?: string | null
+          url?: string | null
+        }
+        Update: {
+          id?: number
+          name?: string | null
+          url?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
-      [_ in never]: never
+      forecast_model_performance: {
+        Row: {
+          classificacao_performance: string | null
+          created_at: string | null
+          data_fim: string | null
+          data_inicio: string | null
+          mae: number | null
+          mape: number | null
+          model_id: string | null
+          model_name: string | null
+          product_name: string | null
+          r2: number | null
+          referencia: string | null
+          rmse: number | null
+          status: string | null
+          tipo_modelo: string | null
+          versao: string | null
+          wmape: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       binary_quantize: {
