@@ -87,18 +87,6 @@ const TechnologySection = () => {
           >
             Sites automáticos, OCR + IA e métricas em tempo real. Sem planilhas.
           </p>
-
-          {/* KPI Strip */}
-          <div 
-            className="flex items-center justify-center gap-3 text-[14px] leading-[1.4] font-semibold mt-6"
-            style={{ color: '#475569' }}
-          >
-            <span>Leitura de nota ~2s</span>
-            <span style={{ opacity: 0.4 }}>•</span>
-            <span>99,9% uptime</span>
-            <span style={{ opacity: 0.4 }}>•</span>
-            <span>+1M usuários</span>
-          </div>
         </motion.div>
 
         {/* Two Column Layout */}
