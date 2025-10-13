@@ -124,8 +124,8 @@ const TechnologySection = () => {
 
                   {/* Content */}
                   <div className="relative z-10 h-full flex flex-col justify-between">
-                    {/* Top section: Icon and Badge */}
-                    <div className="space-y-4">
+                    {/* Top section: Icon */}
+                    <div>
                       {/* Icon circle */}
                       <motion.div
                         className="w-14 h-14 rounded-full border border-white/[0.14] flex items-center justify-center"
@@ -144,21 +144,6 @@ const TechnologySection = () => {
                         }}
                       >
                         <feature.icon className="w-6 h-6 text-white" strokeWidth={1.5} />
-                      </motion.div>
-
-                      {/* Badge */}
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.12, delay: index * 0.15 + 0.3 }}
-                        className="inline-block px-3 py-1.5 rounded-full text-[12px] leading-[1.3] font-medium"
-                        style={{
-                          background: 'rgba(255, 255, 255, 0.08)',
-                          color: '#FFFFFF',
-                        }}
-                      >
-                        {feature.badge}
                       </motion.div>
                     </div>
 
