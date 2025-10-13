@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -22,6 +22,13 @@ const Footer = () => {
             >
               <Mail className="w-5 h-5" />
               <span>comercial@pensadoria.com.br</span>
+            </a>
+            <a 
+              href="tel:+5511993492108" 
+              className="flex items-center gap-2 text-white/70 hover:text-white transition-colors w-fit"
+            >
+              <Phone className="w-5 h-5" />
+              <span>(11) 99349-2108</span>
             </a>
           </div>
 
