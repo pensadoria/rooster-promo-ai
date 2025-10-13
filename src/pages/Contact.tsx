@@ -19,7 +19,13 @@ const contactSchema = z.object({
     .email("Email inválido")
     .max(255, "Email deve ter no máximo 255 caracteres"),
   phone: z.string()
-    .regex(/^(\(\d{2}\)\s?)?\d{4,5}-?\d{4}$/, "Formato inválido. Use: (00) 00000-0000")
+    .refine((value) => {
+      if (!value) return true; // Campo opcional
+      // Remove tudo exceto números
+      const digitsOnly = value.replace(/\D/g, "");
+      // Aceita 10 dígitos (fixo) ou 11 dígitos (celular com 9)
+      return digitsOnly.length === 10 || digitsOnly.length === 11;
+    }, "Telefone deve ter 10 ou 11 dígitos")
     .optional()
     .or(z.literal("")),
   message: z.string()
