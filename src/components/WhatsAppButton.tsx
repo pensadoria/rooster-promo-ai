@@ -20,7 +20,7 @@ const WhatsAppButton = () => {
       {/* Bubble de texto */}
       {showBubble && (
         <div className="absolute bottom-20 right-0 mb-2 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-          <div className="relative bg-white text-gray-800 px-4 py-3 rounded-lg shadow-lg max-w-[200px]">
+          <div className="relative bg-white text-gray-800 px-4 py-3 rounded-lg shadow-lg w-[140px]">
             <button
               onClick={() => setShowBubble(false)}
               className="absolute -top-2 -right-2 bg-gray-200 rounded-full p-1 hover:bg-gray-300 transition-colors"
@@ -28,7 +28,7 @@ const WhatsAppButton = () => {
             >
               <X className="w-3 h-3" />
             </button>
-            <p className="text-sm font-medium">O que posso te ajudar?</p>
+            <p className="text-sm font-medium leading-tight">O que posso te ajudar?</p>
             {/* Seta apontando para baixo */}
             <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white transform rotate-45"></div>
           </div>
