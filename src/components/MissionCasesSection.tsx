@@ -46,7 +46,7 @@ const MissionCasesSection = () => {
             </p>
 
             {/* Bullets with Icons - Produtos */}
-            <div className="space-y-3">
+            <div className="space-y-3 border-t border-white/10 pt-8">
               <h3 className="text-white/60 text-sm font-bold uppercase tracking-wider mb-4">
                 O que entregamos
               </h3>
@@ -91,30 +91,7 @@ const MissionCasesSection = () => {
             </div>
 
             {/* KPI Strip */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="relative mt-8 pt-8 border-t border-white/10"
-            >
-              <div className="grid grid-cols-2 gap-6">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <Award className="w-5 h-5 text-[#FF0000]" />
-                    <span className="text-3xl font-black text-white">+30</span>
-                  </div>
-                  <p className="text-white/60 text-sm font-medium">Projetos entregues</p>
-                </div>
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-[#FF0000]" />
-                    <span className="text-3xl font-black text-white">+1M</span>
-                  </div>
-                  <p className="text-white/60 text-sm font-medium">Usuários impactados</p>
-                </div>
-              </div>
-            </motion.div>
+            
           </motion.div>
 
           {/* RIGHT COLUMN - CLIENT LOGOS (Cols 7-12) */}
@@ -123,7 +100,7 @@ const MissionCasesSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-7"
+            className="lg:col-span-7 h-[800px]"
           >
             {/* Header */}
             <div className="mb-8 space-y-2">
@@ -316,9 +293,10 @@ const MissionCasesSection = () => {
                 </div>
               </motion.div>
             </div>
+          </motion.div>
+        </div>
 
-            {/* Bottom CTA */}
-            <motion.div
+         <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -326,6 +304,30 @@ const MissionCasesSection = () => {
               className="mt-12 pt-8 border-t border-white/10"
             >
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="relative"
+            >
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <Award className="w-5 h-5 text-[#FF0000]" />
+                    <span className="text-3xl font-black text-white">+30</span>
+                  </div>
+                  <p className="text-white/60 text-sm font-medium">Projetos entregues</p>
+                </div>
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <Users className="w-5 h-5 text-[#FF0000]" />
+                    <span className="text-3xl font-black text-white">+1M</span>
+                  </div>
+                  <p className="text-white/60 text-sm font-medium">Usuários impactados</p>
+                </div>
+              </div>
+            </motion.div>
                 <div>
                   <p className="text-white font-bold text-lg">
                     Quer ser o próximo?
@@ -342,8 +344,6 @@ const MissionCasesSection = () => {
                 </Link>
               </div>
             </motion.div>
-          </motion.div>
-        </div>
       </div>
     </section>
   );
