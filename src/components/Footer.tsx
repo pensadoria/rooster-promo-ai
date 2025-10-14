@@ -14,7 +14,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-white/70 max-w-md leading-relaxed">
-              A Rooster usa tecnologia Premiafy e tem seus direitos reservados pela Pensadoria
+              A Rooster usa tecnologia Premiafy
             </p>
             <a 
               href="mailto:comercial@rooster.app" 
