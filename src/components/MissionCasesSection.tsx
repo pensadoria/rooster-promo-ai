@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Award, Users, Zap, ShieldCheck, Sparkles, TrendingUp } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  Users,
+  Settings,
+  FileText,
+  BarChart3,
+  Lock,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -17,7 +25,10 @@ const clients: ClientItem[] = [
 
 const MissionCasesSection = () => {
   return (
-    <section id="mission-cases" className="bg-[#01203F] py-24 lg:py-32 px-6 overflow-hidden">
+    <section
+      id="mission-cases"
+      className="bg-[#01203F] py-24 lg:py-32 px-6 overflow-hidden"
+    >
       <div className="container mx-auto max-w-[1400px]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* LEFT COLUMN - STICKY (Cols 1-5) */}
@@ -37,43 +48,75 @@ const MissionCasesSection = () => {
 
             {/* H1 Title */}
             <h1 className="font-black text-white text-5xl lg:text-[56px] leading-[1.0] tracking-tight">
-              Simplificar o marketing promocional de forma rápida, segura e eficiente.
+              Simplificar o marketing promocional de forma rápida, segura e
+              eficiente.
             </h1>
 
             {/* Paragraph */}
             <p className="text-white/80 text-lg leading-[1.35] max-w-xl">
-              Crie campanhas que vendem — com sites automáticos, leitura de notas via IA e resultados em tempo real. Sem complicação, sem planilhas, só crescimento.
+              Crie campanhas que vendem — com sites automáticos, leitura de
+              notas via IA e resultados em tempo real. Sem complicação, sem
+              planilhas, só crescimento.
             </p>
 
-            {/* Bullets with Icons - Produtos */}
+            {/* Icon cards - Produtos */}
             <div className="space-y-3">
               <h3 className="text-white/60 text-sm font-bold uppercase tracking-wider mb-4">
-                O que entregamos
+                Tecnologia que simplifica, conecta e gera resultado.
               </h3>
-              <ul className="space-y-4">
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { icon: Zap, text: "Sites de campanha automáticos e prontos" },
-                  { icon: Sparkles, text: "Leitura de notas fiscais via IA" },
-                  { icon: TrendingUp, text: "Métricas e resultados em tempo real" },
-                  { icon: ShieldCheck, text: "Compliance e segurança garantidos" },
+                  {
+                    icon: Settings,
+                    title: "Sites automáticos e prontos",
+                    text: "Crie campanhas em minutos com estrutura otimizada.",
+                  },
+                  {
+                    icon: FileText,
+                    title: "Leitura de notas via IA",
+                    text: "OCR inteligente que reconhece produtos e valida cupons.",
+                  },
+                  {
+                    icon: BarChart3,
+                    title: "Métricas em tempo real",
+                    text: "Acompanhe resultados, engajamento e ROI em um só painel.",
+                  },
+                  {
+                    icon: Lock,
+                    title: "Segurança e compliance",
+                    text: "Dados protegidos com tecnologia de nível enterprise.",
+                  },
                 ].map((item, idx) => (
-                  <motion.li
+                  <motion.div
                     key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.1 }}
-                    className="flex items-start gap-4 group"
+                    transition={{ duration: 0.45, delay: idx * 0.08 }}
+                    className="group bg-white/5 backdrop-blur-sm border border-white/8 rounded-2xl p-4 flex items-start gap-4 hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(0,0,0,0.35)] transition-all"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#FF0000]/10 border border-[#FF0000]/20 flex items-center justify-center group-hover:bg-[#FF0000]/20 transition-colors">
-                      <item.icon className="w-5 h-5 text-[#FF0000]" strokeWidth={2} />
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-[#FF0000]/10 border border-[#FF0000]/20 flex items-center justify-center transition-all group-hover:shadow-[0_8px_24px_rgba(255,0,0,0.12)]">
+                      <item.icon
+                        className="w-6 h-6 text-[#FF0000]"
+                        strokeWidth={2}
+                      />
                     </div>
-                    <span className="text-white text-base leading-relaxed pt-1.5">
-                      {item.text}
-                    </span>
-                  </motion.li>
+
+                    <div>
+                      <h4 className="text-white font-extrabold text-base leading-tight">
+                        {item.title}
+                      </h4>
+                      <p
+                        className="text-white/80 text-sm mt-1"
+                        style={{ fontSize: "0.9rem" }}
+                      >
+                        {item.text}
+                      </p>
+                    </div>
+                  </motion.div>
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/* CTAs */}
@@ -89,32 +132,6 @@ const MissionCasesSection = () => {
                 </button>
               </Link>
             </div>
-
-            {/* KPI Strip */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="relative mt-8 pt-8 border-t border-white/10"
-            >
-              <div className="grid grid-cols-2 gap-6">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <Award className="w-5 h-5 text-[#FF0000]" />
-                    <span className="text-3xl font-black text-white">+30</span>
-                  </div>
-                  <p className="text-white/60 text-sm font-medium">Projetos entregues</p>
-                </div>
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-[#FF0000]" />
-                    <span className="text-3xl font-black text-white">+1M</span>
-                  </div>
-                  <p className="text-white/60 text-sm font-medium">Usuários impactados</p>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* RIGHT COLUMN - CLIENT LOGOS (Cols 7-12) */}
@@ -137,11 +154,13 @@ const MissionCasesSection = () => {
 
             {/* Client Grid - Desktop with Vertical Scroll */}
             <div className="hidden md:block">
-              <div 
+              <div
                 className="relative h-[600px] overflow-hidden rounded-2xl"
                 style={{
-                  maskImage: 'linear-gradient(to bottom, transparent 0%, black 140px, black calc(100% - 140px), transparent 100%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 140px, black calc(100% - 140px), transparent 100%)'
+                  maskImage:
+                    "linear-gradient(to bottom, transparent 0%, black 140px, black calc(100% - 140px), transparent 100%)",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, transparent 0%, black 140px, black calc(100% - 140px), transparent 100%)",
                 }}
               >
                 <style>{`
@@ -168,7 +187,7 @@ const MissionCasesSection = () => {
                     }
                   }
                 `}</style>
-                
+
                 <div className="scroll-container">
                   {/* Primeira lista de clientes */}
                   <div className="grid grid-cols-3 gap-5 mb-5">
@@ -310,38 +329,70 @@ const MissionCasesSection = () => {
                   <div className="w-12 h-12 mx-auto rounded-full bg-white/10 flex items-center justify-center">
                     <ArrowRight className="w-5 h-5 text-white" />
                   </div>
-                  <p className="text-white font-semibold text-sm">
-                    Ver todos
-                  </p>
+                  <p className="text-white font-semibold text-sm">Ver todos</p>
                 </div>
               </motion.div>
             </div>
+          </motion.div>
 
-            {/* Bottom CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-12 pt-8 border-t border-white/10"
-            >
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div>
-                  <p className="text-white font-bold text-lg">
-                    Quer ser o próximo?
-                  </p>
-                  <p className="text-white/60 text-sm">
-                    Agende uma demonstração e veja como funciona
-                  </p>
+          {/* FULL-WIDTH DIVIDER ROW */}
+          <div className="lg:col-span-12 h-px bg-white/10 mt-12" />
+
+          {/* ROW BELOW DIVIDER */}
+          {/* Left KPI Strip aligned with right CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="lg:col-span-5 pt-6"
+          >
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <Award className="w-5 h-5 text-[#FF0000]" />
+                  <span className="text-3xl font-black text-white">+30</span>
                 </div>
-                <Link to="/contato">
-                  <button className="bg-[#FF0000] hover:bg-[#FF5001] text-white font-bold px-6 h-11 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 whitespace-nowrap flex items-center gap-2">
-                    Falar com especialista
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </Link>
+                <p className="text-white/60 text-sm font-medium">
+                  Projetos entregues
+                </p>
               </div>
-            </motion.div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <Users className="w-5 h-5 text-[#FF0000]" />
+                  <span className="text-3xl font-black text-white">+1M</span>
+                </div>
+                <p className="text-white/60 text-sm font-medium">
+                  Usuários impactados
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Bottom CTA aligned with divider */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="lg:col-span-7 pt-6"
+          >
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <p className="text-white font-bold text-lg">
+                  Quer ser o próximo?
+                </p>
+                <p className="text-white/60 text-sm">
+                  Agende uma demonstração e veja como funciona
+                </p>
+              </div>
+              <Link to="/contato">
+                <button className="bg-[#FF0000] hover:bg-[#FF5001] text-white font-bold px-6 h-11 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 whitespace-nowrap flex items-center gap-2">
+                  Falar com especialista
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </div>
