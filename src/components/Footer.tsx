@@ -17,18 +17,18 @@ const Footer = () => {
               A Rooster usa tecnologia Premiafy e tem seus direitos reservados pela Pensadoria
             </p>
             <a 
-              href="mailto:comercial@pensadoria.com.br" 
+              href="mailto:comercial@rooster.app" 
               className="flex items-center gap-2 text-white/70 hover:text-white transition-colors w-fit"
             >
               <Mail className="w-5 h-5" />
-              <span>comercial@pensadoria.com.br</span>
+              <span>comercial@rooster.app</span>
             </a>
             <a 
-              href="tel:+5511993492108" 
+              href="tel:+5511976292960" 
               className="flex items-center gap-2 text-white/70 hover:text-white transition-colors w-fit"
             >
               <Phone className="w-5 h-5" />
-              <span>(11) 99349-2108</span>
+              <span>(11) 97629-2960</span>
             </a>
           </div>
 
