@@ -12,7 +12,6 @@ interface ClientItem {
 
 const clients: ClientItem[] = [
   { id: "1", name: "Hellmans", industry: "Alimentos" },
-  { id: "2", name: "Hub", industry: "Varejo" },
 ];
 
 const MissionCasesSection = () => {
