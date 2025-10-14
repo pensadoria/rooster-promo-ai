@@ -61,7 +61,7 @@ const History = () => {
     {
       year: "2023",
       title: "Rooster - Democratizando a Tecnologia",
-      description: "Trouxemos a mesma tecnologia da Premiafy para pequenos e médios varejistas. Rooster nasce com automação acessível, IA inteligente e zero complexidade. Marcas como Hellmans e Hub simplificaram suas campanhas.",
+      description: "Trouxemos a mesma tecnologia da Premiafy para pequenos e médios varejistas. Rooster nasce com automação acessível, IA e zero complexidade.",
       icon: Sparkles,
       color: "#FF5001",
       imageSpace: true
