@@ -106,6 +106,36 @@ const MissionCasesSection = () => {
               </div>
             </div>
 
+            {/* KPIs Section */}
+            <div className="border-t border-white/10 pt-8">
+              <div className="grid grid-cols-2 gap-8 max-w-md">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="space-y-1"
+                >
+                  <div className="text-4xl md:text-5xl font-black text-white">+30</div>
+                  <p className="text-white/60 text-sm font-medium">
+                    Projetos entregues
+                  </p>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="space-y-1"
+                >
+                  <div className="text-4xl md:text-5xl font-black text-white">+1M</div>
+                  <p className="text-white/60 text-sm font-medium">
+                    Usuários impactados
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+
             {/* CTAs + Pitch Inline */}
             <div className="flex flex-col xl:flex-row items-start xl:items-center gap-6 pt-8 xl:pt-10">
               <div className="space-y-1 max-w-xs">
