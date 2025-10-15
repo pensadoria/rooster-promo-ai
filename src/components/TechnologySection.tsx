@@ -1,81 +1,63 @@
 import { motion } from "framer-motion";
-import { Shield, BarChart3, Zap } from "lucide-react";
+import { Zap, BarChart3, Shield, Users2, LineChart, BadgePercent } from "lucide-react";
 
 const TechnologySection = () => {
-  const Bullet = ({ icon, title, description }: { icon: "zap" | "bar" | "shield"; title: string; description: string }) => {
-    const IconComp = icon === "zap" ? Zap : icon === "bar" ? BarChart3 : Shield;
-    return (
-      <div className="flex items-start gap-3">
-        <div className="w-8 h-8 rounded-md bg-[rgba(255,0,0,0.1)] flex items-center justify-center shrink-0">
-          <IconComp className="w-3.5 h-3.5 text-[#FF2A00]" />
-        </div>
-        <div>
-          <div className="text-[16px] font-semibold text-[#01203F] leading-[24px]">{title}</div>
-          <div className="text-[14px] text-[rgba(30,30,30,0.7)] leading-[20px]">{description}</div>
-        </div>
-      </div>
-    );
-  };
-
   return (
-    <section id="tech-section" className="relative py-24 px-6 md:px-8 overflow-hidden" style={{ background: '#FFFFFF' }}>
-      <div className="container mx-auto max-w-[1280px] relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Coluna esquerda - textos e bullets */}
-          <div>
-            <h2 className="text-[32px] md:text-[48px] leading-[1.15] font-black text-[#01203F] mb-3">
-              Sua promoção pronta em minutos
-            </h2>
-            <p className="text-[18px] leading-[28px] text-[rgba(30,30,30,0.7)] mb-8 max-w-[575px]">
-              Resultados em tempo real, economia de tempo e redução de 80% no custo operacional.
-            </p>
+    <section id="tech-section" className="bg-white py-20 md:py-28 px-6">
+      <div className="container mx-auto max-w-[1280px]">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-[#01203f] text-[32px] md:text-[44px] lg:text-[48px] font-black leading-[1.1]">
+            Resultados que você vê e sente
+          </h2>
+        </div>
 
-            <div className="space-y-6">
-              <Bullet icon="zap" title="Setup Instantâneo" description="Configure sua campanha em minutos, não semanas." />
-              <Bullet icon="bar" title="Visibilidade Total" description="Dashboards com métricas instantâneas e insights acionáveis." />
-              <Bullet icon="shield" title="Segurança Garantida" description="IA avançada reduz fraudes em 95%+ automaticamente." />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {/* Card 1 */}
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="bg-white/80 rounded-2xl border border-black/5 shadow-sm p-8 text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Zap className="w-9 h-9 text-[#F5C518]" />
             </div>
-          </div>
+            <h3 className="text-[#01203f] text-[20px] md:text-[24px] font-bold mb-2">Automação total</h3>
+            <p className="text-[16px] text-[rgba(1,32,63,0.8)]">Sem planilhas, sem processos manuais.</p>
+          </motion.div>
 
-          {/* Coluna direita - card métricas */}
-          <div>
-            <div className="rounded-2xl p-8 md:p-10" style={{
-              background: 'linear-gradient(135deg, #01203F 0%, #0052FF 100%)',
-              boxShadow: '0 20px 60px rgba(0, 82, 255, 0.25)'
-            }}>
-              <div className="grid grid-cols-2 gap-y-8 text-white">
-                <div className="text-center">
-                  <div className="text-[28px] md:text-[30px] font-black">80%</div>
-                  <div className="text-[14px] opacity-80 leading-[20px]">Redução de custos</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-[28px] md:text-[30px] font-black">95%</div>
-                  <div className="text-[14px] opacity-80 leading-[20px]">Menos fraudes</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-[28px] md:text-[30px] font-black">3min</div>
-                  <div className="text-[14px] opacity-80 leading-[20px]">Setup médio</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-[28px] md:text-[30px] font-black">24/7</div>
-                  <div className="text-[14px] opacity-80 leading-[20px]">Monitoramento</div>
-                </div>
-              </div>
+          {/* Card 2 */}
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: 0.05 }} className="bg-white/80 rounded-2xl border border-black/5 shadow-sm p-8 text-center">
+            <div className="flex items-center justify-center mb-4">
+              <BarChart3 className="w-9 h-9 text-[#3B82F6]" />
+            </div>
+            <h3 className="text-[#01203f] text-[20px] md:text-[24px] font-bold mb-2">Analytics em tempo real</h3>
+            <p className="text-[16px] text-[rgba(1,32,63,0.8)]">Métricas, vendas e engajamento em um só painel.</p>
+          </motion.div>
+
+          {/* Card 3 */}
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white/80 rounded-2xl border border-black/5 shadow-sm p-8 text-center">
+            <div className="flex items-center justify-center mb-4">
+              <BadgePercent className="w-9 h-9 text-[#F59E0B]" />
+            </div>
+            <h3 className="text-[#01203f] text-[20px] md:text-[24px] font-bold mb-2">Resultados reais</h3>
+            <p className="text-[16px] text-[rgba(1,32,63,0.8)]">Negócios vendendo até 30% mais com Rooster.</p>
+          </motion.div>
+        </div>
+
+        {/* Bottom stats strip */}
+        <div className="mt-8 md:mt-12 bg-white/50 border border-black/5 rounded-2xl px-6 md:px-10 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-[16px] text-[rgba(1,32,63,0.8)]">
+            <div className="flex items-center gap-2">
+              <Users2 className="w-4 h-4 text-[#FF2A00]" />
+              <span className="font-semibold">+1M usuários impactados</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <LineChart className="w-4 h-4 text-[#FF2A00]" />
+              <span className="font-semibold">+30 campanhas simultâneas</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-[#FF2A00]" />
+              <span className="font-semibold">98% de validações automáticas</span>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Reduced motion support */}
-      <style>{`
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
-        }
-      `}</style>
     </section>
   );
 };

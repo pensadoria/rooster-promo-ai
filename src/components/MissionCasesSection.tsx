@@ -1,32 +1,42 @@
 import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 
 const MissionCasesSection = () => {
+  const logos = new Array(6).fill(0);
   return (
-    <section id="mission-cases" className="bg-[#F6F8FA] py-24 lg:py-28 px-6 overflow-hidden">
-      <div className="container mx-auto max-w-[1400px]">
-        <div className="text-center mb-12">
+    <section id="mission-cases" className="bg-[#01203f] py-20 md:py-28 px-6 overflow-hidden">
+      <div className="container mx-auto max-w-[1280px]">
+        {/* Heading */}
+        <div className="text-center mb-12 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
-            className="text-[#01203F] text-3xl md:text-5xl font-black"
+            className="text-white text-[32px] md:text-[44px] lg:text-[48px] font-black leading-[1.1]"
           >
-            Parceiros de Sucesso
+            Empresas que confiam na Rooster
           </motion.h2>
-          <p className="text-[rgba(30,30,30,0.7)] text-base md:text-lg mt-3">
-            Empresas que já transformaram seus resultados com a Rooster
+          <p className="text-white/80 text-[16px] md:text-[20px] leading-[27px] mt-4 max-w-[820px] mx-auto">
+            De pequenos comércios a grandes marcas — a Rooster está por trás das campanhas que vendem mais.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-[1216px] mx-auto">
-          {["MARCA A","MARCA B","MARCA C","MARCA D","MARCA E","MARCA F"].map((label) => (
-            <div key={label} className="bg-white rounded-xl h-24 flex items-center justify-center">
-              <div className="bg-gray-200 rounded w-[128px] h-12 flex items-center justify-center">
-                <span className="text-gray-500 font-semibold text-sm">{label}</span>
-              </div>
+        {/* Logos row */}
+        <div className="max-w-[1216px] mx-auto grid grid-cols-3 md:grid-cols-6 gap-y-10 md:gap-y-0">
+          {logos.map((_, i) => (
+            <div key={i} className="flex items-center justify-center">
+              <div className="w-12 h-12 rounded bg-white/60" />
             </div>
           ))}
+        </div>
+
+        {/* Bottom pill */}
+        <div className="mt-10 md:mt-12 flex justify-center">
+          <div className="inline-flex items-center gap-2 bg-[rgba(255,0,0,0.1)] text-[#FF0000] px-4 py-2 rounded-full">
+            <MapPin className="w-4 h-4" />
+            <span className="font-semibold text-[14px] md:text-[16px]">Presente em todo o Brasil</span>
+          </div>
         </div>
       </div>
     </section>
