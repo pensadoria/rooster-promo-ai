@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Award, Users, Zap, ShieldCheck, Sparkles, TrendingUp } from "lucide-react";
+import {
+  Award,
+  Users,
+  Settings,
+  FileText,
+  BarChart3,
+  Lock,
+  ArrowRight,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -16,16 +24,19 @@ const clients: ClientItem[] = [
 
 const MissionCasesSection = () => {
   return (
-    <section id="mission-cases" className="bg-[#01203F] py-24 lg:py-32 px-6 overflow-hidden">
+    <section
+      id="mission-cases"
+      className="bg-[#01203F] py-24 lg:py-32 px-6 overflow-hidden"
+    >
       <div className="container mx-auto max-w-[1400px]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* LEFT COLUMN - STICKY (Cols 1-5) */}
+        <div className="grid grid-cols-1 gap-16">
+          {/* MISSION BLOCK FULL-WIDTH */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 lg:sticky lg:top-24 lg:h-fit space-y-8"
+            className="space-y-12"
           >
             {/* Overline */}
             <div className="inline-block">
@@ -36,61 +47,103 @@ const MissionCasesSection = () => {
 
             {/* H1 Title */}
             <h1 className="font-black text-white text-5xl lg:text-[56px] leading-[1.0] tracking-tight">
-              Simplificar o marketing promocional de forma rápida, segura e eficiente.
+              Simplificar o marketing promocional de forma rápida, segura e
+              eficiente.
             </h1>
 
             {/* Paragraph */}
-            <p className="text-white/80 text-lg leading-[1.35] max-w-xl">
-              Crie campanhas que vendem — com sites automáticos, leitura de notas via IA e resultados em tempo real. Sem complicação, sem planilhas, só crescimento.
+            <p className="text-white/80 text-lg leading-[1.45] max-w-4xl">
+              Crie campanhas que vendem — com sites automáticos, leitura de
+              notas via IA e resultados em tempo real. Sem complicação, sem
+              planilhas, só crescimento.
             </p>
 
-            {/* Bullets with Icons - Produtos */}
+            {/* Feature Cards Inline (Full Row) */}
             <div className="space-y-3 border-t border-white/10 pt-8">
-              <h3 className="text-white/60 text-sm font-bold uppercase tracking-wider mb-4">
-                O que entregamos
+              <h3 className="text-white/60 text-sm font-bold uppercase tracking-wider mb-6">
+                Tecnologia que simplifica, conecta e gera resultado.
               </h3>
-              <ul className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                  { icon: Zap, text: "Sites de campanha automáticos e prontos" },
-                  { icon: Sparkles, text: "Leitura de notas fiscais via IA" },
-                  { icon: TrendingUp, text: "Métricas e resultados em tempo real" },
-                  { icon: ShieldCheck, text: "Compliance e segurança garantidos" },
+                  {
+                    icon: Settings,
+                    title: "Sites automáticos e prontos",
+                    text: "Crie campanhas em minutos com estrutura otimizada.",
+                  },
+                  {
+                    icon: FileText,
+                    title: "Leitura de notas via IA",
+                    text: "OCR inteligente que reconhece produtos e valida cupons.",
+                  },
+                  {
+                    icon: BarChart3,
+                    title: "Métricas em tempo real",
+                    text: "Acompanhe resultados, engajamento e ROI em um só painel.",
+                  },
+                  {
+                    icon: Lock,
+                    title: "Segurança e compliance",
+                    text: "Dados protegidos com tecnologia de nível enterprise.",
+                  },
                 ].map((item, idx) => (
-                  <motion.li
+                  <motion.div
                     key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.1 }}
-                    className="flex items-start gap-4 group"
+                    transition={{ duration: 0.55, delay: idx * 0.08 }}
+                    className="group relative overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex flex-col gap-5 hover:bg-white/10 transition-colors"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#FF0000]/10 border border-[#FF0000]/20 flex items-center justify-center group-hover:bg-[#FF0000]/20 transition-colors">
-                      <item.icon className="w-5 h-5 text-[#FF0000]" strokeWidth={2} />
+                    <div className="w-14 h-14 rounded-xl bg-[#FF0000]/10 border border-[#FF0000]/20 flex items-center justify-center group-hover:shadow-[0_0_0_1px_rgba(255,0,0,0.25)] transition-all">
+                      <item.icon
+                        className="w-7 h-7 text-[#FF0000]"
+                        strokeWidth={2}
+                      />
                     </div>
-                    <span className="text-white text-base leading-relaxed pt-1.5">
-                      {item.text}
-                    </span>
-                  </motion.li>
+                    <div className="flex flex-col gap-3">
+                      <h4 className="text-white font-extrabold text-lg leading-tight">
+                        {item.title}
+                      </h4>
+                      <p className="text-white/70 text-sm leading-relaxed">
+                        {item.text}
+                      </p>
+                    </div>
+                    <div
+                      className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
+                      style={{
+                        background:
+                          "radial-gradient(circle at 30% 30%, rgba(255,0,0,0.08), transparent 70%)",
+                      }}
+                    />
+                  </motion.div>
                 ))}
-              </ul>
+              </div>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link to="/contato">
-                <button className="bg-[#FF0000] hover:bg-[#FF5001] text-white font-bold px-8 h-12 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105">
-                  Falar com especialista
-                </button>
-              </Link>
-              <Link to="/calculadora">
-                <button className="text-white border-2 border-white/30 hover:border-white hover:bg-white/5 font-semibold px-8 h-12 rounded-full transition-all">
-                  Calcular economia
-                </button>
-              </Link>
+            {/* CTAs + Pitch Inline */}
+            <div className="flex flex-col xl:flex-row items-start xl:items-center gap-6 pt-8 xl:pt-10">
+              <div className="space-y-1 max-w-xs">
+                <p className="text-white font-bold text-lg leading-tight">
+                  Quer ser o próximo?
+                </p>
+                <p className="text-white/60 text-sm">
+                  Agende uma demonstração e veja como funciona.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/contato">
+                  <button className="bg-[#FF0000] hover:bg-[#FF5001] text-white font-bold px-8 h-12 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 flex items-center gap-2">
+                    Falar com especialista
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </Link>
+                <Link to="/calculadora">
+                  <button className="text-white border-2 border-white/30 hover:border-white hover:bg-white/5 font-semibold px-8 h-12 rounded-full transition-all">
+                    Calcular economia
+                  </button>
+                </Link>
+              </div>
             </div>
-
-            {/* KPI Strip */}
-            
           </motion.div>
 
           {/* RIGHT COLUMN - CLIENT LOGOS (Cols 7-12) */}
@@ -245,104 +298,29 @@ const MissionCasesSection = () => {
               </div>
             </div>
 
-            {/* Client Grid - Mobile (Horizontal Carousel) */}
-            <div className="md:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 scrollbar-hide">
-              {clients.map((client, idx) => (
-                <motion.div
-                  key={client.id}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  className="snap-start flex-shrink-0 w-[70vw] max-w-[240px] bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] rounded-[22px] p-6 hover:bg-white/10 transition-all"
-                >
-                  <div className="space-y-3 text-center">
-                    <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center">
-                      <span className="text-white font-black text-xl">
-                        {client.name.charAt(0)}
-                      </span>
-                    </div>
-                    <h3 className="text-white font-bold text-sm leading-tight">
-                      {client.name}
-                    </h3>
-                    <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full">
-                      <span className="text-white/70 text-xs font-medium">
-                        {client.industry}
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-
-              {/* Ver mais - Mobile */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.4, delay: clients.length * 0.05 }}
-                className="snap-start flex-shrink-0 w-[70vw] max-w-[240px] bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] border-dashed rounded-[22px] p-6 flex items-center justify-center"
-              >
-                <div className="text-center space-y-2">
-                  <div className="w-12 h-12 mx-auto rounded-full bg-white/10 flex items-center justify-center">
-                    <ArrowRight className="w-5 h-5 text-white" />
-                  </div>
-                  <p className="text-white font-semibold text-sm">
-                    Ver todos
-                  </p>
+            {/* KPIs */}
+            <div className="grid grid-cols-2 gap-8 max-w-sm pt-2">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <Award className="w-5 h-5 text-[#FF0000]" />
+                  <span className="text-3xl font-black text-white">+30</span>
                 </div>
-              </motion.div>
+                <p className="text-white/60 text-sm font-medium">
+                  Projetos entregues
+                </p>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <Users className="w-5 h-5 text-[#FF0000]" />
+                  <span className="text-3xl font-black text-white">+1M</span>
+                </div>
+                <p className="text-white/60 text-sm font-medium">
+                  Usuários impactados
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
-
-         <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-12 pt-8 border-t border-white/10"
-            >
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="relative"
-            >
-              <div className="grid grid-cols-2 gap-6">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <Award className="w-5 h-5 text-[#FF0000]" />
-                    <span className="text-3xl font-black text-white">+30</span>
-                  </div>
-                  <p className="text-white/60 text-sm font-medium">Projetos entregues</p>
-                </div>
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-[#FF0000]" />
-                    <span className="text-3xl font-black text-white">+1M</span>
-                  </div>
-                  <p className="text-white/60 text-sm font-medium">Usuários impactados</p>
-                </div>
-              </div>
-            </motion.div>
-                <div>
-                  <p className="text-white font-bold text-lg">
-                    Quer ser o próximo?
-                  </p>
-                  <p className="text-white/60 text-sm">
-                    Agende uma demonstração e veja como funciona
-                  </p>
-                </div>
-                <Link to="/contato">
-                  <button className="bg-[#FF0000] hover:bg-[#FF5001] text-white font-bold px-6 h-11 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 whitespace-nowrap flex items-center gap-2">
-                    Falar com especialista
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </Link>
-              </div>
-            </motion.div>
       </div>
     </section>
   );
