@@ -92,7 +92,7 @@ const History = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+      <section className="relative pt-24 md:pt-32 pb-12 md:pb-20 px-6 overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,42,0,0.04)_0%,transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(3,68,220,0.03)_0%,transparent_50%)]" />
@@ -102,13 +102,13 @@ const History = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center space-y-6"
+            className="text-center space-y-4 md:space-y-6"
           >
             <span className="text-[#FF2A00] font-bold text-sm tracking-wider uppercase">Nossa Jornada</span>
 
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight">A História da Rooster</h1>
+            <h1 className="text-4xl md:text-7xl font-black text-white leading-tight">A História da Rooster</h1>
 
-            <p className="text-xl text-white/70 leading-relaxed max-w-[700px] mx-auto">
+            <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-[700px] mx-auto">
               De uma ideia simples a uma plataforma que transforma o marketing promocional. Esta é a nossa jornada de
               simplificação, inovação e confiança.
             </p>
@@ -117,13 +117,13 @@ const History = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="relative py-16 px-6">
+      <section className="relative py-8 md:py-16 px-6">
         <div className="container mx-auto max-w-[1000px]">
           {/* Vertical Timeline Line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-white/10 hidden md:block" />
 
           {/* Timeline Events */}
-          <div className="space-y-24">
+          <div className="space-y-12 md:space-y-24">
             {timelineEvents.map((event, index) => {
               const Icon = event.icon;
               const isLeft = index % 2 === 0;
@@ -355,9 +355,9 @@ const History = () => {
                       {event.year}
                     </span>
 
-                    <h3 className="text-2xl font-black text-white">{event.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-black text-white">{event.title}</h3>
 
-                    <p className="text-white/70 leading-relaxed">{renderDescription(event.year, event.description)}</p>
+                    <p className="text-white/70 text-sm md:text-base leading-relaxed">{renderDescription(event.year, event.description)}</p>
 
                     {/* Image Placeholder Mobile */}
                     {event.imageSpace && event.year === "2020" && (
@@ -424,21 +424,21 @@ const History = () => {
       </section>
 
       {/* Mission Statement */}
-      <section className="relative py-24 px-6">
+      <section className="relative py-12 md:py-24 px-6">
         <div className="container mx-auto max-w-[900px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative bg-gradient-to-br from-[#FF2A00]/10 to-[#0344DC]/10 border border-white/10 rounded-3xl p-12 text-center backdrop-blur-sm"
+            className="relative bg-gradient-to-br from-[#FF2A00]/10 to-[#0344DC]/10 border border-white/10 rounded-3xl p-6 md:p-12 text-center backdrop-blur-sm"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,42,0,0.1)_0%,transparent_70%)] rounded-3xl" />
 
-            <div className="relative z-10 space-y-6">
-              <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">Nossa Missão</h2>
+            <div className="relative z-10 space-y-4 md:space-y-6">
+              <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">Nossa Missão</h2>
 
-              <p className="text-2xl md:text-3xl text-white/90 font-bold leading-relaxed">
+              <p className="text-xl md:text-3xl text-white/90 font-bold leading-relaxed">
                 Simplificar o marketing promocional de forma rápida, segura e eficiente.
               </p>
 
@@ -467,20 +467,20 @@ const History = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-16 px-6">
+      <section className="relative py-12 md:py-16 px-6">
         <div className="container mx-auto max-w-[700px] text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            className="space-y-4 md:space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
+            <h2 className="text-2xl md:text-4xl font-black text-white leading-tight">
               Quer fazer parte desta história?
             </h2>
 
-            <p className="text-xl text-white/70">Junte-se aos varejistas que já simplificaram suas campanhas.</p>
+            <p className="text-lg md:text-xl text-white/70">Junte-se aos varejistas que já simplificaram suas campanhas.</p>
 
             <motion.a href="/contato" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} className="inline-block">
               <button className="bg-gradient-to-r from-[#FF0000] to-[#FF5001] hover:from-[#FF5001] hover:to-[#FF0000] text-white font-bold px-10 h-[64px] rounded-xl shadow-2xl shadow-[#FF0000]/20 hover:shadow-[#FF0000]/40 transition-all">

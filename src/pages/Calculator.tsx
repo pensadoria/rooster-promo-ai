@@ -143,23 +143,23 @@ const Calculator = () => {
       <Header />
 
       {/* Form Section */}
-      <section className="pt-24 pb-12 px-6">
+      <section className="pt-20 md:pt-24 pb-8 md:pb-12 px-6">
         <div className="container mx-auto max-w-4xl">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12 space-y-4"
+            className="text-center mb-8 md:mb-12 space-y-3 md:space-y-4"
           >
             <div className="inline-block">
               <span className="text-[#FF0000] text-sm font-bold tracking-widest uppercase">
                 Calculadora de ROI
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-black text-white leading-tight">
+            <h1 className="text-3xl md:text-5xl font-black text-white leading-tight">
               Descubra quanto você pode ganhar
             </h1>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-base md:text-lg max-w-2xl mx-auto">
               Simule a economia anual com automação Rooster
             </p>
           </motion.div>
@@ -169,7 +169,7 @@ const Calculator = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8"
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8"
           >
             <form className="space-y-6">
               {/* Row 1 */}
@@ -307,7 +307,7 @@ const Calculator = () => {
       {/* Results Hero - Appears after calculation */}
       {showResults && (
         <>
-          <section id="results-hero" className="py-16 px-6 bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 relative overflow-hidden">
+          <section id="results-hero" className="py-12 md:py-16 px-6 bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 relative overflow-hidden">
             {/* Animated background */}
             <div className="absolute inset-0 opacity-20">
               <motion.div
@@ -340,7 +340,7 @@ const Calculator = () => {
                 </motion.div>
 
                 {/* Main Message */}
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
                   🎉 Você está ganhando
                 </h2>
 
@@ -349,12 +349,12 @@ const Calculator = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 100, delay: 0.3 }}
-                  className="py-8"
+                  className="py-6 md:py-8"
                 >
-                  <p className="text-6xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-2xl">
+                  <p className="text-4xl md:text-7xl lg:text-8xl font-black text-white drop-shadow-2xl">
                     R$ {animatedEconomia.toLocaleString('pt-BR')}
                   </p>
-                  <p className="text-2xl md:text-3xl font-bold text-white/90 mt-4">
+                  <p className="text-xl md:text-3xl font-bold text-white/90 mt-3 md:mt-4">
                     por ano com a Rooster!
                   </p>
                 </motion.div>
@@ -375,69 +375,69 @@ const Calculator = () => {
           </section>
 
           {/* Comparison Section */}
-          <section className="py-20 px-6 bg-[#011E36]">
+          <section className="py-12 md:py-20 px-6 bg-[#011E36]">
             <div className="container mx-auto max-w-6xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-center mb-12"
+                className="text-center mb-8 md:mb-12"
               >
-                <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
+                <h3 className="text-2xl md:text-4xl font-black text-white mb-3 md:mb-4">
                   Comparativo: Antes x Com Rooster
                 </h3>
-                <p className="text-white/60 text-lg">
+                <p className="text-white/60 text-base md:text-lg">
                   Veja o impacto real da automação
                 </p>
               </motion.div>
 
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 {/* ANTES */}
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-red-500/20 to-red-600/20 backdrop-blur-sm border-2 border-red-500/30 rounded-3xl p-8 relative overflow-hidden"
+                  className="bg-gradient-to-br from-red-500/20 to-red-600/20 backdrop-blur-sm border-2 border-red-500/30 rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl" />
 
                   <div className="relative z-10 space-y-6">
                     {/* Header */}
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center">
-                        <X className="w-6 h-6 text-red-400" />
+                    <div className="flex items-center gap-3 mb-4 md:mb-6">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-500/20 flex items-center justify-center">
+                        <X className="w-5 h-5 md:w-6 md:h-6 text-red-400" />
                       </div>
                       <div>
-                        <h4 className="text-2xl font-black text-white">Antes</h4>
-                        <p className="text-red-300 text-sm">Você está perdendo</p>
+                        <h4 className="text-xl md:text-2xl font-black text-white">Antes</h4>
+                        <p className="text-red-300 text-xs md:text-sm">Você está perdendo</p>
                       </div>
                     </div>
 
                     {/* Metrics */}
-                    <div className="space-y-4">
+                    <div className="space-y-3 md:space-y-4">
                       <div className="flex justify-between items-center">
-                        <span className="text-white/70 text-sm">Custo operacional</span>
-                        <span className="text-white font-bold text-lg">
+                        <span className="text-white/70 text-xs md:text-sm">Custo operacional</span>
+                        <span className="text-white font-bold text-sm md:text-lg">
                           R$ {results.custoOperacionalAtual.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                         </span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-white/70 text-sm">Perdas com fraudes</span>
-                        <span className="text-white font-bold text-lg">
+                        <span className="text-white/70 text-xs md:text-sm">Perdas com fraudes</span>
+                        <span className="text-white font-bold text-sm md:text-lg">
                           R$ {results.fraudesAtuais.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                         </span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-white/70 text-sm">Prêmios indevidos</span>
-                        <span className="text-white font-bold text-lg">
+                        <span className="text-white/70 text-xs md:text-sm">Prêmios indevidos</span>
+                        <span className="text-white font-bold text-sm md:text-lg">
                           R$ {results.perdasPremiosAtuais.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                         </span>
                       </div>
 
-                      <div className="border-t-2 border-red-400/30 pt-4 mt-4">
+                      <div className="border-t-2 border-red-400/30 pt-3 md:pt-4 mt-3 md:mt-4">
                         <div className="flex justify-between items-center">
-                          <span className="text-white font-semibold">Total Anual</span>
-                          <span className="text-red-400 font-black text-2xl">
+                          <span className="text-white font-semibold text-sm md:text-base">Total Anual</span>
+                          <span className="text-red-400 font-black text-xl md:text-2xl">
                             R$ {results.totalPerdendo.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                           </span>
                         </div>
@@ -472,47 +472,47 @@ const Calculator = () => {
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-emerald-500/20 to-teal-600/20 backdrop-blur-sm border-2 border-emerald-500/30 rounded-3xl p-8 relative overflow-hidden"
+                  className="bg-gradient-to-br from-emerald-500/20 to-teal-600/20 backdrop-blur-sm border-2 border-emerald-500/30 rounded-2xl md:rounded-3xl p-6 md:p-8 relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl" />
 
                   <div className="relative z-10 space-y-6">
                     {/* Header */}
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                        <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                    <div className="flex items-center gap-3 mb-4 md:mb-6">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                        <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-emerald-400" />
                       </div>
                       <div>
-                        <h4 className="text-2xl font-black text-white">Com Rooster</h4>
-                        <p className="text-emerald-300 text-sm">Você vai ganhar</p>
+                        <h4 className="text-xl md:text-2xl font-black text-white">Com Rooster</h4>
+                        <p className="text-emerald-300 text-xs md:text-sm">Você vai ganhar</p>
                       </div>
                     </div>
 
                     {/* Metrics */}
-                    <div className="space-y-4">
+                    <div className="space-y-3 md:space-y-4">
                       <div className="flex justify-between items-center">
-                        <span className="text-white/70 text-sm">Custo operacional</span>
-                        <span className="text-white font-bold text-lg">
+                        <span className="text-white/70 text-xs md:text-sm">Custo operacional</span>
+                        <span className="text-white font-bold text-sm md:text-lg">
                           R$ {results.custoOperacionalNovo.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                         </span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-white/70 text-sm">Perdas com fraudes</span>
-                        <span className="text-white font-bold text-lg">
+                        <span className="text-white/70 text-xs md:text-sm">Perdas com fraudes</span>
+                        <span className="text-white font-bold text-sm md:text-lg">
                           R$ {results.fraudesNovo.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                         </span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-white/70 text-sm">Prêmios indevidos</span>
-                        <span className="text-white font-bold text-lg">
+                        <span className="text-white/70 text-xs md:text-sm">Prêmios indevidos</span>
+                        <span className="text-white font-bold text-sm md:text-lg">
                           R$ {results.perdasPremiosNovo.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                         </span>
                       </div>
 
-                      <div className="border-t-2 border-emerald-400/30 pt-4 mt-4">
+                      <div className="border-t-2 border-emerald-400/30 pt-3 md:pt-4 mt-3 md:mt-4">
                         <div className="flex justify-between items-center">
-                          <span className="text-white font-semibold">Total Anual</span>
-                          <span className="text-emerald-400 font-black text-2xl">
+                          <span className="text-white font-semibold text-sm md:text-base">Total Anual</span>
+                          <span className="text-emerald-400 font-black text-xl md:text-2xl">
                             R$ {results.totalComAutomacao.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                           </span>
                         </div>
@@ -548,69 +548,69 @@ const Calculator = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="grid md:grid-cols-3 gap-6 mt-12"
+                className="grid md:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-12"
               >
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                    <TrendingUp className="w-8 h-8 text-white" />
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 text-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
-                  <h5 className="text-white font-bold text-xl mb-2">{results.roiPercentual.toFixed(0)}%</h5>
-                  <p className="text-white/60 text-sm">Eficiência estimada</p>
+                  <h5 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">{results.roiPercentual.toFixed(0)}%</h5>
+                  <p className="text-white/60 text-xs md:text-sm">Eficiência estimada</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
-                    <Clock className="w-8 h-8 text-white" />
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 text-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                    <Clock className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
-                  <h5 className="text-white font-bold text-xl mb-2">80%</h5>
-                  <p className="text-white/60 text-sm">Redução de tempo</p>
+                  <h5 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">80%</h5>
+                  <p className="text-white/60 text-xs md:text-sm">Redução de tempo</p>
                 </div>
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
-                    <TrendingDown className="w-8 h-8 text-white" />
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl p-4 md:p-6 text-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                    <TrendingDown className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
-                  <h5 className="text-white font-bold text-xl mb-2">80%</h5>
-                  <p className="text-white/60 text-sm">Redução de fraudes</p>
+                  <h5 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">80%</h5>
+                  <p className="text-white/60 text-xs md:text-sm">Redução de fraudes</p>
                 </div>
               </motion.div>
             </div>
           </section>
 
           {/* Social Proof - Testimonial */}
-          <section className="py-16 px-6 bg-[#01203F]">
+          <section className="py-12 md:py-16 px-6 bg-[#01203F]">
             <div className="container mx-auto max-w-4xl">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-12"
               >
-                <div className="flex flex-col md:flex-row gap-8 items-center">
+                <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
                   {/* Avatar */}
                   <div className="flex-shrink-0">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center text-white text-2xl font-black">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center text-white text-xl md:text-2xl font-black">
                       JM
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 text-center md:text-left">
-                    <p className="text-white text-xl md:text-2xl font-bold mb-4 leading-relaxed">
+                    <p className="text-white text-lg md:text-2xl font-bold mb-3 md:mb-4 leading-relaxed">
                       "Economizei R$ 30 mil no primeiro trimestre. A Rooster transformou nossa operação."
                     </p>
                     <div className="space-y-1">
-                      <p className="text-white/90 font-semibold">João Martins</p>
-                      <p className="text-white/60 text-sm">Gerente de Marketing, Varejo SP</p>
+                      <p className="text-white/90 font-semibold text-sm md:text-base">João Martins</p>
+                      <p className="text-white/60 text-xs md:text-sm">Gerente de Marketing, Varejo SP</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Client Logos */}
-                <div className="mt-8 pt-8 border-t border-white/10">
-                  <p className="text-white/40 text-sm text-center mb-6">Empresas que confiam na Rooster</p>
-                  <div className="flex flex-wrap justify-center gap-6">
+                <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-white/10">
+                  <p className="text-white/40 text-xs md:text-sm text-center mb-4 md:mb-6">Empresas que confiam na Rooster</p>
+                  <div className="flex flex-wrap justify-center gap-4 md:gap-6">
                     {['Lojas Americanas', 'Magazine Luiza', 'Casas Bahia', 'Renner'].map((client, idx) => (
-                      <div key={idx} className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center">
-                        <span className="text-white font-black text-lg">{client.charAt(0)}</span>
+                      <div key={idx} className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/10 flex items-center justify-center">
+                        <span className="text-white font-black text-base md:text-lg">{client.charAt(0)}</span>
                       </div>
                     ))}
                   </div>
@@ -623,12 +623,12 @@ const Calculator = () => {
 
       {/* Warning */}
       {showResults && (
-        <section className="py-8 px-6 bg-[#011E36]">
+        <section className="py-6 md:py-8 px-6 bg-[#011E36]">
           <div className="container mx-auto max-w-4xl">
-            <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-2xl p-4">
-              <div className="flex gap-3">
-                <AlertCircle className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                <p className="text-yellow-200/90 text-sm leading-relaxed">
+            <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl md:rounded-2xl p-3 md:p-4">
+              <div className="flex gap-2 md:gap-3">
+                <AlertCircle className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                <p className="text-yellow-200/90 text-xs md:text-sm leading-relaxed">
                   <strong>Aviso:</strong> Esses valores são estimativas ilustrativas, baseadas em parâmetros médios do setor. O objetivo é demonstrar cenários de eficiência — não garantias de resultado.
                 </p>
               </div>
@@ -645,20 +645,20 @@ const Calculator = () => {
           transition={{ delay: 1 }}
           className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-[#FF0000] to-[#FF5001] shadow-2xl"
         >
-          <div className="container mx-auto max-w-6xl px-6 py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="container mx-auto max-w-6xl px-4 md:px-6 py-4 md:py-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
               <div className="text-center md:text-left">
-                <p className="text-white font-black text-xl md:text-2xl mb-1">
+                <p className="text-white font-black text-lg md:text-2xl mb-0.5 md:mb-1">
                   🚀 Pronto para começar?
                 </p>
-                <p className="text-white/90 text-sm md:text-base">
+                <p className="text-white/90 text-xs md:text-base">
                   Agende sua demonstração e veja a Rooster em ação
                 </p>
               </div>
               <Link to="/contato">
-                <Button className="bg-white hover:bg-white/90 text-[#FF0000] h-14 px-8 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition-all whitespace-nowrap">
+                <Button className="bg-white hover:bg-white/90 text-[#FF0000] h-12 md:h-14 px-6 md:px-8 rounded-full font-bold text-base md:text-lg shadow-xl hover:scale-105 transition-all whitespace-nowrap">
                   Falar com especialista
-                  <Zap className="ml-2 w-5 h-5" />
+                  <Zap className="ml-2 w-4 h-4 md:w-5 md:h-5" />
                 </Button>
               </Link>
             </div>

@@ -85,22 +85,22 @@ const Contact = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <div className="text-center mb-8 md:mb-16">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
               Entre em <span className="text-red-600">Contato</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto">
               Estamos aqui para ajudar. Fale com nossos especialistas e descubra como podemos transformar suas promoções.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12">
             {/* Contact Form */}
-            <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
-              <h2 className="text-2xl font-bold text-white mb-6">Envie uma mensagem</h2>
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div className="bg-white/5 backdrop-blur-lg rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/10">
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Envie uma mensagem</h2>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
                     Nome
@@ -176,38 +176,38 @@ const Contact = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-8">
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
-                <h2 className="text-2xl font-bold text-white mb-6">Informações de Contato</h2>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-red-600/20 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-red-600" />
+            <div className="space-y-6 md:space-y-8">
+              <div className="bg-white/5 backdrop-blur-lg rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/10">
+                <h2 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Informações de Contato</h2>
+
+                <div className="space-y-4 md:space-y-6">
+                  <div className="flex items-start gap-3 md:gap-4">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-red-600/20 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 md:w-6 md:h-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">E-mail</h3>
-                      <p className="text-white/70">comercial@rooster.app</p>
+                      <h3 className="text-base md:text-lg font-semibold text-white mb-1">E-mail</h3>
+                      <p className="text-sm md:text-base text-white/70">comercial@rooster.app</p>
                     </div>
                   </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-red-600/20 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-red-600" />
+
+                  <div className="flex items-start gap-3 md:gap-4">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-red-600/20 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5 md:w-6 md:h-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">Telefone</h3>
-                      <a href="tel:+5511976292960" className="text-white/70 hover:text-white transition-colors">(11) 97629-2960</a>
+                      <h3 className="text-base md:text-lg font-semibold text-white mb-1">Telefone</h3>
+                      <a href="tel:+5511976292960" className="text-sm md:text-base text-white/70 hover:text-white transition-colors">(11) 97629-2960</a>
                     </div>
                   </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-red-600/20 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-red-600" />
+
+                  <div className="flex items-start gap-3 md:gap-4">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-red-600/20 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 md:w-6 md:h-6 text-red-600" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">Endereço</h3>
-                      <p className="text-white/70">
+                      <h3 className="text-base md:text-lg font-semibold text-white mb-1">Endereço</h3>
+                      <p className="text-sm md:text-base text-white/70">
                         São Paulo, SP<br />
                         Brasil
                       </p>
@@ -216,11 +216,11 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-red-600/20 to-red-800/20 backdrop-blur-lg rounded-2xl p-8 border border-red-500/20">
-                <h3 className="text-xl font-bold text-white mb-4">
+              <div className="bg-gradient-to-br from-red-600/20 to-red-800/20 backdrop-blur-lg rounded-xl md:rounded-2xl p-6 md:p-8 border border-red-500/20">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">
                   Horário de Atendimento
                 </h3>
-                <div className="space-y-2 text-white/80">
+                <div className="space-y-1.5 md:space-y-2 text-sm md:text-base text-white/80">
                   <p>Segunda a Sexta: 9h às 18h</p>
                   <p>Sábado: 9h às 13h</p>
                   <p>Domingo: Fechado</p>
