@@ -15,9 +15,9 @@ const Index = () => {
       <Header />
       <Hero />
       <StorytellingSection />
-      <MissionCasesSection />
-      <TechnologySection />
       <PlatformSection />
+      <TechnologySection />
+      <MissionCasesSection />
       <ComparisonSection />
       <ROICalculator />
       <CTAFinal />
