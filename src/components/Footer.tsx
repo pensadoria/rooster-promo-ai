@@ -14,21 +14,21 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-white/70 max-w-md leading-relaxed">
-              A Rooster usa tecnologia Premiafy e tem seus direitos reservados pela Pensadoria
+              A Rooster usa tecnologia Premiafy e tem seus direitos reservados
             </p>
-            <a 
-              href="mailto:comercial@pensadoria.com.br" 
+            <a
+              href="mailto:comercial@rooster.app.br"
               className="flex items-center gap-2 text-white/70 hover:text-white transition-colors w-fit"
             >
               <Mail className="w-5 h-5" />
-              <span>comercial@pensadoria.com.br</span>
+              <span>comercial@rooster.app.br</span>
             </a>
-            <a 
-              href="tel:+5511993492108" 
+            <a
+              href="tel:+5511976292960"
               className="flex items-center gap-2 text-white/70 hover:text-white transition-colors w-fit"
             >
               <Phone className="w-5 h-5" />
-              <span>(11) 99349-2108</span>
+              <span>(11) 97629-2960</span>
             </a>
           </div>
 
@@ -54,9 +54,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/60 text-sm">
-            © 2024 Rooster. Todos os direitos reservados.
-          </p>
+          <p className="text-white/60 text-sm">© 2024 Rooster. Todos os direitos reservados.</p>
           <div className="flex items-center gap-6 text-sm">
             <a href="#" className="text-white/60 hover:text-white transition-colors">
               Privacidade

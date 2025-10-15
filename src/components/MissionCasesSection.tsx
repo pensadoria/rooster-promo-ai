@@ -20,7 +20,6 @@ interface ClientItem {
 
 const clients: ClientItem[] = [
   { id: "1", name: "Hellmans", industry: "Alimentos" },
-  { id: "2", name: "Hub", industry: "Varejo" },
 ];
 
 const MissionCasesSection = () => {
@@ -60,7 +59,7 @@ const MissionCasesSection = () => {
             </p>
 
             {/* Feature Cards Inline (Full Row) */}
-            <div>
+            <div className="space-y-3 border-t border-white/10 pt-8">
               <h3 className="text-white/60 text-sm font-bold uppercase tracking-wider mb-6">
                 Tecnologia que simplifica, conecta e gera resultado.
               </h3>
@@ -121,28 +120,6 @@ const MissionCasesSection = () => {
               </div>
             </div>
 
-            {/* KPIs */}
-            <div className="grid grid-cols-2 gap-8 max-w-sm pt-2">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-[#FF0000]" />
-                  <span className="text-3xl font-black text-white">+30</span>
-                </div>
-                <p className="text-white/60 text-sm font-medium">
-                  Projetos entregues
-                </p>
-              </div>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-[#FF0000]" />
-                  <span className="text-3xl font-black text-white">+1M</span>
-                </div>
-                <p className="text-white/60 text-sm font-medium">
-                  Usuários impactados
-                </p>
-              </div>
-            </div>
-
             {/* CTAs + Pitch Inline */}
             <div className="flex flex-col xl:flex-row items-start xl:items-center gap-6 pt-8 xl:pt-10">
               <div className="space-y-1 max-w-xs">
@@ -169,7 +146,180 @@ const MissionCasesSection = () => {
             </div>
           </motion.div>
 
-          {/* (CTA inferior removido - agora inline) */}
+          {/* RIGHT COLUMN - CLIENT LOGOS (Cols 7-12) */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-7 h-[800px]"
+          >
+            {/* Header */}
+            <div className="mb-8 space-y-2">
+              <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
+                Quem já simplificou com a Rooster
+              </h2>
+              <p className="text-white/60 text-base">
+                Pequenos e médios varejistas que transformaram suas campanhas
+              </p>
+            </div>
+
+            {/* Client Grid - Desktop with Vertical Scroll */}
+            <div className="hidden md:block">
+              <div 
+                className="relative h-[600px] overflow-hidden rounded-2xl"
+                style={{
+                  maskImage: 'linear-gradient(to bottom, transparent 0%, black 140px, black calc(100% - 140px), transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 140px, black calc(100% - 140px), transparent 100%)'
+                }}
+              >
+                <style>{`
+                  @keyframes scroll-up {
+                    from {
+                      transform: translateY(0);
+                    }
+                    to {
+                      transform: translateY(-50%);
+                    }
+                  }
+
+                  .scroll-container {
+                    animation: scroll-up 20s linear infinite;
+                  }
+
+                  .scroll-container:hover {
+                    animation-play-state: paused;
+                  }
+
+                  @media (prefers-reduced-motion: reduce) {
+                    .scroll-container {
+                      animation: none;
+                    }
+                  }
+                `}</style>
+                
+                <div className="scroll-container">
+                  {/* Primeira lista de clientes */}
+                  <div className="grid grid-cols-3 gap-5 mb-5">
+                    {clients.map((client) => (
+                      <div
+                        key={`first-${client.id}`}
+                        className="group relative bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] rounded-[22px] p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_8px_30px_rgba(255,0,0,0.15)] cursor-pointer"
+                        tabIndex={0}
+                      >
+                        {/* Content */}
+                        <div className="space-y-3 text-center">
+                          {/* Logo Placeholder - Circle with first letter */}
+                          <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center">
+                            <span className="text-white font-black text-2xl">
+                              {client.name.charAt(0)}
+                            </span>
+                          </div>
+
+                          {/* Client Name */}
+                          <h3 className="text-white font-bold text-base leading-tight">
+                            {client.name}
+                          </h3>
+
+                          {/* Industry */}
+                          <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full">
+                            <span className="text-white/70 text-xs font-medium">
+                              {client.industry}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Hover Glow */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-[#FF0000]/5 to-transparent transition-opacity duration-300 rounded-[22px] pointer-events-none" />
+                      </div>
+                    ))}
+
+                    {/* Ver mais */}
+                    <div className="group relative bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] border-dashed rounded-[22px] p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-[1.04] cursor-pointer flex items-center justify-center">
+                      <div className="text-center space-y-2">
+                        <div className="w-12 h-12 mx-auto rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                          <ArrowRight className="w-6 h-6 text-white" />
+                        </div>
+                        <p className="text-white font-semibold text-sm">
+                          Ver todos
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Segunda lista de clientes (duplicada para loop contínuo) */}
+                  <div className="grid grid-cols-3 gap-5">
+                    {clients.map((client) => (
+                      <div
+                        key={`second-${client.id}`}
+                        className="group relative bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] rounded-[22px] p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_8px_30px_rgba(255,0,0,0.15)] cursor-pointer"
+                        tabIndex={0}
+                      >
+                        {/* Content */}
+                        <div className="space-y-3 text-center">
+                          {/* Logo Placeholder - Circle with first letter */}
+                          <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#FF0000] to-[#FF5001] flex items-center justify-center">
+                            <span className="text-white font-black text-2xl">
+                              {client.name.charAt(0)}
+                            </span>
+                          </div>
+
+                          {/* Client Name */}
+                          <h3 className="text-white font-bold text-base leading-tight">
+                            {client.name}
+                          </h3>
+
+                          {/* Industry */}
+                          <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full">
+                            <span className="text-white/70 text-xs font-medium">
+                              {client.industry}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Hover Glow */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-[#FF0000]/5 to-transparent transition-opacity duration-300 rounded-[22px] pointer-events-none" />
+                      </div>
+                    ))}
+
+                    {/* Ver mais (duplicado) */}
+                    <div className="group relative bg-white/5 backdrop-blur-sm border border-[#FFFFFF14] border-dashed rounded-[22px] p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-[1.04] cursor-pointer flex items-center justify-center">
+                      <div className="text-center space-y-2">
+                        <div className="w-12 h-12 mx-auto rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                          <ArrowRight className="w-6 h-6 text-white" />
+                        </div>
+                        <p className="text-white font-semibold text-sm">
+                          Ver todos
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* KPIs */}
+            <div className="grid grid-cols-2 gap-8 max-w-sm pt-2">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <Award className="w-5 h-5 text-[#FF0000]" />
+                  <span className="text-3xl font-black text-white">+30</span>
+                </div>
+                <p className="text-white/60 text-sm font-medium">
+                  Projetos entregues
+                </p>
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <Users className="w-5 h-5 text-[#FF0000]" />
+                  <span className="text-3xl font-black text-white">+1M</span>
+                </div>
+                <p className="text-white/60 text-sm font-medium">
+                  Usuários impactados
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

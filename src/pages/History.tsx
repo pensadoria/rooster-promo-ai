@@ -14,19 +14,25 @@ const History = () => {
     if (year === "2021-2022") {
       return (
         <>
-          Lançamos a <span className="font-black text-[#FFD700]">Premiafy</span>: a primeira plataforma completa de promoções com IA para grandes marcas. Sites automáticos, OCR instantâneo, dashboards enterprise e arquitetura para alto volume. Unilever, Royal Canin, BRF e outras líderes confiaram na tecnologia.
+          Lançamos a <span className="font-black text-[#FFD700]">Premiafy</span>: a primeira plataforma completa de
+          promoções com IA para grandes marcas. Sites automáticos, OCR instantâneo, dashboards enterprise e arquitetura
+          para alto volume. Unilever, Royal Canin, BRF e outras líderes confiaram na tecnologia.
         </>
       );
     } else if (year === "2023") {
       return (
         <>
-          Trouxemos a mesma tecnologia da <span className="font-black text-[#FFD700]">Premiafy</span> para pequenos e médios varejistas. Rooster nasce com automação acessível, IA inteligente e zero complexidade. Marcas como Hellmans e Hub simplificaram suas campanhas.
+          Trouxemos a mesma tecnologia da <span className="font-black text-[#FFD700]">Premiafy</span> para pequenos e
+          médios varejistas. Rooster nasce com automação acessível, IA zero complexidade. Marcas como Hellmans já
+          simplificaram suas campanhas.
         </>
       );
     } else if (year === "2024") {
       return (
         <>
-          Mais de 30 projetos enterprise com <span className="font-black text-[#FFD700]">Premiafy</span>, +1M de usuários impactados. Rooster expandindo para centenas de PMEs. Integrando IA generativa em ambas as plataformas. E isso é só o começo.
+          Mais de 30 projetos enterprise com <span className="font-black text-[#FFD700]">Premiafy</span>, +1M de
+          usuários impactados. Rooster expandindo para centenas de PMEs. Integrando IA generativa em ambas as
+          plataformas. E isso é só o começo.
         </>
       );
     }
@@ -37,43 +43,48 @@ const History = () => {
     {
       year: "2020",
       title: "O Problema que Mudou Tudo",
-      description: "Pequenos e médios varejistas perdiam dias criando promoções. Planilhas infinitas, validações manuais e zero visibilidade dos resultados. Era hora de mudar isso.",
+      description:
+        "Pequenos e médios varejistas perdiam dias criando promoções. Planilhas infinitas, validações manuais e zero visibilidade dos resultados. Era hora de mudar isso.",
       icon: Target,
       color: "#FF2A00",
-      imageSpace: true
+      imageSpace: true,
     },
     {
       year: "2021",
       title: "Nasceu a Ideia",
-      description: "E se a tecnologia pudesse fazer o trabalho pesado? IA para validar notas, sites gerados automaticamente e métricas em tempo real. A visão estava clara.",
+      description:
+        "E se a tecnologia pudesse fazer o trabalho pesado? IA para validar notas, sites gerados automaticamente e métricas em tempo real. A visão estava clara.",
       icon: Lightbulb,
       color: "#0344DC",
-      imageSpace: true
+      imageSpace: true,
     },
     {
       year: "2021-2022",
       title: "Premiafy - A Solução Enterprise",
-      description: "Lançamos a Premiafy: a primeira plataforma completa de promoções com IA para grandes marcas. Sites automáticos, OCR instantâneo, dashboards enterprise e arquitetura para alto volume. Unilever, Royal Canin, BRF e outras líderes confiaram na tecnologia.",
+      description:
+        "Lançamos a Premiafy: a primeira plataforma completa de promoções com IA para grandes marcas. Sites automáticos, OCR instantâneo, dashboards enterprise e arquitetura para alto volume. Unilever, Royal Canin, BRF e outras líderes confiaram na tecnologia.",
       icon: Rocket,
       color: "#0344DC",
-      imageSpace: true
+      imageSpace: true,
     },
     {
       year: "2023",
       title: "Rooster - Democratizando a Tecnologia",
-      description: "Trouxemos a mesma tecnologia da Premiafy para pequenos e médios varejistas. Rooster nasce com automação acessível, IA inteligente e zero complexidade. Marcas como Hellmans e Hub simplificaram suas campanhas.",
+      description:
+        "Trouxemos a mesma tecnologia da Premiafy para pequenos e médios varejistas. Rooster nasce com automação acessível, IA inteligente e zero complexidade. Marcas como Hellmans e Hub simplificaram suas campanhas.",
       icon: Sparkles,
       color: "#FF5001",
-      imageSpace: true
+      imageSpace: true,
     },
     {
       year: "2024",
       title: "Crescimento Acelerado",
-      description: "Mais de 30 projetos enterprise com Premiafy, +1M de usuários impactados. Rooster expandindo para centenas de PMEs. Integrando IA generativa em ambas as plataformas. E isso é só o começo.",
+      description:
+        "Mais de 30 projetos enterprise com Premiafy, +1M de usuários impactados. Rooster expandindo para centenas de PMEs. Integrando IA generativa em ambas as plataformas. E isso é só o começo.",
       icon: TrendingUp,
       color: "#FF2A00",
-      imageSpace: true
-    }
+      imageSpace: true,
+    },
   ];
 
   return (
@@ -93,17 +104,13 @@ const History = () => {
             transition={{ duration: 0.8 }}
             className="text-center space-y-6"
           >
-            <span className="text-[#FF2A00] font-bold text-sm tracking-wider uppercase">
-              Nossa Jornada
-            </span>
+            <span className="text-[#FF2A00] font-bold text-sm tracking-wider uppercase">Nossa Jornada</span>
 
-            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight">
-              A História da Rooster
-            </h1>
+            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight">A História da Rooster</h1>
 
             <p className="text-xl text-white/70 leading-relaxed max-w-[700px] mx-auto">
-              De uma ideia simples a uma plataforma que transforma o marketing promocional.
-              Esta é a nossa jornada de simplificação, inovação e confiança.
+              De uma ideia simples a uma plataforma que transforma o marketing promocional. Esta é a nossa jornada de
+              simplificação, inovação e confiança.
             </p>
           </motion.div>
         </div>
@@ -141,15 +148,13 @@ const History = () => {
                             className="inline-block px-4 py-1 rounded-full text-sm font-bold tracking-wider"
                             style={{
                               backgroundColor: `${event.color}20`,
-                              color: event.color
+                              color: event.color,
                             }}
                           >
                             {event.year}
                           </span>
 
-                          <h3 className="text-3xl font-black text-white">
-                            {event.title}
-                          </h3>
+                          <h3 className="text-3xl font-black text-white">{event.title}</h3>
 
                           <p className="text-white/70 text-lg leading-relaxed">
                             {renderDescription(event.year, event.description)}
@@ -158,8 +163,8 @@ const History = () => {
                           {/* Image Placeholder Left */}
                           {event.imageSpace && event.year === "2020" && (
                             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
-                              <img 
-                                src={historyDashboard} 
+                              <img
+                                src={historyDashboard}
                                 alt="Dashboard de analytics mostrando evolução de cupons e gestão de promoções"
                                 className="w-full h-full object-cover"
                               />
@@ -167,8 +172,8 @@ const History = () => {
                           )}
                           {event.imageSpace && event.year === "2021" && (
                             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
-                              <img 
-                                src={ideaBirth} 
+                              <img
+                                src={ideaBirth}
                                 alt="Representação visual do nascimento de uma ideia inovadora com tecnologia e IA"
                                 className="w-full h-full object-cover"
                               />
@@ -176,8 +181,8 @@ const History = () => {
                           )}
                           {event.imageSpace && event.year === "2021-2022" && (
                             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10 bg-white">
-                              <img 
-                                src={premiafyLogo} 
+                              <img
+                                src={premiafyLogo}
                                 alt="Logo Premiafy - Plataforma de promoções enterprise"
                                 className="w-full h-full object-contain"
                               />
@@ -185,8 +190,8 @@ const History = () => {
                           )}
                           {event.imageSpace && event.year === "2023" && (
                             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                              <img 
-                                src={roosterLogo} 
+                              <img
+                                src={roosterLogo}
                                 alt="Logo Rooster - Plataforma de promoções para PMEs"
                                 className="w-full h-full object-contain"
                               />
@@ -194,20 +199,23 @@ const History = () => {
                           )}
                           {event.imageSpace && event.year === "2024" && (
                             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
-                              <img 
-                                src={growthChart} 
+                              <img
+                                src={growthChart}
                                 alt="Gráfico mostrando crescimento acelerado e expansão"
                                 className="w-full h-full object-cover"
                               />
                             </div>
                           )}
-                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && event.year !== "2024" && (
-                            <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
-                              <span className="text-white/40 text-sm font-medium">
-                                Espaço para imagem
-                              </span>
-                            </div>
-                          )}
+                          {event.imageSpace &&
+                            event.year !== "2020" &&
+                            event.year !== "2021" &&
+                            event.year !== "2021-2022" &&
+                            event.year !== "2023" &&
+                            event.year !== "2024" && (
+                              <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
+                                <span className="text-white/40 text-sm font-medium">Espaço para imagem</span>
+                              </div>
+                            )}
                         </div>
 
                         {/* Empty Right */}
@@ -224,15 +232,13 @@ const History = () => {
                             className="inline-block px-4 py-1 rounded-full text-sm font-bold tracking-wider"
                             style={{
                               backgroundColor: `${event.color}20`,
-                              color: event.color
+                              color: event.color,
                             }}
                           >
                             {event.year}
                           </span>
 
-                          <h3 className="text-3xl font-black text-white">
-                            {event.title}
-                          </h3>
+                          <h3 className="text-3xl font-black text-white">{event.title}</h3>
 
                           <p className="text-white/70 text-lg leading-relaxed">
                             {renderDescription(event.year, event.description)}
@@ -241,8 +247,8 @@ const History = () => {
                           {/* Image Placeholder Right */}
                           {event.imageSpace && event.year === "2020" && (
                             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
-                              <img 
-                                src={historyDashboard} 
+                              <img
+                                src={historyDashboard}
                                 alt="Dashboard de analytics mostrando evolução de cupons e gestão de promoções"
                                 className="w-full h-full object-cover"
                               />
@@ -250,8 +256,8 @@ const History = () => {
                           )}
                           {event.imageSpace && event.year === "2021" && (
                             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
-                              <img 
-                                src={ideaBirth} 
+                              <img
+                                src={ideaBirth}
                                 alt="Representação visual do nascimento de uma ideia inovadora com tecnologia e IA"
                                 className="w-full h-full object-cover"
                               />
@@ -259,8 +265,8 @@ const History = () => {
                           )}
                           {event.imageSpace && event.year === "2021-2022" && (
                             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10 bg-white">
-                              <img 
-                                src={premiafyLogo} 
+                              <img
+                                src={premiafyLogo}
                                 alt="Logo Premiafy - Plataforma de promoções enterprise"
                                 className="w-full h-full object-contain"
                               />
@@ -268,8 +274,8 @@ const History = () => {
                           )}
                           {event.imageSpace && event.year === "2023" && (
                             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                              <img 
-                                src={roosterLogo} 
+                              <img
+                                src={roosterLogo}
                                 alt="Logo Rooster - Plataforma de promoções para PMEs"
                                 className="w-full h-full object-contain"
                               />
@@ -277,20 +283,23 @@ const History = () => {
                           )}
                           {event.imageSpace && event.year === "2024" && (
                             <div className="mt-6 aspect-video rounded-2xl overflow-hidden border border-white/10">
-                              <img 
-                                src={growthChart} 
+                              <img
+                                src={growthChart}
                                 alt="Gráfico mostrando crescimento acelerado e expansão"
                                 className="w-full h-full object-cover"
                               />
                             </div>
                           )}
-                          {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && event.year !== "2024" && (
-                            <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
-                              <span className="text-white/40 text-sm font-medium">
-                                Espaço para imagem
-                              </span>
-                            </div>
-                          )}
+                          {event.imageSpace &&
+                            event.year !== "2020" &&
+                            event.year !== "2021" &&
+                            event.year !== "2021-2022" &&
+                            event.year !== "2023" &&
+                            event.year !== "2024" && (
+                              <div className="mt-6 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
+                                <span className="text-white/40 text-sm font-medium">Espaço para imagem</span>
+                              </div>
+                            )}
                         </div>
                       </>
                     )}
@@ -308,7 +317,7 @@ const History = () => {
                           className="w-16 h-16 rounded-full flex items-center justify-center border-4"
                           style={{
                             backgroundColor: `${event.color}20`,
-                            borderColor: event.color
+                            borderColor: event.color,
                           }}
                         >
                           <Icon className="w-7 h-7" style={{ color: event.color }} />
@@ -329,7 +338,7 @@ const History = () => {
                         className="w-12 h-12 rounded-full flex items-center justify-center border-4"
                         style={{
                           backgroundColor: `${event.color}20`,
-                          borderColor: event.color
+                          borderColor: event.color,
                         }}
                       >
                         <Icon className="w-5 h-5" style={{ color: event.color }} />
@@ -340,25 +349,21 @@ const History = () => {
                       className="inline-block px-4 py-1 rounded-full text-sm font-bold tracking-wider"
                       style={{
                         backgroundColor: `${event.color}20`,
-                        color: event.color
+                        color: event.color,
                       }}
                     >
                       {event.year}
                     </span>
 
-                    <h3 className="text-2xl font-black text-white">
-                      {event.title}
-                    </h3>
+                    <h3 className="text-2xl font-black text-white">{event.title}</h3>
 
-                    <p className="text-white/70 leading-relaxed">
-                      {renderDescription(event.year, event.description)}
-                    </p>
+                    <p className="text-white/70 leading-relaxed">{renderDescription(event.year, event.description)}</p>
 
                     {/* Image Placeholder Mobile */}
                     {event.imageSpace && event.year === "2020" && (
                       <div className="mt-4 aspect-video rounded-2xl overflow-hidden border border-white/10">
-                        <img 
-                          src={historyDashboard} 
+                        <img
+                          src={historyDashboard}
                           alt="Dashboard de analytics mostrando evolução de cupons e gestão de promoções"
                           className="w-full h-full object-cover"
                         />
@@ -366,8 +371,8 @@ const History = () => {
                     )}
                     {event.imageSpace && event.year === "2021" && (
                       <div className="mt-4 aspect-video rounded-2xl overflow-hidden border border-white/10">
-                        <img 
-                          src={ideaBirth} 
+                        <img
+                          src={ideaBirth}
                           alt="Representação visual do nascimento de uma ideia inovadora com tecnologia e IA"
                           className="w-full h-full object-cover"
                         />
@@ -375,8 +380,8 @@ const History = () => {
                     )}
                     {event.imageSpace && event.year === "2021-2022" && (
                       <div className="mt-4 aspect-video rounded-2xl overflow-hidden border border-white/10 bg-white">
-                        <img 
-                          src={premiafyLogo} 
+                        <img
+                          src={premiafyLogo}
                           alt="Logo Premiafy - Plataforma de promoções enterprise"
                           className="w-full h-full object-contain"
                         />
@@ -384,8 +389,8 @@ const History = () => {
                     )}
                     {event.imageSpace && event.year === "2023" && (
                       <div className="mt-4 aspect-video rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1a]">
-                        <img 
-                          src={roosterLogo} 
+                        <img
+                          src={roosterLogo}
                           alt="Logo Rooster - Plataforma de promoções para PMEs"
                           className="w-full h-full object-contain"
                         />
@@ -393,20 +398,23 @@ const History = () => {
                     )}
                     {event.imageSpace && event.year === "2024" && (
                       <div className="mt-4 aspect-video rounded-2xl overflow-hidden border border-white/10">
-                        <img 
-                          src={growthChart} 
+                        <img
+                          src={growthChart}
                           alt="Gráfico mostrando crescimento acelerado e expansão"
                           className="w-full h-full object-cover"
                         />
                       </div>
                     )}
-                    {event.imageSpace && event.year !== "2020" && event.year !== "2021" && event.year !== "2021-2022" && event.year !== "2023" && event.year !== "2024" && (
-                      <div className="mt-4 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
-                        <span className="text-white/40 text-sm font-medium">
-                          Espaço para imagem
-                        </span>
-                      </div>
-                    )}
+                    {event.imageSpace &&
+                      event.year !== "2020" &&
+                      event.year !== "2021" &&
+                      event.year !== "2021-2022" &&
+                      event.year !== "2023" &&
+                      event.year !== "2024" && (
+                        <div className="mt-4 aspect-video rounded-2xl border-2 border-dashed border-white/20 bg-white/5 flex items-center justify-center">
+                          <span className="text-white/40 text-sm font-medium">Espaço para imagem</span>
+                        </div>
+                      )}
                   </div>
                 </motion.div>
               );
@@ -428,9 +436,7 @@ const History = () => {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,42,0,0.1)_0%,transparent_70%)] rounded-3xl" />
 
             <div className="relative z-10 space-y-6">
-              <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-                Nossa Missão
-              </h2>
+              <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">Nossa Missão</h2>
 
               <p className="text-2xl md:text-3xl text-white/90 font-bold leading-relaxed">
                 Simplificar o marketing promocional de forma rápida, segura e eficiente.
@@ -440,7 +446,7 @@ const History = () => {
                 {[
                   "Transformar complexidade em simplicidade",
                   "Entregar tecnologia com propósito",
-                  "Crescer junto com nossos clientes"
+                  "Crescer junto com nossos clientes",
                 ].map((principle, idx) => (
                   <motion.div
                     key={idx}
@@ -474,16 +480,9 @@ const History = () => {
               Quer fazer parte desta história?
             </h2>
 
-            <p className="text-xl text-white/70">
-              Junte-se aos varejistas que já simplificaram suas campanhas.
-            </p>
+            <p className="text-xl text-white/70">Junte-se aos varejistas que já simplificaram suas campanhas.</p>
 
-            <motion.a
-              href="/contato"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-block"
-            >
+            <motion.a href="/contato" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} className="inline-block">
               <button className="bg-gradient-to-r from-[#FF0000] to-[#FF5001] hover:from-[#FF5001] hover:to-[#FF0000] text-white font-bold px-10 h-[64px] rounded-xl shadow-2xl shadow-[#FF0000]/20 hover:shadow-[#FF0000]/40 transition-all">
                 Falar com especialista
               </button>

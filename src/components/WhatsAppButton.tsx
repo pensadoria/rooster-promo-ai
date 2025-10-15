@@ -37,7 +37,7 @@ const WhatsAppButton = () => {
 
       {/* Botão WhatsApp */}
       <a
-        href="https://wa.me/5511993492108?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20Rook!"
+        href="https://wa.me/5511976292960?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20Rook!"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 hover:brightness-110 transition-all duration-300 animate-bounce-gentle"
