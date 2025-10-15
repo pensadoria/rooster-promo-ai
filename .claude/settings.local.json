@@ -13,7 +13,8 @@
       "mcp__playwright__browser_snapshot",
       "Bash(npx playwright screenshot:*)",
       "Bash(powershell:*)",
-      "mcp__playwright__browser_tabs"
+      "mcp__playwright__browser_tabs",
+      "Read(//c/Users/Antônio/Pictures/Screenshots/**)"
     ],
     "deny": [],
     "ask": []
