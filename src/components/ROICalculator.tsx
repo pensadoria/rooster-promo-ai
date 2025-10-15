@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ROICalculator = () => {
   return (
-    <section id="roi" className="bg-gradient-to-br from-[#ff5001] to-[#ff3000] py-32 px-6">
+    <section id="roi" className="bg-gradient-to-br from-[#ff5001] to-[#ff3000] py-20 md:py-32 px-6">
       <div className="container mx-auto max-w-5xl">
         {/* Section Header */}
         <motion.div
@@ -13,12 +13,12 @@ const ROICalculator = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 space-y-6"
+          className="text-center mb-12 md:mb-16 space-y-4 md:space-y-6"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+          <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
             Quanto você pode economizar com automação?
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
             Use nossa calculadora gratuita e descubra o impacto real da Rooster no seu negócio.
           </p>
         </motion.div>

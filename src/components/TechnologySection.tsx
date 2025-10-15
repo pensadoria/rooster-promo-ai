@@ -76,16 +76,16 @@ const TechnologySection = () => {
           className="text-center mb-12 space-y-4"
         >
           {/* Title */}
-          <h2 
-            className="text-[32px] md:text-[48px] leading-[1.1] font-extrabold tracking-tight"
+          <h2
+            className="text-[28px] md:text-[48px] leading-[1.1] font-extrabold tracking-tight"
             style={{ fontFamily: 'Inter, sans-serif', color: '#011E36' }}
           >
             Tecnologia que simplifica, <span style={{ color: '#FF2A00' }}>e vende</span>.
           </h2>
-          
+
           {/* Subtitle */}
-          <p 
-            className="text-[18px] leading-[1.55] font-medium max-w-3xl mx-auto"
+          <p
+            className="text-[16px] md:text-[18px] leading-[1.55] font-medium max-w-3xl mx-auto"
             style={{ color: '#64748B' }}
           >
             Sites automáticos, OCR + IA e métricas em tempo real. Sem planilhas.
@@ -94,7 +94,7 @@ const TechnologySection = () => {
 
         {/* Inverted Pyramid Layout */}
         {/* First Row - Feature Cards Horizontally */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
           {features.map((feature, index) => (
             <motion.a
               key={feature.id}
@@ -112,12 +112,16 @@ const TechnologySection = () => {
                 y: -8,
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
+              whileTap={{
+                scale: 0.98,
+                transition: { duration: 0.1 }
+              }}
               role="link"
               aria-label={`${feature.title} - ${feature.description}. Clique para ir ao formulário de contato`}
               className="group/card cursor-pointer block no-underline"
             >
               <div
-                className="relative h-[260px] rounded-[24px] border-2 p-8 overflow-hidden transition-all duration-300"
+                className="relative min-h-[240px] h-auto md:h-[260px] rounded-[20px] md:rounded-[24px] border-2 p-6 md:p-8 overflow-hidden transition-all duration-300"
                 style={{
                   background: feature.bgColor,
                   borderColor: feature.accentColor,
@@ -143,10 +147,10 @@ const TechnologySection = () => {
                 />
 
                 {/* Content - Centralized */}
-                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center space-y-4">
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center space-y-3 md:space-y-4">
                   {/* Icon circle */}
                   <motion.div
-                    className="w-16 h-16 rounded-full flex items-center justify-center"
+                    className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center"
                     style={{
                       background: feature.accentColor,
                       boxShadow: `0 4px 16px ${feature.accentColor}60`,
@@ -166,7 +170,7 @@ const TechnologySection = () => {
                     }}
                   >
                     <feature.icon
-                      className="w-8 h-8"
+                      className="w-7 h-7 md:w-8 md:h-8"
                       strokeWidth={2}
                       style={{
                         color: feature.iconColor || (feature.bgColor === '#FFFFFF' ? '#01203F' : '#FFFFFF')
@@ -176,7 +180,7 @@ const TechnologySection = () => {
 
                   {/* Title */}
                   <h3
-                    className="text-[22px] leading-[1.2] font-bold tracking-tight"
+                    className="text-[20px] md:text-[22px] leading-[1.2] font-bold tracking-tight"
                     style={{
                       fontFamily: 'Inter, sans-serif',
                       color: feature.textColor || '#FFFFFF'
@@ -187,7 +191,7 @@ const TechnologySection = () => {
 
                   {/* Description */}
                   <p
-                    className="text-[15px] leading-[1.5] max-w-[280px]"
+                    className="text-[14px] md:text-[15px] leading-[1.5] max-w-[240px] md:max-w-[280px]"
                     style={{
                       fontFamily: 'Inter, sans-serif',
                       color: feature.textColor ? `${feature.textColor}CC` : 'rgba(255, 255, 255, 0.9)'
@@ -198,7 +202,7 @@ const TechnologySection = () => {
 
                   {/* Click indicator */}
                   <motion.div
-                    className="mt-2 text-[13px] font-semibold"
+                    className="mt-1 md:mt-2 text-[12px] md:text-[13px] font-semibold"
                     style={{ color: feature.accentColor }}
                     animate={{ opacity: [0.6, 1, 0.6] }}
                     transition={{ duration: 2, repeat: Infinity }}
@@ -212,7 +216,7 @@ const TechnologySection = () => {
         </div>
 
         {/* Second Row - Images with Same Size */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto mb-8 md:mb-12">
           {/* Image 1 - Dashboard */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}

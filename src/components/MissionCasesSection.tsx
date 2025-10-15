@@ -32,7 +32,7 @@ const MissionCasesSection = () => {
             </div>
 
             {/* H1 Title */}
-            <h1 className="font-black text-white text-5xl lg:text-[56px] leading-[1.0] tracking-tight">
+            <h1 className="font-black text-white text-4xl lg:text-[56px] leading-[1.0] tracking-tight">
               Simplificar o marketing promocional de forma rápida, segura e
               eficiente.
             </h1>
@@ -116,7 +116,7 @@ const MissionCasesSection = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="space-y-1"
                 >
-                  <div className="text-4xl md:text-5xl font-black text-white">+30</div>
+                  <div className="text-3xl md:text-5xl font-black text-white">+30</div>
                   <p className="text-white/60 text-sm font-medium">
                     Projetos entregues
                   </p>
@@ -128,7 +128,7 @@ const MissionCasesSection = () => {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="space-y-1"
                 >
-                  <div className="text-4xl md:text-5xl font-black text-white">+1M</div>
+                  <div className="text-3xl md:text-5xl font-black text-white">+1M</div>
                   <p className="text-white/60 text-sm font-medium">
                     Usuários impactados
                   </p>

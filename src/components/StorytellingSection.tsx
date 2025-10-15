@@ -74,11 +74,11 @@ const StorytellingSection = () => {
             </span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-6xl font-black text-[#01203F] leading-tight mb-6">
+          <h2 className="text-3xl md:text-6xl font-black text-[#01203F] leading-tight mb-6">
             Como a Rooster nasceu
           </h2>
 
-          <p className="text-xl text-[#01203F]/70 leading-relaxed mb-8">
+          <p className="text-lg md:text-xl text-[#01203F]/70 leading-relaxed mb-8">
             Uma jornada de simplicidade, inovação e confiança para transformar o marketing promocional.
           </p>
 
@@ -139,7 +139,7 @@ const StorytellingSection = () => {
                   <motion.div
                     whileHover={{ y: -8, scale: 1.02 }}
                     transition={{ duration: 0.3 }}
-                    className="relative bg-white border border-[#01203F]/10 rounded-2xl p-8 shadow-lg hover:border-[#01203F]/20 hover:shadow-2xl transition-all group mt-28"
+                    className="relative bg-white border border-[#01203F]/10 rounded-2xl p-6 md:p-8 shadow-lg hover:border-[#01203F]/20 hover:shadow-2xl transition-all group mt-20 md:mt-28"
                   >
                     {/* Icon Circle */}
                     <div className="absolute -top-12 left-1/2 -translate-x-1/2">
@@ -226,10 +226,10 @@ const StorytellingSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center max-w-[700px] mx-auto"
         >
-          <p className="text-2xl md:text-3xl text-[#01203F] font-bold leading-tight mb-8">
+          <p className="text-xl md:text-3xl text-[#01203F] font-bold leading-tight mb-8">
             Hoje, simplificamos promoções para centenas de varejistas.
             <br />
-            <span className="text-[#01203F]/60 font-normal text-xl">
+            <span className="text-[#01203F]/60 font-normal text-lg md:text-xl">
               E estamos apenas começando.
             </span>
           </p>

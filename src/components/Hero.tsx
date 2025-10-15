@@ -11,7 +11,7 @@ const Hero = () => {
   const images = [heroImage1, heroImage2, heroImage3];
 
   return (
-    <section className="relative min-h-[924px] flex items-center justify-center overflow-hidden pt-24">
+    <section className="relative min-h-[600px] md:min-h-[924px] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
       {/* Background carousel */}
       <div className="absolute inset-0">
         <Carousel

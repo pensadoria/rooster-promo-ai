@@ -86,7 +86,7 @@ const PlatformSection = () => {
                 {/* Screen */}
                 <div className="bg-[#0A1628] rounded-lg overflow-hidden aspect-video relative">
                   {/* Dashboard Content */}
-                  <div className="absolute inset-0 p-6 space-y-4">
+                  <div className="absolute inset-0 p-3 md:p-6 space-y-2 md:space-y-4">
                     {/* Header with stats */}
                     <div className="flex items-center justify-between">
                       <div>
