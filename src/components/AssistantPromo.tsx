@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AssistantPromo = () => {
   return (
@@ -13,9 +14,9 @@ const AssistantPromo = () => {
           <p className="text-[16px] md:text-[20px] text-[rgba(1,32,63,0.8)] leading-[27px] max-w-[560px] mb-6">
             O Rook ajuda você a criar promoções, fidelizar clientes e entender seus resultados — tudo via chat.
           </p>
-          <button className="inline-flex items-center gap-2 bg-[#FF0000] hover:bg-[#FF5001] text-white font-semibold px-5 h-[60px] rounded-[12px] shadow-[0_10px_30px_rgba(255,0,0,0.25)]">
+          <Link to="/contato" className="inline-flex items-center gap-2 bg-[#FF0000] hover:bg-[#FF5001] text-white font-semibold px-5 h-[60px] rounded-[12px] shadow-[0_10px_30px_rgba(255,0,0,0.25)]">
             Testar agora
-          </button>
+          </Link>
         </div>
 
         {/* Right chat card */}
