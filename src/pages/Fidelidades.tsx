@@ -329,7 +329,7 @@ const Fidelidades = () => {
             </p>
 
             {/* Checklist */}
-            <ul className="space-y-6">
+            <ul className="space-y-6 mb-8">
               <li className="flex items-center gap-4">
                 <div className="w-6 h-6 rounded-full bg-[rgba(0,255,4,0.09)] flex items-center justify-center flex-shrink-0">
                   <img
@@ -367,6 +367,21 @@ const Fidelidades = () => {
                 </span>
               </li>
             </ul>
+
+            {/* Novo texto separado */}
+            <div className="mb-6">
+              <p className="text-[18px] lg:text-[20px] font-semibold text-white">
+                Vem conhecer o Rooster Promoções
+              </p>
+            </div>
+
+            {/* Botão Clique Aqui */}
+            <Link
+              to="/promocoes"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#ff0000] text-white font-semibold text-[16px] rounded-xl hover:bg-[#ff0000]/90 transition-colors"
+            >
+              Clique Aqui
+            </Link>
           </div>
         </div>
       </section>

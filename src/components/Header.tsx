@@ -9,8 +9,8 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { to: "/promocoes", label: "promocoes" },
-    { to: "/fidelidades", label: "fidelidades" },
+    { to: "/promocoes", label: "Promoções" },
+    { to: "/fidelidades", label: "Fidelidades" },
     { to: "/sobre-nos", label: "Sobre nós" },
   ];
 
@@ -24,10 +24,10 @@ const Header = () => {
               <img
                 src={roosterIcon}
                 alt="Rooster Logo"
-                className="h-8 w-8 object-contain"
+                className="h-7 w-8 object-contain"
               />
               <span className="hidden text-base font-semibold tracking-tight text-white sm:inline">
-                Rooster
+                ROOSTER
               </span>
             </Link>
 
