@@ -3,8 +3,15 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { supabase } from "@/integrations/supabase/client";
@@ -28,6 +35,10 @@ const contactSchema = z.object({
     }, "Telefone deve ter 10 ou 11 dígitos")
     .optional()
     .or(z.literal("")),
+  product_interest: z.enum(["rooster_fidelidade", "rooster_promocoes"], {
+    required_error: "Por favor, selecione um produto",
+    invalid_type_error: "Por favor, selecione um produto válido"
+  }),
   message: z.string()
     .min(10, "Mensagem deve ter pelo menos 10 caracteres")
     .max(1000, "Mensagem deve ter no máximo 1000 caracteres"),
@@ -44,6 +55,7 @@ const Contact = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    control,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
   });
@@ -58,6 +70,7 @@ const Contact = () => {
           name: data.name,
           email: data.email,
           phone: data.phone || null,
+          product_interest: data.product_interest,
           message: data.message,
         });
 
@@ -146,6 +159,34 @@ const Contact = () => {
                   />
                   {errors.phone && (
                     <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="product_interest" className="block text-sm font-medium text-white mb-2">
+                    Qual produto você deseja falar?
+                  </label>
+                  <Controller
+                    name="product_interest"
+                    control={control}
+                    render={({ field }) => (
+                      <Select onValueChange={field.onChange} value={field.value}>
+                        <SelectTrigger className="bg-white/10 border-white/20 text-white placeholder:text-white/50">
+                          <SelectValue placeholder="Selecione um produto" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-[#01203f] border-white/20 z-50">
+                          <SelectItem value="rooster_fidelidade" className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white">
+                            Rooster Fidelidade
+                          </SelectItem>
+                          <SelectItem value="rooster_promocoes" className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white">
+                            Rooster Promoções
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                    )}
+                  />
+                  {errors.product_interest && (
+                    <p className="text-red-400 text-sm mt-1">{errors.product_interest.message}</p>
                   )}
                 </div>
                 
