@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/img.png";
 import iconImage from "@/assets/icon.png";
 
 // Assets gerados pelo plugin Figma (servidor local exposto pelo MCP)
 const imgGroup = "http://localhost:3845/assets/9b4adbfa3cd945fdd24d8abc53b76dc3fcf51b6d.svg";
 const imgFrame = "http://localhost:3845/assets/2e498edd9e5b9eb4553b47690f938f38f57fb0bc.svg";
-const imgImg = heroImage;
+// Imagem do bucket Supabase
+const imgImg = "https://wqrmsdwtsgcrrkqtpkbm.supabase.co/storage/v1/object/public/photos/header-02.png";
 
 const Hero = () => {
   return (
