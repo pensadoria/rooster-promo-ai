@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import heroImage from "@/assets/img.png";
+import iconImage from "@/assets/icon.png";
 
 // Assets gerados pelo plugin Figma (servidor local exposto pelo MCP)
 const imgGroup = "http://localhost:3845/assets/9b4adbfa3cd945fdd24d8abc53b76dc3fcf51b6d.svg";
 const imgFrame = "http://localhost:3845/assets/2e498edd9e5b9eb4553b47690f938f38f57fb0bc.svg";
-const imgImg = "http://localhost:3845/assets/993bbe4b5f052101446284f2320fc4cf26cc8db7.png";
+const imgImg = heroImage;
 
 const Hero = () => {
   return (
@@ -57,7 +59,7 @@ const Hero = () => {
                 <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[28px] left-[23.25px] top-[18px] w-[17.5px]">
                   <div className="absolute content-stretch flex h-[20px] items-center justify-center left-0 top-[3.5px] w-[17.5px]">
                     <div className="h-[20px] relative shrink-0 w-[17.5px]">
-                      <img alt="" className="block max-w-none size-full" src={imgFrame} />
+                      <img alt="" className="block max-w-none size-full" src={iconImage} />
                     </div>
                   </div>
                 </div>
