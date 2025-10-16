@@ -257,16 +257,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-red-600/20 to-red-800/20 backdrop-blur-lg rounded-xl md:rounded-2xl p-6 md:p-8 border border-red-500/20">
-                <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">
-                  Horário de Atendimento
-                </h3>
-                <div className="space-y-1.5 md:space-y-2 text-sm md:text-base text-white/80">
-                  <p>Segunda a Sexta: 9h às 18h</p>
-                  <p>Sábado: 9h às 13h</p>
-                  <p>Domingo: Fechado</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
