@@ -29,7 +29,8 @@ const SobreNos = () => {
               A Rooster nasceu para simplificar o marketing promocional
             </h1>
             <p className="mx-auto w-[574px] font-['Inter'] text-[20px] font-normal leading-[27px] text-white/85">
-              Somos a plataforma que automatiza promoções e fidelidade, ajudando pequenos e médios negócios a crescerem mais rápido.
+              Somos a plataforma que automatiza promoções e fidelidade, ajudando
+              pequenos e médios negócios a crescerem mais rápido.
             </p>
           </div>
         </div>
@@ -44,13 +45,18 @@ const SobreNos = () => {
             </h2>
             <div className="w-[576px] space-y-6 font-['Inter'] text-[18px] leading-[25px] text-[rgba(1,32,63,0.8)]">
               <p>
-                A Rooster é uma plataforma de automação de promoções e fidelidade que ajuda empreendedores a criar campanhas de forma prática e eficiente.
+                A Rooster é uma plataforma de automação de promoções e
+                fidelidade que ajuda empreendedores a criar campanhas de forma
+                prática e eficiente.
               </p>
               <p>
-                Tudo acontece em um só lugar: leitura automática de notas fiscais, dashboards em tempo real e suporte inteligente com o Rook.
+                Tudo acontece em um só lugar: leitura automática de notas
+                fiscais, dashboards em tempo real e suporte inteligente com o
+                Rook.
               </p>
               <p>
-                Nosso propósito é simples — transformar tecnologia em resultado acessível para quem faz o varejo acontecer.
+                Nosso propósito é simples — transformar tecnologia em resultado
+                acessível para quem faz o varejo acontecer.
               </p>
             </div>
           </div>
@@ -67,7 +73,9 @@ const SobreNos = () => {
                 A história que começou com a Premiafy
               </h2>
               <p className="mx-auto w-[844px] font-['Inter'] text-[20px] leading-[27px] text-[rgba(1,32,63,0.8)]">
-                A Rooster nasceu da tecnologia e da experiência da Premiafy — uma das plataformas de promoções mais inteligentes do mercado, com mais de 1 milhão de usuários impactados.
+                A Rooster nasceu da tecnologia e da experiência da Premiafy —
+                uma das plataformas de promoções mais inteligentes do mercado,
+                com mais de 1 milhão de usuários impactados.
               </p>
             </div>
 
@@ -135,7 +143,10 @@ const SobreNos = () => {
             {/* Bottom Text */}
             <div className="mx-auto w-[896px]">
               <p className="text-center font-['Inter'] text-[18px] leading-[25px] text-[rgba(1,32,63,0.8)]">
-                A partir desse know-how, criamos uma nova geração de soluções: mais leves, rápidas e acessíveis para o varejo. Hoje, a Rooster carrega o mesmo DNA de inovação, mas com foco total na simplicidade e eficiência.
+                A partir desse know-how, criamos uma nova geração de soluções:
+                mais leves, rápidas e acessíveis para o varejo. Hoje, a Rooster
+                carrega o mesmo DNA de inovação, mas com foco total na
+                simplicidade e eficiência.
               </p>
             </div>
           </div>
@@ -162,7 +173,9 @@ const SobreNos = () => {
 
             {/* Description */}
             <p className="mx-auto w-[714px] font-['Inter'] text-[24px] leading-[33px] text-white/85">
-              Ajudar negócios de todos os tamanhos a crescerem mais rápido, com promoções e programas de fidelidade que qualquer pessoa consegue usar.
+              Ajudar negócios de todos os tamanhos a crescerem mais rápido, com
+              promoções e programas de fidelidade que qualquer pessoa consegue
+              usar.
             </p>
           </div>
         </div>
@@ -350,7 +363,8 @@ const SobreNos = () => {
             {/* Bottom Text */}
             <div className="mx-auto w-[872px]">
               <p className="text-center font-['Inter'] text-[20px] leading-[27px] text-[rgba(1,32,63,0.8)]">
-                Na Rooster, cada recurso é feito para gerar impacto real — no seu caixa, no seu tempo e no seu crescimento.
+                Na Rooster, cada recurso é feito para gerar impacto real — no
+                seu caixa, no seu tempo e no seu crescimento.
               </p>
             </div>
           </div>
