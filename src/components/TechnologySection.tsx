@@ -13,7 +13,7 @@ const TechnologySection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* Card 1 */}
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="bg-white/80 rounded-2xl border border-black/5 shadow-sm p-8 text-center">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="group bg-white/80 rounded-2xl border border-black/5 shadow-sm p-8 text-center transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10">
             <div className="flex items-center justify-center mb-4">
               <Zap className="w-9 h-9 text-[#F5C518]" />
             </div>
@@ -22,7 +22,7 @@ const TechnologySection = () => {
           </motion.div>
 
           {/* Card 2 */}
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: 0.05 }} className="bg-white/80 rounded-2xl border border-black/5 shadow-sm p-8 text-center">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45, delay: 0.05 }} className="group bg-white/80 rounded-2xl border border-black/5 shadow-sm p-8 text-center transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10">
             <div className="flex items-center justify-center mb-4">
               <BarChart3 className="w-9 h-9 text-[#3B82F6]" />
             </div>
@@ -31,7 +31,7 @@ const TechnologySection = () => {
           </motion.div>
 
           {/* Card 3 */}
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white/80 rounded-2xl border border-black/5 shadow-sm p-8 text-center">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="group bg-white/80 rounded-2xl border border-black/5 shadow-sm p-8 text-center transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10">
             <div className="flex items-center justify-center mb-4">
               <BadgePercent className="w-9 h-9 text-[#F59E0B]" />
             </div>

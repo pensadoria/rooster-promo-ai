@@ -22,7 +22,7 @@ const StorytellingSection = () => {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 max-w-[900px] mx-auto">
           <h2 className="text-[32px] md:text-[44px] lg:text-[48px] font-black text-[#01203F] leading-[1.1] mb-4">
-            Duas ferramentas, uma plataforma
+            Duas ferramentas
           </h2>
         </div>
 
@@ -36,13 +36,13 @@ const StorytellingSection = () => {
             <h3 className="text-3xl font-bold text-[#01203F] mb-6">
               Rooster Fidelidades
             </h3>
-            <p className="text-lg text-[rgba(1,32,63,0.8)] mb-8 leading-relaxed">
+            <p className="text-[17px] text-[rgba(1,32,63,0.8)] mb-8 leading-relaxed">
               Transforme cada compra em um motivo para voltar. Sistema automático de pontos e cashback integrado às suas promoções.
             </p>
-            <Button variant="ghost" className="text-[#01203F] font-semibold p-0 h-auto hover:bg-transparent">
+            <Link to="/contato" className="inline-flex items-center gap-2 text-[#01203F] font-semibold p-0 h-auto hover:text-[#01203F]">
               Ver mais
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
           {/* Rooster Promoções */}
@@ -53,13 +53,13 @@ const StorytellingSection = () => {
             <h3 className="text-3xl font-bold text-white mb-6">
               Rooster Promoções
             </h3>
-            <p className="text-lg text-[rgba(255,255,255,0.85)] mb-8 leading-relaxed">
+            <p className="text-[17px] text-[rgba(255,255,255,0.85)] mb-8 leading-relaxed">
               Crie promoções automáticas e acompanhe tudo em tempo real. OCR + IA para leitura de notas e validação instantânea.
             </p>
-            <Button variant="ghost" className="text-white font-semibold p-0 h-auto hover:bg-transparent">
+            <Link to="/contato" className="inline-flex items-center gap-2 text-white font-semibold p-0 h-auto hover:text-white">
               Ver mais
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 

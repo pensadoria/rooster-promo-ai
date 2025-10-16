@@ -15,25 +15,7 @@ const Hero = () => {
         <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[666px] left-[80px] top-[67px] w-[calc(100%-160px)] max-w-[1280px]">
           <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[666px] left-[32px] top-0 w-[calc(100%-64px)] max-w-[1216px]">
             <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[666px] left-0 top-0 w-[576px]">
-            {/* Pill */}
-              <div className="absolute bg-[rgba(255,255,255,0.1)] border-0 border-gray-200 border-solid h-[40px] left-0 rounded-[9999px] top-[38px] w-[208.656px]">
-                <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[24px] left-[16px] top-[8px] w-[16px]">
-                  <div className="absolute content-stretch flex items-center justify-center left-0 size-[16px] top-[4px]">
-                    <div className="bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid relative shrink-0 size-[16px]">
-                      <div className="overflow-clip relative rounded-[inherit] size-[16px]">
-                        <div className="absolute inset-[1.66%]">
-                          <img alt="" className="block max-w-none size-full" src={imgGroup} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[20px] left-[40px] top-[10px] w-[152.656px]">
-                  <p className="absolute font-['Inter:Semi_Bold',_sans-serif] font-semibold h-[20px] leading-[normal] left-0 not-italic text-[14px] text-[rgba(255,255,255,0.9)] top-px w-[154px]">
-                    Automação Inteligente
-                  </p>
-                </div>
-              </div>
+              {/* Removed top pill 'Automação Inteligente' */}
               
               {/* Main Title */}
               <p className="absolute font-['Inter:Black',_sans-serif] font-black leading-[72px] left-0 not-italic text-[72px] text-white top-[102px] w-[602px]">

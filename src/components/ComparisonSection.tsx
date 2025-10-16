@@ -31,7 +31,7 @@ const ComparisonSection = () => {
             </div>
             <h3 className="text-2xl font-bold text-white mb-2">Rooster Fidelidades</h3>
             <p className="text-[16px] text-white/90 mb-6">Fidelize clientes com cashback automático.</p>
-            <button className="w-full h-12 rounded-xl border border-white text-white font-semibold">
+            <button className="w-full h-12 rounded-xl border border-white text-white font-semibold transition-all duration-200 ease-out hover:bg-white/10 hover:shadow-[0_8px_20px_rgba(255,255,255,0.15)] hover:-translate-y-[2px] active:translate-y-0">
               Ver planos de fidelidade
             </button>
           </motion.div>
@@ -49,7 +49,7 @@ const ComparisonSection = () => {
             </div>
             <h3 className="text-2xl font-bold text-[#01203f] mb-2">Rooster Promoções</h3>
             <p className="text-[16px] text-[rgba(1,32,63,0.9)] mb-6">Crie promoções que vendem de verdade.</p>
-            <button className="w-full h-12 rounded-xl bg-[#01203f] text-white font-semibold">
+            <button className="w-full h-12 rounded-xl bg-[#01203f] text-white font-semibold transition-all duration-200 ease-out hover:bg-[#001a33] hover:shadow-[0_8px_20px_rgba(1,32,63,0.25)] hover:-translate-y-[2px] active:translate-y-0">
               Ver planos de promoções
             </button>
           </motion.div>
