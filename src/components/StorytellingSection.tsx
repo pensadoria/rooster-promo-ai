@@ -39,7 +39,7 @@ const StorytellingSection = () => {
             <p className="text-[17px] text-[rgba(1,32,63,0.8)] mb-8 leading-relaxed">
               Transforme cada compra em um motivo para voltar. Sistema automático de pontos e cashback integrado às suas promoções.
             </p>
-            <Link to="/contato" className="inline-flex items-center gap-2 text-[#01203F] font-semibold p-0 h-auto hover:text-[#01203F]">
+            <Link to="/fidelidades" className="inline-flex items-center gap-2 text-[#01203F] font-semibold p-0 h-auto hover:text-[#01203F]">
               Ver mais
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -56,7 +56,7 @@ const StorytellingSection = () => {
             <p className="text-[17px] text-[rgba(255,255,255,0.85)] mb-8 leading-relaxed">
               Crie promoções automáticas e acompanhe tudo em tempo real. OCR + IA para leitura de notas e validação instantânea.
             </p>
-            <Link to="/contato" className="inline-flex items-center gap-2 text-white font-semibold p-0 h-auto hover:text-white">
+            <Link to="/promocoes" className="inline-flex items-center gap-2 text-white font-semibold p-0 h-auto hover:text-white">
               Ver mais
               <ArrowRight className="w-4 h-4" />
             </Link>
