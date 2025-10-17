@@ -1,6 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const MotionLink = motion(Link);
 
 // Assets exported from the Figma MCP call (external URLs).
 const ASSETS = {
@@ -122,12 +125,19 @@ const Fidelidades = () => {
           </p>
 
           {/* Buttons group - exact widths inside a 494px group with 16px gap */}
-          <div
-            className="mx-auto mt-[33px] flex items-center justify-between"
+          <motion.div
+            className="mx-auto mt-[33px] flex items-center justify-center"
             style={{ width: 494, height: 64 }}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <Link
-              to="/criar-promocao"
+            <MotionLink
+              to="/contato"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 28 }}
               className="inline-flex items-center justify-center rounded-[12px] text-white font-semibold"
               style={{
                 width: 200.109,
@@ -136,16 +146,8 @@ const Fidelidades = () => {
               }}
             >
               Começar Agora
-            </Link>
-
-            <Link
-              to="/precos"
-              className="inline-flex items-center justify-center rounded-[12px] text-white font-semibold border-2 border-white"
-              style={{ width: 278.031, height: 64 }}
-            >
-              Ver planos de fidelidade
-            </Link>
-          </div>
+            </MotionLink>
+          </motion.div>
         </div>
       </section>
 
@@ -376,12 +378,15 @@ const Fidelidades = () => {
             </div>
 
             {/* Botão Clique Aqui */}
-            <Link
+            <MotionLink
               to="/promocoes"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 28 }}
               className="inline-flex items-center justify-center px-8 py-4 bg-[#ff0000] text-white font-semibold text-[16px] rounded-xl hover:bg-[#ff0000]/90 transition-colors"
             >
               Clique Aqui
-            </Link>
+            </MotionLink>
           </div>
         </div>
       </section>
@@ -501,30 +506,26 @@ const Fidelidades = () => {
               </p>
 
               {/* CTA Button */}
-              <Link
-                to="/precos"
+              <MotionLink
+                to="/contato"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                 className="w-full max-w-[360px] h-[56px] flex items-center justify-center border-2 border-white rounded-lg text-[16px] font-semibold hover:bg-white hover:text-[#01203f] transition-colors"
               >
                 Ver planos de fidelidade
-              </Link>
+              </MotionLink>
             </div>
 
             {/* Card 2 - Rooster Promoções */}
             <div className="bg-white text-[#01203f] rounded-2xl p-8 lg:p-10 flex flex-col items-center text-center border border-[#01203f]/10">
               {/* Icon */}
               <div className="w-16 h-16 rounded-full bg-[rgba(1,32,63,0.08)] flex items-center justify-center mb-6">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                    fill="#01203f"
-                  />
-                </svg>
+                <img
+                  src="https://www.figma.com/api/mcp/asset/dcdead4e-daec-46b3-90f1-f4fea5cc11a1"
+                  alt=""
+                  className="h-5 w-5 md:h-6 md:w-6"
+                />
               </div>
 
               {/* Title */}
@@ -538,12 +539,15 @@ const Fidelidades = () => {
               </p>
 
               {/* CTA Button */}
-              <Link
-                to="/precos"
+              <MotionLink
+                to="/contato"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                 className="w-full max-w-[360px] h-[56px] flex items-center justify-center bg-[#01203f] text-white rounded-lg text-[16px] font-semibold hover:bg-[#01203f]/90 transition-colors"
               >
                 Ver planos de promoções
-              </Link>
+              </MotionLink>
             </div>
           </div>
         </div>

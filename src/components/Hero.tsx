@@ -13,7 +13,13 @@ const Hero = () => {
   return (
     <>
       {/* Desktop Layout - Mantém visual original */}
-      <div className="hidden xl:block border-0 bg-[#01203f] border-gray-200 border-solid relative size-full min-h-[800px] w-full">
+      <motion.div
+        className="hidden xl:block border-0 bg-[#01203f] border-gray-200 border-solid relative size-full min-h-[800px] w-full"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="relative size-full">
           <div className="absolute bg-[rgba(0,0,0,0.2)] border-0 border-gray-200 border-solid h-[800px] left-0 top-0" />
           <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[666px] left-[300px] top-[67px] w-[calc(100%-160px)] max-w-[1280px]">
@@ -23,37 +29,37 @@ const Hero = () => {
                 <p className="absolute font-['Inter:Black',_sans-serif] font-black leading-[72px] left-0 not-italic text-[72px] text-white top-[102px] w-[602px]">
                   Crie promoções que vendem — com sites automáticos e inteligentes
                 </p>
-                
+
                 {/* Subtitle */}
                 <p className="absolute font-['Inter:Regular',_sans-serif] font-normal h-[54px] leading-[27px] left-0 not-italic text-[20px] text-[rgba(255,255,255,0.85)] top-[550px] w-[492px]">
                   A Rooster lê as notas, valida os cupons e mostra os resultados em tempo real.
                 </p>
-                
+
                 {/* Buttons */}
                 <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[64px] left-0 top-[610px] w-[576px]">
-                <Link to="/contato">
+                  <Link to="/contato">
                     <div className="absolute bg-[red] border-0 border-gray-200 border-solid h-[64px] left-0 rounded-[12px] top-0 w-[270.328px] cursor-pointer hover:bg-red-600/90 transition-colors">
                       <p className="absolute font-['Inter:Semi_Bold',_sans-serif] font-semibold h-[28px] leading-[normal] left-[138px] not-italic text-[18px] text-center text-white top-[21px] translate-x-[-50%] w-[212px]">
                         Criar promoção
                       </p>
                     </div>
-                </Link>
-                <Link to="/contato">
+                  </Link>
+                  <Link to="/contato">
                     <div className="absolute bg-[rgba(0,0,0,0)] border-2 border-solid border-white h-[64px] left-[286.33px] rounded-[12px] top-0 w-[232.078px] cursor-pointer hover:bg-white/10 transition-colors">
                       <p className="absolute font-['Inter:Semi_Bold',_sans-serif] font-semibold h-[28px] leading-[normal] left-[119px] not-italic text-[18px] text-center text-white top-[21px] translate-x-[-50%] w-[170px]">
                         Ver como funciona
                       </p>
                     </div>
-                </Link>
+                  </Link>
                 </div>
               </div>
-              
+
               {/* Right Image Section */}
               <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[384px] left-[640px] top-[141px] w-[576px]">
                 <div className="absolute border-0 border-gray-200 border-solid h-[384px] left-0 rounded-[16px] top-0 w-[576px]">
                   <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[16px] size-full" src={imgImg} />
                 </div>
-                
+
                 {/* Play Button */}
                 <div className="absolute bg-[red] border-0 border-gray-200 border-solid left-[528px] rounded-[9999px] size-[64px] top-[336px] cursor-pointer hover:bg-red-600/90 transition-colors">
                   <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[28px] left-[23.25px] top-[18px] w-[17.5px]">
@@ -64,7 +70,7 @@ const Hero = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Badge */}
                 <div className="absolute bg-[rgba(255,255,255,0.1)] border-0 border-gray-200 border-solid h-[40px] left-[-32px] rounded-[8px] top-[-32.03px] w-[194.156px]">
                   <div className="absolute bg-[rgba(0,0,0,0)] border-0 border-gray-200 border-solid h-[17px] left-[12px] top-[11.97px] w-[170.156px]">
@@ -77,10 +83,16 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Tablet Layout - Adaptação responsiva */}
-      <div className="hidden lg:block xl:hidden bg-[#01203f] relative w-full min-h-screen pt-24 pb-12 px-8">
+      <motion.div
+        className="hidden lg:block xl:hidden bg-[#01203f] relative w-full min-h-screen pt-24 pb-12 px-8"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column */}
@@ -89,12 +101,12 @@ const Hero = () => {
               <h1 className="font-['Inter:Black',_sans-serif] font-black text-[48px] lg:text-[56px] leading-[1.1] text-white">
                 Crie promoções que vendem — com sites automáticos e inteligentes
               </h1>
-              
+
               {/* Subtitle */}
               <p className="font-['Inter:Regular',_sans-serif] font-normal text-[18px] lg:text-[20px] leading-[27px] text-[rgba(255,255,255,0.85)]">
                 A Rooster lê as notas, valida os cupons e mostra os resultados em tempo real.
               </p>
-              
+
               {/* Buttons */}
               <div className="flex gap-4">
                 <Link to="/contato">
@@ -113,19 +125,19 @@ const Hero = () => {
                 </Link>
               </div>
             </div>
-            
+
             {/* Right Column */}
             <div className="relative">
               <div className="relative rounded-[16px] overflow-hidden">
                 <img alt="" className="w-full h-auto object-cover rounded-[16px]" src={imgImg} />
-                
+
                 {/* Play Button */}
                 <div className="absolute bg-[red] right-4 bottom-4 rounded-[9999px] size-[64px] cursor-pointer hover:bg-red-600/90 transition-colors flex items-center justify-center">
                   <div className="w-[20px] h-[20px]">
                     <img alt="" className="w-full h-full" src={iconImage} />
                   </div>
                 </div>
-                
+
                 {/* Badge */}
                 <div className="absolute bg-[rgba(255,255,255,0.1)] left-4 top-4 rounded-[8px] px-4 py-2">
                   <p className="font-['Inter:Regular',_sans-serif] font-normal text-[14px] text-white">
@@ -136,10 +148,16 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Mobile Layout - Adaptação responsiva */}
-      <div className="block lg:hidden bg-[#01203f] relative w-full min-h-screen pt-24 pb-12 px-6">
+      <motion.div
+        className="block lg:hidden bg-[#01203f] relative w-full min-h-screen pt-24 pb-12 px-6"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="max-w-md mx-auto text-center space-y-8">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2">
@@ -147,24 +165,24 @@ const Hero = () => {
               Pronto pra vender mais? 🚀
             </span>
           </div>
-          
+
           {/* Title */}
           <h1 className="font-['Inter:Black',_sans-serif] font-black text-[28px] md:text-[32px] leading-[1.1] text-white">
             Crie promoções que vendem — com sites automáticos e inteligentes
           </h1>
-          
+
           {/* Subtitle */}
           <p className="font-['Inter:Regular',_sans-serif] font-normal text-[16px] md:text-[18px] leading-[27px] text-[rgba(255,255,255,0.85)]">
             A Rooster lê as notas, valida os cupons e mostra os resultados em tempo real.
           </p>
-          
+
           {/* Image */}
           <div className="relative">
             <div className="relative rounded-[16px] overflow-hidden">
-              <img 
-                alt="" 
-                className="w-full h-auto object-cover rounded-[16px]" 
-                src={imgImg} 
+              <img
+                alt=""
+                className="w-full h-auto object-cover rounded-[16px]"
+                src={imgImg}
               />
               {/* Play Button */}
               <div className="absolute bg-[red] right-4 bottom-4 rounded-[9999px] size-[56px] cursor-pointer hover:bg-red-600/90 transition-colors flex items-center justify-center">
@@ -174,7 +192,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Buttons */}
           <div className="flex flex-col gap-4">
             <Link to="/contato">
@@ -193,7 +211,7 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+// Motion wrappers para interação
+const MotionButton = motion(Button);
+const MotionLink = motion(Link);
 
 const SobreNos = () => {
   return (
@@ -37,7 +42,13 @@ const SobreNos = () => {
       </section>
 
       {/* Parceiro de Crescimento Section */}
-      <section className="bg-white py-32">
+      <motion.section
+        className="bg-white py-32"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="mx-auto max-w-[1280px] px-20">
           <div className="mx-8">
             <h2 className="mb-6 w-[589px] font-['Inter'] text-[48px] font-black leading-[44px] text-[#01203f]">
@@ -61,10 +72,16 @@ const SobreNos = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* História Premiafy Section */}
-      <section className="bg-white py-32">
+      <motion.section
+        className="bg-white py-32"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="mx-auto max-w-[1280px] px-20">
           <div className="mx-8">
             {/* Title */}
@@ -151,7 +168,7 @@ const SobreNos = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Missão Section */}
       <section className="bg-[#01203f] py-32">
@@ -384,11 +401,18 @@ const SobreNos = () => {
               {/* Fidelidades Plan */}
               <div className="rounded-2xl border border-[rgba(1,32,63,0.1)] bg-[#00254c] p-8 text-center">
                 <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[rgba(255,0,0,0.35)]">
-                  <img
-                    src="https://www.figma.com/api/mcp/asset/4ba96db0-11ef-4d79-aacd-6ab7c22416f0"
-                    alt=""
-                    className="h-6 w-6"
-                  />
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                      fill="#FF0000"
+                    />
+                  </svg>
                 </div>
                 <h3 className="mb-4 font-['Inter'] text-[30px] font-bold leading-[normal] text-white">
                   Rooster Fidelidades
@@ -396,14 +420,20 @@ const SobreNos = () => {
                 <p className="mb-8 font-['Inter'] text-lg font-normal leading-[normal] text-white">
                   Fidelize clientes com cashback automático.
                 </p>
-                <Link to="/fidelidades">
+                <MotionLink
+                  to="/fidelidades"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 28 }}
+                  style={{ display: "block" }}
+                >
                   <Button
                     variant="outline"
                     className="h-12 w-full rounded-xl border-2 border-white bg-transparent font-['Inter'] text-base font-semibold text-white hover:bg-white/10"
                   >
                     Ver planos de fidelidade
                   </Button>
-                </Link>
+                </MotionLink>
               </div>
 
               {/* Promocoes Plan */}
@@ -421,9 +451,14 @@ const SobreNos = () => {
                 <p className="mb-8 font-['Inter'] text-lg font-normal leading-[normal] text-[#01203f]">
                   Crie promoções que vendem de verdade.
                 </p>
-                <Button className="h-12 w-full rounded-xl bg-[#01203f] font-['Inter'] text-base font-semibold text-white hover:bg-[#01203f]/90">
+                <MotionButton
+                  className="h-12 w-full rounded-xl bg-[#01203f] font-['Inter'] text-base font-semibold text-white hover:bg-[#01203f]/90"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 28 }}
+                >
                   Ver planos de promoções
-                </Button>
+                </MotionButton>
               </div>
             </div>
           </div>

@@ -1,6 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+const MotionButton = motion(Button);
 import { Link } from "react-router-dom";
 import hellmannsLogo from "@/assets/hellmanns-seeklogo.png";
 import {
@@ -45,16 +48,9 @@ const Promocoes = () => {
         <div className="absolute inset-0 bg-black/20"></div>
 
         {/* Content Container */}
-        <div className="absolute left-[290px] top-[93px] h-[614px] w-[1280px]">
+        <div className="absolute left-[305px] top-[93px] h-[614px] w-[1280px]">
           <div className="relative h-[614px] w-full px-8 ">
             <div className="absolute left-1/2 top-1/2 h-[492px] w-[1058px] -translate-x-1/2 -translate-y-1/2">
-              {/* Badge com ícone */}
-              <div className="absolute left-1/2 top-0 flex h-10 w-[272.984px] -translate-x-1/2 items-center rounded-full bg-white/10 px-4">
-                <Sparkles className="h-4 w-4 text-white/90" />
-                <span className="ml-2 text-[14px] font-semibold leading-[20px] text-white/90">
-                  IA Integrada + 98% de precisão
-                </span>
-              </div>
 
               {/* Título Principal */}
               <h1 className="absolute left-1/2 top-[72px] h-[230px] w-[1058px] -translate-x-1/2 text-center font-['Inter'] text-[72px] font-black leading-[72px] text-white">
@@ -68,16 +64,17 @@ const Promocoes = () => {
               </p>
 
               {/* Botões CTA */}
-              <div className="absolute left-1/2 top-[428px] flex h-16 w-[518px] -translate-x-1/2 items-center gap-4">
-                <Button className="h-16 w-[270.328px] rounded-xl bg-[#ff0000] font-['Inter'] text-[18px] font-semibold text-white hover:bg-[#ff0000]/90">
-                  Criar promoção
-                </Button>
-                <Button
-                  variant="outline"
-                  className="h-16 w-[232.078px] rounded-xl border-2 border-white bg-transparent font-['Inter'] text-[18px] font-semibold text-white hover:bg-white/10"
-                >
-                  Ver como funciona
-                </Button>
+              <div className="absolute left-1/2 top-[428px] flex justify-center h-16 w-[518px] -translate-x-1/2 items-center gap-4">
+                <Link to="/contato">
+                  <MotionButton
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                    className="h-16 w-[270.328px] rounded-xl bg-[#ff0000] font-['Inter'] text-[18px] font-semibold text-white hover:bg-[#ff0000]/90"
+                  >
+                    Ver como funciona
+                  </MotionButton>
+                </Link>
               </div>
             </div>
           </div>
@@ -93,11 +90,9 @@ const Promocoes = () => {
               {/* Badge com ícone */}
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2">
                 <Sparkles className="h-4 w-4 text-white/90" />
-                <span className="text-sm font-semibold text-white/90">
-                  IA Integrada + 98% de precisão
-                </span>
+
               </div>
-              
+
               {/* Título Principal */}
               <h1 className="text-4xl lg:text-5xl font-black text-white leading-tight">
                 A plataforma que transforma suas promoções em resultados
@@ -110,18 +105,26 @@ const Promocoes = () => {
 
               {/* Botões CTA */}
               <div className="flex gap-4">
-                <Button className="h-16 px-8 rounded-xl bg-red-600 text-lg font-semibold text-white hover:bg-red-700">
+                <MotionButton
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                  className="h-16 px-8 rounded-xl bg-red-600 text-lg font-semibold text-white hover:bg-red-700"
+                >
                   Criar promoção
-                </Button>
-                <Button
+                </MotionButton>
+                <MotionButton
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
                   variant="outline"
                   className="h-16 px-8 rounded-xl border-2 border-white bg-transparent text-lg font-semibold text-white hover:bg-white/10"
                 >
                   Ver como funciona
-                </Button>
+                </MotionButton>
               </div>
             </div>
-            
+
             {/* Right Column - Background art */}
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden">
@@ -146,7 +149,7 @@ const Promocoes = () => {
               IA Integrada + 98% de precisão
             </span>
           </div>
-          
+
           {/* Título Principal */}
           <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">
             A plataforma que transforma suas promoções em resultados
@@ -156,7 +159,7 @@ const Promocoes = () => {
           <p className="text-lg text-white/85 leading-relaxed">
             A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo real — sem planilhas e sem complicação.
           </p>
-          
+
           {/* Background art */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden">
@@ -170,15 +173,23 @@ const Promocoes = () => {
 
           {/* Botões CTA */}
           <div className="flex flex-col gap-4">
-            <Button className="h-16 rounded-xl bg-red-600 text-lg font-semibold text-white hover:bg-red-700">
+            <MotionButton
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+              className="h-16 rounded-xl bg-red-600 text-lg font-semibold text-white hover:bg-red-700"
+            >
               Criar promoção
-            </Button>
-            <Button
+            </MotionButton>
+            <MotionButton
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 28 }}
               variant="outline"
               className="h-16 rounded-xl border-2 border-white bg-transparent text-lg font-semibold text-white hover:bg-white/10"
             >
               Ver como funciona
-            </Button>
+            </MotionButton>
           </div>
         </div>
       </section>
@@ -479,33 +490,14 @@ const Promocoes = () => {
             </p>
 
             {/* Logo Grid */}
-            <div className="mb-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <div className="mb-12 flex justify-center gap-6 md:gap-8">
               {/* Hellmann's Logo */}
-              <div className="flex h-16 md:h-20 items-center justify-center rounded-xl bg-white p-4">
+              <div className="flex h-16 md:h-20 items-center justify-center rounded-xl bg-white p-4 w-[250px]">
                 <img
                   src={hellmannsLogo}
                   alt="Hellmann's"
                   className="max-h-12 md:max-h-16 w-auto object-contain"
                 />
-              </div>
-              
-              {/* Cards vazios para vagas futuras */}
-              <div className="flex h-16 md:h-20 items-center justify-center rounded-xl bg-white border-2 border-dashed border-gray-300 opacity-60">
-                <span className="text-sm md:text-base font-medium text-gray-400">
-                  Marca 
-                </span>
-              </div>
-              
-              <div className="flex h-16 md:h-20 items-center justify-center rounded-xl bg-white border-2 border-dashed border-gray-300 opacity-60">
-                <span className="text-sm md:text-base font-medium text-gray-400">
-                  Marca 
-                </span>
-              </div>
-              
-              <div className="flex h-16 md:h-20 items-center justify-center rounded-xl bg-white border-2 border-dashed border-gray-300 opacity-60">
-                <span className="text-sm md:text-base font-medium text-gray-400">
-                  Marca 
-                </span>
               </div>
             </div>
 
@@ -534,11 +526,18 @@ const Promocoes = () => {
             {/* Fidelidades Plan */}
             <div className="rounded-2xl border border-[rgba(1,32,63,0.1)] bg-[#00254c] p-6 md:p-8 text-center">
               <div className="mx-auto mb-4 md:mb-6 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-full bg-[rgba(255,0,0,0.35)]">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/4ba96db0-11ef-4d79-aacd-6ab7c22416f0"
-                  alt=""
-                  className="h-5 w-5 md:h-6 md:w-6"
-                />
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    fill="#FF0000"
+                  />
+                </svg>
               </div>
               <h3 className="mb-3 md:mb-4 text-2xl md:text-[30px] font-bold leading-tight text-white">
                 Rooster Fidelidades
@@ -546,15 +545,15 @@ const Promocoes = () => {
               <p className="mb-6 md:mb-8 text-base md:text-lg font-normal leading-relaxed text-white">
                 Fidelize clientes com cashback automático.
               </p>
-              <Link to="/fidelidades">
+              <Link to="/contato">
                 <Button
                   variant="outline"
                   className="h-12 w-full rounded-xl border-2 border-white bg-transparent text-sm md:text-base font-semibold text-white hover:bg-white/10"
-                  >
-                    Ver planos de fidelidade
-                  </Button>
-                </Link>
-              </div>
+                >
+                  Ver planos de fidelidade
+                </Button>
+              </Link>
+            </div>
 
             {/* Promocoes Plan */}
             <div className="rounded-2xl bg-white p-6 md:p-8 text-center">
@@ -571,9 +570,16 @@ const Promocoes = () => {
               <p className="mb-6 md:mb-8 text-base md:text-lg font-normal leading-relaxed text-[#01203f]">
                 Crie promoções que vendem de verdade.
               </p>
-              <Button className="h-12 w-full rounded-xl bg-[#01203f] text-sm md:text-base font-semibold text-white hover:bg-[#01203f]/90">
-                Ver planos de promoções
-              </Button>
+              <Link to="/contato">
+                <MotionButton
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  className="h-12 w-full rounded-xl bg-[#01203f] text-sm md:text-base font-semibold text-white hover:bg-[#01203f]/90"
+                >
+                  Ver planos de promoções
+                </MotionButton>
+              </Link>
             </div>
           </div>
         </div>

@@ -11,6 +11,7 @@ const Header = () => {
   const navLinks = [
     { to: "/promocoes", label: "Promoções" },
     { to: "/fidelidades", label: "Fidelidades" },
+    { to: "/calculadora", label: "Calculadora" },
     { to: "/sobre-nos", label: "Sobre nós" },
   ];
 
@@ -39,17 +40,15 @@ const Header = () => {
                   <Link
                     key={item.to}
                     to={item.to}
-                    className={`relative text-sm font-medium transition-colors ${
-                      active ? "text-white" : "text-white/80 hover:text-white"
-                    }`}
+                    className={`relative text-sm font-medium transition-colors ${active ? "text-white" : "text-white/80 hover:text-white"
+                      }`}
                   >
                     {item.label}
                     <span
-                      className={`absolute -bottom-1 left-0 h-0.5 rounded-full transition-all ${
-                        active
-                          ? "w-full bg-red-500"
-                          : "w-0 bg-transparent group-hover:w-full"
-                      }`}
+                      className={`absolute -bottom-1 left-0 h-0.5 rounded-full transition-all ${active
+                        ? "w-full bg-red-500"
+                        : "w-0 bg-transparent group-hover:w-full"
+                        }`}
                     />
                   </Link>
                 );
@@ -87,11 +86,10 @@ const Header = () => {
               <Link
                 key={item.to}
                 to={item.to}
-                className={`text-lg font-medium transition-colors ${
-                  location.pathname === item.to
-                    ? "text-white"
-                    : "text-white/80 hover:text-white"
-                }`}
+                className={`text-lg font-medium transition-colors ${location.pathname === item.to
+                  ? "text-white"
+                  : "text-white/80 hover:text-white"
+                  }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}

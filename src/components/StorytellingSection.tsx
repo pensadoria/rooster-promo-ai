@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Gift, Heart, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const MotionCard = motion.div;
+const MotionLink = motion(Link);
+
 const StorytellingSection = () => {
   return (
     <section className="relative py-24 md:py-28 bg-white overflow-hidden">
@@ -29,7 +32,7 @@ const StorytellingSection = () => {
         {/* Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-[1240px] mx-auto mb-16">
           {/* Rooster Fidelidades */}
-          <div className="bg-white border border-[#01203F]/10 rounded-2xl p-8 shadow-sm h-[327px]">
+          <MotionCard className="bg-white border border-[#01203F]/10 rounded-2xl p-8 shadow-sm h-[327px]">
             <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-6">
               <Heart className="w-8 h-8 text-[#01203F]" />
             </div>
@@ -39,14 +42,15 @@ const StorytellingSection = () => {
             <p className="text-[17px] text-[rgba(1,32,63,0.8)] mb-8 leading-relaxed">
               Transforme cada compra em um motivo para voltar. Sistema automático de pontos e cashback integrado às suas promoções.
             </p>
-            <Link to="/fidelidades" className="inline-flex items-center gap-2 text-[#01203F] font-semibold p-0 h-auto hover:text-[#01203F]">
-              Ver mais
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
+            <MotionLink to="/fidelidades" className="gap-2 text-[#01203F] font-semibold p-0 hover:text-[#01203F]">
+              <p className="flex items-center gap-2">
+                Ver mais
+                <ArrowRight className="w-4 h-4" />
+              </p>
+            </MotionLink>
+          </MotionCard>
           {/* Rooster Promoções */}
-          <div className="bg-[#01203F] rounded-2xl p-8 shadow-sm h-[327px]">
+          <MotionCard className="bg-[#01203F] rounded-2xl p-8 shadow-sm h-[327px]">
             <div className="w-16 h-16 rounded-full bg-[rgba(255,0,0,0.15)] flex items-center justify-center mb-6">
               <Gift className="w-8 h-8 text-[#FF0000]" />
             </div>
@@ -56,11 +60,13 @@ const StorytellingSection = () => {
             <p className="text-[17px] text-[rgba(255,255,255,0.85)] mb-8 leading-relaxed">
               Crie promoções automáticas e acompanhe tudo em tempo real. OCR + IA para leitura de notas e validação instantânea.
             </p>
-            <Link to="/promocoes" className="inline-flex items-center gap-2 text-white font-semibold p-0 h-auto hover:text-white">
-              Ver mais
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+            <MotionLink to="/promocoes" className="inline-flex items-center gap-2 text-white font-semibold p-0 h-auto hover:text-white">
+              <p className="flex justify-center items-center gap-2">
+                Ver mais
+                <ArrowRight className="w-4 h-4" />
+              </p>
+            </MotionLink>
+          </MotionCard>
         </div>
 
         {/* Footer Text */}
