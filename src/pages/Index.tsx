@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StorytellingSection from "@/components/StorytellingSection";
 import MissionCasesSection from "@/components/MissionCasesSection";
+import AssistantPromo from "@/components/AssistantPromo";
 import TechnologySection from "@/components/TechnologySection";
 import PlatformSection from "@/components/PlatformSection";
 import ComparisonSection from "@/components/ComparisonSection";
@@ -15,9 +16,10 @@ const Index = () => {
       <Header />
       <Hero />
       <StorytellingSection />
-      <MissionCasesSection />
-      <TechnologySection />
       <PlatformSection />
+      <TechnologySection />
+      <MissionCasesSection />
+      <AssistantPromo />
       <ComparisonSection />
       <ROICalculator />
       <CTAFinal />

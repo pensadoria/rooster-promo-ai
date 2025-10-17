@@ -18,7 +18,7 @@ const CTAFinal = () => {
           Vamos criar algo <span className="text-white/80">grande</span> juntos?
         </h2>
 
-        <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto">
+        <p className="text-lg md:text-xl text-white/90 max-w-xl mx-auto pb-8">
           Fale com nosso time e acelere suas próximas campanhas.
         </p>
 

@@ -4,6 +4,11 @@
 
 @layer base {
   :root {
+    /* Design tokens from Figma */
+    --rooster-orange: #FF5001;
+    --rooster-red: #FF0000;
+    --rooster-blue: #01203F;
+    --rooster-white: #FFFFFF;
     --background: 210 97% 13%;
     --foreground: 0 0% 100%;
     --card: 210 90% 18%;
@@ -46,5 +51,11 @@
     @apply font-black;
     font-family: 'Inter', sans-serif;
     font-weight: 900;
+  }
+
+  /* Utility for the large hero heading used in Figma (72px) */
+  .hero-h1 {
+    font-size: 72px;
+    line-height: 72px;
   }
 }

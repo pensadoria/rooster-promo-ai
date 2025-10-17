@@ -1,167 +1,49 @@
 import { motion } from "framer-motion";
-import {
-  Settings,
-  FileText,
-  BarChart3,
-  Lock,
-  ArrowRight,
-} from "lucide-react";
-import { Link } from "react-router-dom";
+import { MapPin } from "lucide-react";
+import hellmannsLogo from "@/assets/hellmanns-seeklogo.png";
 
 const MissionCasesSection = () => {
   return (
     <section
       id="mission-cases"
-      className="bg-[#01203F] py-24 lg:py-32 px-6 overflow-hidden"
+      className="bg-[#01203f] py-20 md:py-28 px-6 overflow-hidden"
     >
-      <div className="container mx-auto max-w-[1400px]">
-        <div className="grid grid-cols-1 gap-16">
-          {/* MISSION BLOCK FULL-WIDTH */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+      <div className="container mx-auto max-w-[1280px]">
+        {/* Heading */}
+        <div className="text-center mb-12 md:mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-12"
+            transition={{ duration: 0.5 }}
+            className="text-white text-[32px] md:text-[44px] lg:text-[48px] font-black leading-[1.1]"
           >
-            {/* Overline */}
-            <div className="inline-block">
-              <span className="text-[#FF0000] text-sm font-bold tracking-widest uppercase">
-                Nossa missão
-              </span>
-            </div>
+            Empresas que confiam na Rooster
+          </motion.h2>
+          <p className="text-white/80 text-[16px] md:text-[20px] leading-[27px] mt-4 max-w-[820px] mx-auto">
+            De pequenos comércios a grandes marcas — a Rooster está por trás das
+            campanhas que vendem mais.
+          </p>
+        </div>
 
-            {/* H1 Title */}
-            <h1 className="font-black text-white text-4xl lg:text-[56px] leading-[1.0] tracking-tight">
-              Simplificar o marketing promocional de forma rápida, segura e
-              eficiente.
-            </h1>
+        {/* Single logo centered */}
+        <div className="max-w-[1216px] mx-auto flex items-center justify-center">
+          <img
+            src={hellmannsLogo}
+            alt="Hellmann’s"
+            className="h-12 md:h-14 lg:h-16 object-contain"
+            loading="lazy"
+          />
+        </div>
 
-            {/* Paragraph */}
-            <p className="text-white/80 text-lg leading-[1.45] max-w-4xl">
-              Crie campanhas que vendem — com sites automáticos, leitura de
-              notas via IA e resultados em tempo real. Sem complicação, sem
-              planilhas, só crescimento.
-            </p>
-
-            {/* Feature Cards Inline (Full Row) */}
-            <div className="space-y-3 border-t border-white/10 pt-8">
-              <h3 className="text-white/60 text-sm font-bold uppercase tracking-wider mb-6">
-                Tecnologia que simplifica, conecta e gera resultado.
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {[
-                  {
-                    icon: Settings,
-                    title: "Sites automáticos e prontos",
-                    text: "Crie campanhas em minutos com estrutura otimizada.",
-                  },
-                  {
-                    icon: FileText,
-                    title: "Leitura de notas via IA",
-                    text: "OCR inteligente que reconhece produtos e valida cupons.",
-                  },
-                  {
-                    icon: BarChart3,
-                    title: "Métricas em tempo real",
-                    text: "Acompanhe resultados, engajamento e ROI em um só painel.",
-                  },
-                  {
-                    icon: Lock,
-                    title: "Segurança e compliance",
-                    text: "Dados protegidos com tecnologia de nível enterprise.",
-                  },
-                ].map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.55, delay: idx * 0.08 }}
-                    className="group relative overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 flex flex-col gap-5 hover:bg-white/10 transition-colors"
-                  >
-                    <div className="w-14 h-14 rounded-xl bg-[#FF0000]/10 border border-[#FF0000]/20 flex items-center justify-center group-hover:shadow-[0_0_0_1px_rgba(255,0,0,0.25)] transition-all">
-                      <item.icon
-                        className="w-7 h-7 text-[#FF0000]"
-                        strokeWidth={2}
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      <h4 className="text-white font-extrabold text-lg leading-tight">
-                        {item.title}
-                      </h4>
-                      <p className="text-white/70 text-sm leading-relaxed">
-                        {item.text}
-                      </p>
-                    </div>
-                    <div
-                      className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
-                      style={{
-                        background:
-                          "radial-gradient(circle at 30% 30%, rgba(255,0,0,0.08), transparent 70%)",
-                      }}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* KPIs Section */}
-            <div className="border-t border-white/10 pt-8">
-              <div className="grid grid-cols-2 gap-8 max-w-md">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="space-y-1"
-                >
-                  <div className="text-3xl md:text-5xl font-black text-white">+30</div>
-                  <p className="text-white/60 text-sm font-medium">
-                    Projetos entregues
-                  </p>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="space-y-1"
-                >
-                  <div className="text-3xl md:text-5xl font-black text-white">+1M</div>
-                  <p className="text-white/60 text-sm font-medium">
-                    Usuários impactados
-                  </p>
-                </motion.div>
-              </div>
-            </div>
-
-            {/* CTAs + Pitch Inline */}
-            <div className="flex flex-col xl:flex-row items-start xl:items-center gap-6 pt-8 xl:pt-10">
-              <div className="space-y-1 max-w-xs">
-                <p className="text-white font-bold text-lg leading-tight">
-                  Quer ser o próximo?
-                </p>
-                <p className="text-white/60 text-sm">
-                  Agende uma demonstração e veja como funciona.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/contato">
-                  <button className="bg-[#FF0000] hover:bg-[#FF5001] text-white font-bold px-8 h-12 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 flex items-center gap-2">
-                    Falar com especialista
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </Link>
-                <Link to="/calculadora">
-                  <button className="text-white border-2 border-white/30 hover:border-white hover:bg-white/5 font-semibold px-8 h-12 rounded-full transition-all">
-                    Calcular economia
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-
+        {/* Bottom pill */}
+        <div className="mt-10 md:mt-12 flex justify-center">
+          <div className="inline-flex items-center gap-2 bg-[rgba(255,0,0,0.1)] text-[#FF0000] px-4 py-2 rounded-full">
+            <MapPin className="w-4 h-4" />
+            <span className="font-semibold text-[14px] md:text-[16px]">
+              Presente em todo o Brasil
+            </span>
+          </div>
         </div>
       </div>
     </section>

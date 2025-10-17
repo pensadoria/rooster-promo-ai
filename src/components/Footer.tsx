@@ -36,17 +36,17 @@ const Footer = () => {
           <div className="md:col-span-2 md:col-start-10">
             <h3 className="font-bold text-white mb-6">Menu</h3>
             <nav className="flex flex-col gap-3">
-              <Link to="/" className="text-white/70 hover:text-white transition-colors">
-                Inicio
+              <Link to="/promocoes" className="text-white/70 hover:text-white transition-colors">
+                Promoções
               </Link>
-              <Link to="/historia" className="text-white/70 hover:text-white transition-colors">
-                História
+              <Link to="/fidelidades" className="text-white/70 hover:text-white transition-colors">
+                Fidelidades
               </Link>
               <Link to="/calculadora" className="text-white/70 hover:text-white transition-colors">
                 Calculadora
               </Link>
-              <Link to="/contato" className="text-white/70 hover:text-white transition-colors">
-                Contato
+              <Link to="/sobre-nos" className="text-white/70 hover:text-white transition-colors">
+                Sobre nós
               </Link>
             </nav>
           </div>

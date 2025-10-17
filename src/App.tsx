@@ -4,6 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Promocoes from "./pages/Promocoes";
+import Fidelidades from "./pages/Fidelidades";
+import SobreNos from "./pages/SobreNos";
 import Calculator from "./pages/Calculator";
 import Contact from "./pages/Contact";
 import History from "./pages/History";
@@ -23,6 +26,9 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/promocoes" element={<Promocoes />} />
+          <Route path="/fidelidades" element={<Fidelidades />} />
+          <Route path="/sobre-nos" element={<SobreNos />} />
           <Route path="/calculadora" element={<Calculator />} />
           <Route path="/contato" element={<Contact />} />
           <Route path="/historia" element={<History />} />
