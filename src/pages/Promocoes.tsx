@@ -51,7 +51,6 @@ const Promocoes = () => {
         <div className="absolute left-[305px] top-[93px] h-[614px] w-[1280px]">
           <div className="relative h-[614px] w-full px-8 ">
             <div className="absolute left-1/2 top-1/2 h-[492px] w-[1058px] -translate-x-1/2 -translate-y-1/2">
-
               {/* Título Principal */}
               <h1 className="absolute left-1/2 top-[72px] h-[230px] w-[1058px] -translate-x-1/2 text-center font-['Inter'] text-[72px] font-black leading-[72px] text-white">
                 A plataforma que transforma suas promoções em resultados
@@ -69,7 +68,7 @@ const Promocoes = () => {
                   <MotionButton
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 28 }}
                     className="h-16 w-[270.328px] rounded-xl bg-[#ff0000] font-['Inter'] text-[18px] font-semibold text-white hover:bg-[#ff0000]/90"
                   >
                     Ver como funciona
@@ -90,7 +89,6 @@ const Promocoes = () => {
               {/* Badge com ícone */}
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2">
                 <Sparkles className="h-4 w-4 text-white/90" />
-
               </div>
 
               {/* Título Principal */}
@@ -100,7 +98,8 @@ const Promocoes = () => {
 
               {/* Subtítulo */}
               <p className="text-lg lg:text-xl text-white/85 leading-relaxed">
-                A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo real — sem planilhas e sem complicação.
+                A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo
+                real — sem planilhas e sem complicação.
               </p>
 
               {/* Botões CTA */}
@@ -108,7 +107,7 @@ const Promocoes = () => {
                 <MotionButton
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 28 }}
                   className="h-16 px-8 rounded-xl bg-red-600 text-lg font-semibold text-white hover:bg-red-700"
                 >
                   Criar promoção
@@ -116,7 +115,7 @@ const Promocoes = () => {
                 <MotionButton
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 28 }}
                   variant="outline"
                   className="h-16 px-8 rounded-xl border-2 border-white bg-transparent text-lg font-semibold text-white hover:bg-white/10"
                 >
@@ -157,7 +156,8 @@ const Promocoes = () => {
 
           {/* Subtítulo */}
           <p className="text-lg text-white/85 leading-relaxed">
-            A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo real — sem planilhas e sem complicação.
+            A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo
+            real — sem planilhas e sem complicação.
           </p>
 
           {/* Background art */}
@@ -176,7 +176,7 @@ const Promocoes = () => {
             <MotionButton
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+              transition={{ type: "spring", stiffness: 400, damping: 28 }}
               className="h-16 rounded-xl bg-red-600 text-lg font-semibold text-white hover:bg-red-700"
             >
               Criar promoção
@@ -184,7 +184,7 @@ const Promocoes = () => {
             <MotionButton
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+              transition={{ type: "spring", stiffness: 400, damping: 28 }}
               variant="outline"
               className="h-16 rounded-xl border-2 border-white bg-transparent text-lg font-semibold text-white hover:bg-white/10"
             >
@@ -195,7 +195,13 @@ const Promocoes = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-white py-16 md:py-24 lg:py-32">
+      <motion.section
+        className="bg-white py-16 md:py-24 lg:py-32"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-7xl px-6 lg:px-20">
           {/* Header */}
           <div className="mb-12 md:mb-16 lg:mb-20 text-center">
@@ -203,7 +209,8 @@ const Promocoes = () => {
               De notas fiscais a resultados em segundos
             </h2>
             <p className="mx-auto max-w-2xl md:max-w-3xl lg:max-w-[720px] text-lg md:text-xl lg:text-[20px] font-normal leading-relaxed text-[rgba(1,32,63,0.8)]">
-              Configure campanhas automáticas e veja sua promoção funcionar no piloto automático.
+              Configure campanhas automáticas e veja sua promoção funcionar no
+              piloto automático.
             </p>
           </div>
 
@@ -257,7 +264,8 @@ const Promocoes = () => {
               </h3>
               {/* Description */}
               <p className="text-center text-sm md:text-base font-normal leading-relaxed text-[rgba(1,32,63,0.7)]">
-                OCR + inteligência artificial verificam os critérios da campanha.
+                OCR + inteligência artificial verificam os critérios da
+                campanha.
               </p>
             </div>
 
@@ -283,15 +291,22 @@ const Promocoes = () => {
               </h3>
               {/* Description */}
               <p className="text-center text-sm md:text-base font-normal leading-relaxed text-[rgba(1,32,63,0.7)]">
-                Você acompanha cupons validados, participantes e métricas sem esforço.
+                Você acompanha cupons validados, participantes e métricas sem
+                esforço.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Automation Features Section */}
-      <section className="bg-[#0344dc]/5 py-16 md:py-24 lg:py-32">
+      <motion.section
+        className="bg-[#0344dc]/5 py-16 md:py-24 lg:py-32"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-7xl px-6 lg:px-20">
           <h2 className="mb-12 md:mb-16 lg:mb-20 text-center text-3xl md:text-4xl lg:text-[48px] font-black leading-tight text-[#01203f]">
             Automatize tudo, de ponta a ponta
@@ -312,7 +327,8 @@ const Promocoes = () => {
                 Leitura Inteligente (OCR + IA)
               </h3>
               <p className="text-sm md:text-base text-[#01203f]/70 leading-relaxed">
-                A Rooster identifica produtos, loja, CNPJ, data e valor com precisão total.
+                A Rooster identifica produtos, loja, CNPJ, data e valor com
+                precisão total.
               </p>
             </div>
 
@@ -329,7 +345,8 @@ const Promocoes = () => {
                 Gestão Automatizada
               </h3>
               <p className="text-sm md:text-base text-[#01203f]/70 leading-relaxed">
-                Sem planilhas — o sistema cuida da inscrição, validação e premiação.
+                Sem planilhas — o sistema cuida da inscrição, validação e
+                premiação.
               </p>
             </div>
 
@@ -368,10 +385,16 @@ const Promocoes = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Technology Section */}
-      <section className="bg-[#01203f] py-16 md:py-24 lg:py-32">
+      <motion.section
+        className="bg-[#01203f] py-16 md:py-24 lg:py-32"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-7xl px-6 lg:px-20">
           <div className="grid grid-cols-1 gap-12 md:gap-16 lg:gap-16 md:grid-cols-2">
             {/* Left Column - Text */}
@@ -380,7 +403,9 @@ const Promocoes = () => {
                 Tecnologia que trabalha por você
               </h2>
               <p className="mb-8 md:mb-12 text-lg md:text-xl lg:text-[20px] font-normal leading-relaxed text-white/85">
-                Por trás da Rooster, uma tecnologia de ponta feita para ser simples. OCR integrado à IA, dashboards de alta performance e segurança total.
+                Por trás da Rooster, uma tecnologia de ponta feita para ser
+                simples. OCR integrado à IA, dashboards de alta performance e
+                segurança total.
               </p>
 
               {/* Tech Features Grid - 2x2 */}
@@ -475,18 +500,24 @@ const Promocoes = () => {
             </div>
           </div>
         </div>
-      </section>
-
+      </motion.section>
 
       {/* Clients Section */}
-      <section className="bg-[#0344dc]/5 py-16 md:py-24 lg:py-32">
+      <motion.section
+        className="bg-[#0344dc]/5 py-16 md:py-24 lg:py-32"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-7xl px-6 lg:px-20">
           <div className="text-center">
             <h2 className="mb-4 text-2xl md:text-3xl lg:text-[36px] font-black leading-tight text-[#01203f]">
               Empresas que crescem com a Rooster
             </h2>
             <p className="mb-12 md:mb-16 text-base md:text-lg leading-relaxed text-[#01203f]/80 max-w-3xl mx-auto">
-              De pequenas lojas a grandes marcas — a Rooster está por trás de promoções que fazem a diferença.
+              De pequenas lojas a grandes marcas — a Rooster está por trás de
+              promoções que fazem a diferença.
             </p>
 
             {/* Logo Grid */}
@@ -512,10 +543,16 @@ const Promocoes = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="bg-[#021a33] py-16 md:py-24 lg:py-32">
+      <motion.section
+        className="bg-[#021a33] py-16 md:py-24 lg:py-32"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-7xl px-6 lg:px-20">
           <h2 className="mb-12 md:mb-16 lg:mb-20 text-center text-3xl md:text-4xl lg:text-[48px] font-black leading-tight text-white">
             Escolha o melhor caminho para seu crescimento
@@ -574,7 +611,7 @@ const Promocoes = () => {
                 <MotionButton
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   className="h-12 w-full rounded-xl bg-[#01203f] text-sm md:text-base font-semibold text-white hover:bg-[#01203f]/90"
                 >
                   Ver planos de promoções
@@ -583,7 +620,7 @@ const Promocoes = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>

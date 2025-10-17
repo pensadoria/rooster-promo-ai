@@ -137,7 +137,7 @@ const Fidelidades = () => {
               to="/contato"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+              transition={{ type: "spring", stiffness: 400, damping: 28 }}
               className="inline-flex items-center justify-center rounded-[12px] text-white font-semibold"
               style={{
                 width: 200.109,
@@ -152,7 +152,13 @@ const Fidelidades = () => {
       </section>
 
       {/* Features Row (Figma node 40:2140 - balanced design) */}
-      <section className="bg-white py-20 lg:py-28">
+      <motion.section
+        className="bg-white py-20 lg:py-28"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-[1280px] px-6 lg:px-20">
           {/* Title + subtitle */}
           <div className="text-center mx-auto mb-16">
@@ -230,10 +236,16 @@ const Fidelidades = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Mais que pontos section (Figma node 40:2186) */}
-      <section className="bg-[rgba(3,68,220,0.05)] py-20 lg:py-28">
+      <motion.section
+        className="bg-[rgba(3,68,220,0.05)] py-20 lg:py-28"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-[1280px] px-6 lg:px-20">
           {/* Title */}
           <div className="text-center mb-16">
@@ -316,10 +328,16 @@ const Fidelidades = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Tudo conectado section (Figma node 40:2234) */}
-      <section className="bg-[#01203f] text-white py-20 lg:py-28">
+      <motion.section
+        className="bg-[#01203f] text-white py-20 lg:py-28"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-[1280px] px-6 lg:px-20">
           <div className="max-w-[576px]">
             <h2 className="font-black text-4xl lg:text-[48px] lg:leading-[44px] text-white mb-6">
@@ -382,17 +400,23 @@ const Fidelidades = () => {
               to="/promocoes"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+              transition={{ type: "spring", stiffness: 400, damping: 28 }}
               className="inline-flex items-center justify-center px-8 py-4 bg-[#ff0000] text-white font-semibold text-[16px] rounded-xl hover:bg-[#ff0000]/90 transition-colors"
             >
               Clique Aqui
             </MotionLink>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Results Section - Resultados que você vê crescer */}
-      <section className="bg-white py-16 lg:py-20">
+      <motion.section
+        className="bg-white py-16 lg:py-20"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-[1280px] px-6">
           {/* Title */}
           <h2 className="text-[40px] lg:text-[48px] leading-[44px] lg:leading-[54px] font-bold text-[#01203f] text-center mb-16">
@@ -465,10 +489,16 @@ const Fidelidades = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Choose Your Path Section - Escolha o melhor caminho para seu crescimento */}
-      <section className="bg-[#f2f6fd] py-16 lg:py-20">
+      <motion.section
+        className="bg-[#f2f6fd] py-16 lg:py-20"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="container mx-auto max-w-[1280px] px-6">
           {/* Title */}
           <h2 className="text-[40px] lg:text-[48px] leading-[44px] lg:leading-[54px] font-bold text-[#01203f] text-center mb-12">
@@ -510,7 +540,7 @@ const Fidelidades = () => {
                 to="/contato"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                transition={{ type: "spring", stiffness: 400, damping: 28 }}
                 className="w-full max-w-[360px] h-[56px] flex items-center justify-center border-2 border-white rounded-lg text-[16px] font-semibold hover:bg-white hover:text-[#01203f] transition-colors"
               >
                 Ver planos de fidelidade
@@ -543,7 +573,7 @@ const Fidelidades = () => {
                 to="/contato"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 28 }}
+                transition={{ type: "spring", stiffness: 400, damping: 28 }}
                 className="w-full max-w-[360px] h-[56px] flex items-center justify-center bg-[#01203f] text-white rounded-lg text-[16px] font-semibold hover:bg-[#01203f]/90 transition-colors"
               >
                 Ver planos de promoções
@@ -551,7 +581,7 @@ const Fidelidades = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>

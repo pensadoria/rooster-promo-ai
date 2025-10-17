@@ -77,10 +77,10 @@ const SobreNos = () => {
       {/* História Premiafy Section */}
       <motion.section
         className="bg-white py-32"
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="mx-auto max-w-[1280px] px-20">
           <div className="mx-8">
@@ -171,7 +171,13 @@ const SobreNos = () => {
       </motion.section>
 
       {/* Missão Section */}
-      <section className="bg-[#01203f] py-32">
+      <motion.section
+        className="bg-[#01203f] py-32"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="mx-auto max-w-[1280px] px-20">
           <div className="mx-48 text-center">
             {/* Icon */}
@@ -196,10 +202,16 @@ const SobreNos = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Valores Section */}
-      <section className="bg-white py-32">
+      <motion.section
+        className="bg-white py-32"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="mx-auto max-w-[1280px] px-20">
           <div className="mx-8">
             {/* Title */}
@@ -279,10 +291,16 @@ const SobreNos = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* O que esperar Section */}
-      <section className="bg-white py-32">
+      <motion.section
+        className="bg-white py-32"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="mx-auto max-w-[1280px] px-20">
           <div className="mx-8">
             {/* Title */}
@@ -386,10 +404,16 @@ const SobreNos = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="bg-[#021a33] py-32">
+      <motion.section
+        className="bg-[#021a33] py-32"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="mx-auto max-w-[1280px] px-20">
           <div className="mx-16">
             <h2 className="mb-20 text-center font-['Inter'] text-[48px] font-black leading-[44px] text-white">
@@ -463,7 +487,7 @@ const SobreNos = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>
