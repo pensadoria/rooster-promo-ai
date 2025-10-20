@@ -82,7 +82,7 @@ const Fidelidades = () => {
         <div className="absolute inset-0 bg-[rgba(0,0,0,0.2)]" />
 
         {/* Centered content per Figma */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[611px] text-center">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[611px] px-4 md:px-6 text-center">
           {/* pill - exact 201x40 with absolute inner icon/text */}
           <div
             className="relative mx-auto rounded-full"
@@ -112,22 +112,18 @@ const Fidelidades = () => {
             </span>
           </div>
 
-          <h1 className="mt-[33px] text-white hero-h1 font-black w-[605px] mx-auto">
+          <h1 className="mt-[33px] text-white text-[32px] md:text-[48px] lg:text-[72px] leading-[36px] md:leading-[52px] lg:leading-[72px] font-black max-w-[605px] w-full mx-auto">
             Fidelize clientes em minutos
           </h1>
 
-          <p
-            className="mt-[16px] text-white/90 mx-auto"
-            style={{ width: 611, fontSize: 20, lineHeight: "27px" }}
-          >
+          <p className="mt-4 text-white/90 mx-auto max-w-[611px] w-full text-[16px] md:text-[18px] lg:text-[20px] leading-[22px] md:leading-[24px] lg:leading-[27px]">
             A Rooster Fidelidades transforma cada compra em pontos automáticos
             que viram cashback. Tudo integrado à sua plataforma de promoções.
           </p>
 
           {/* Buttons group - exact widths inside a 494px group with 16px gap */}
           <motion.div
-            className="mx-auto mt-[33px] flex items-center justify-center"
-            style={{ width: 494, height: 64 }}
+            className="mx-auto mt-8 flex items-center justify-center w-full max-w-[494px]"
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -138,12 +134,7 @@ const Fidelidades = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 28 }}
-              className="inline-flex items-center justify-center rounded-[12px] text-white font-semibold"
-              style={{
-                width: 200.109,
-                height: 64,
-                background: "var(--rooster-red)",
-              }}
+              className="w-full md:w-[200px] h-[56px] md:h-[64px] inline-flex items-center justify-center rounded-[12px] text-white font-semibold bg-[#FF0000]"
             >
               Começar Agora
             </MotionLink>
@@ -162,19 +153,19 @@ const Fidelidades = () => {
         <div className="container mx-auto max-w-[1280px] px-6 lg:px-20">
           {/* Title + subtitle */}
           <div className="text-center mx-auto mb-16">
-            <h2 className="font-black text-[#01203f] text-4xl lg:text-[48px] lg:leading-[44px] mb-6">
+            <h2 className="font-black text-[#01203f] text-[28px] md:text-[36px] lg:text-[48px] leading-[32px] md:leading-[40px] lg:leading-[44px] mb-6">
               Simples, rápido e automático
             </h2>
-            <p className="text-lg lg:text-[20px] lg:leading-[27px] text-[rgba(1,32,63,0.8)] max-w-[760px] mx-auto">
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] leading-[22px] md:leading-[24px] lg:leading-[27px] text-[rgba(1,32,63,0.8)] max-w-[760px] mx-auto px-4">
               Configure seu programa de fidelidade em minutos e veja seus
               clientes voltarem mais.
             </p>
           </div>
 
           {/* Cards grid - mais compacto */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1216px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-[1216px] mx-auto">
             {/* Card 1 */}
-            <div className="bg-white border border-[rgba(1,32,63,0.1)] rounded-[16px] px-6 py-8 text-center flex flex-col items-center min-h-[280px]">
+            <div className="bg-white border border-[rgba(1,32,63,0.1)] rounded-[16px] p-6 md:p-8 text-center flex flex-col items-center min-h-[240px] md:min-h-[280px]">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-8 bg-[rgba(1,32,63,0.05)]">
                 <img
                   src={ASSETS.postHeroIcon1}
@@ -185,7 +176,7 @@ const Fidelidades = () => {
               <div className="text-[#FF0000] font-semibold text-sm mb-4">
                 01
               </div>
-              <h3 className="font-bold text-[#01203f] text-[24px] leading-tight mb-4">
+              <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] leading-tight mb-4 break-words">
                 Configure em minutos
               </h3>
               <p className="text-[16px] text-[rgba(1,32,63,0.7)] leading-[1.4]">
@@ -195,7 +186,7 @@ const Fidelidades = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white border border-[rgba(1,32,63,0.1)] rounded-[16px] px-6 py-8 text-center flex flex-col items-center min-h-[280px]">
+            <div className="bg-white border border-[rgba(1,32,63,0.1)] rounded-[16px] p-6 md:p-8 text-center flex flex-col items-center min-h-[240px] md:min-h-[280px]">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-8 bg-[rgba(255,0,0,0.05)]">
                 <img
                   src={ASSETS.postHeroIcon2}
@@ -206,7 +197,7 @@ const Fidelidades = () => {
               <div className="text-[#FF0000] font-semibold text-sm mb-4">
                 02
               </div>
-              <h3 className="font-bold text-[#01203f] text-[24px] leading-tight mb-4">
+              <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] leading-tight mb-4 break-words">
                 Acúmulo automático
               </h3>
               <p className="text-[16px] text-[rgba(1,32,63,0.7)] leading-[1.4]">
@@ -216,7 +207,7 @@ const Fidelidades = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white border border-[rgba(1,32,63,0.1)] rounded-[16px] px-6 py-8 text-center flex flex-col items-center min-h-[280px]">
+            <div className="bg-white border border-[rgba(1,32,63,0.1)] rounded-[16px] p-6 md:p-8 text-center flex flex-col items-center min-h-[240px] md:min-h-[280px]">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-8 bg-[rgba(1,32,63,0.05)]">
                 <img
                   src={ASSETS.postHeroIcon3}
@@ -227,7 +218,7 @@ const Fidelidades = () => {
               <div className="text-[#FF0000] font-semibold text-sm mb-4">
                 03
               </div>
-              <h3 className="font-bold text-[#01203f] text-[24px] leading-tight mb-4">
+              <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] leading-tight mb-4 break-words">
                 Dashboard em tempo real
               </h3>
               <p className="text-[16px] text-[rgba(1,32,63,0.7)] leading-[1.4]">
@@ -249,15 +240,15 @@ const Fidelidades = () => {
         <div className="container mx-auto max-w-[1280px] px-6 lg:px-20">
           {/* Title */}
           <div className="text-center mb-16">
-            <h2 className="font-black text-[#01203f] text-4xl lg:text-[48px] lg:leading-[44px]">
+            <h2 className="font-black text-[#01203f] text-[28px] md:text-[36px] lg:text-[48px] leading-[32px] md:leading-[40px] lg:leading-[44px] px-4">
               Mais que pontos, uma experiência completa
             </h2>
           </div>
 
           {/* Grid 2x2 de cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-[1216px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-[1216px] mx-auto">
             {/* Card 1: Pontos + Cashback */}
-            <div className="bg-white/80 rounded-[16px] p-8">
+            <div className="bg-white/80 rounded-[16px] p-6 md:p-8">
               <div className="w-12 h-12 rounded-[8px] bg-[rgba(255,80,1,0.2)] flex items-center justify-center mb-6">
                 <img
                   src={ASSETS.experienceIcon1}
@@ -265,7 +256,7 @@ const Fidelidades = () => {
                   className="w-5 h-5 object-contain"
                 />
               </div>
-              <h3 className="font-bold text-[#01203f] text-[24px] mb-3">
+              <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] mb-3 break-words">
                 Pontos + Cashback Automático
               </h3>
               <p className="text-[16px] text-[rgba(1,32,63,0.7)] leading-relaxed">
@@ -275,7 +266,7 @@ const Fidelidades = () => {
             </div>
 
             {/* Card 2: Integração */}
-            <div className="bg-white/80 rounded-[16px] p-8">
+            <div className="bg-white/80 rounded-[16px] p-6 md:p-8">
               <div className="w-12 h-12 rounded-[8px] bg-[rgba(255,0,0,0.2)] flex items-center justify-center mb-6">
                 <img
                   src={ASSETS.experienceIcon2}
@@ -283,7 +274,7 @@ const Fidelidades = () => {
                   className="w-6 h-5 object-contain"
                 />
               </div>
-              <h3 className="font-bold text-[#01203f] text-[24px] mb-3">
+              <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] mb-3 break-words">
                 Integração com Promoções
               </h3>
               <p className="text-[16px] text-[rgba(1,32,63,0.7)] leading-relaxed">
@@ -293,7 +284,7 @@ const Fidelidades = () => {
             </div>
 
             {/* Card 3: Dashboard */}
-            <div className="bg-white/80 rounded-[16px] p-8">
+            <div className="bg-white/80 rounded-[16px] p-6 md:p-8">
               <div className="w-12 h-12 rounded-[8px] bg-[rgba(1,32,63,0.2)] flex items-center justify-center mb-6">
                 <img
                   src={ASSETS.experienceIcon3}
@@ -301,7 +292,7 @@ const Fidelidades = () => {
                   className="w-5 h-5 object-contain"
                 />
               </div>
-              <h3 className="font-bold text-[#01203f] text-[24px] mb-3">
+              <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] mb-3 break-words">
                 Dashboard de Resultados
               </h3>
               <p className="text-[16px] text-[rgba(1,32,63,0.7)] leading-relaxed">
@@ -310,7 +301,7 @@ const Fidelidades = () => {
             </div>
 
             {/* Card 4: Engajamento */}
-            <div className="bg-white/80 rounded-[16px] p-8">
+            <div className="bg-white/80 rounded-[16px] p-6 md:p-8">
               <div className="w-12 h-12 rounded-[8px] bg-[rgba(255,80,1,0.2)] flex items-center justify-center mb-6">
                 <img
                   src={ASSETS.experienceIcon4}
@@ -318,7 +309,7 @@ const Fidelidades = () => {
                   className="w-4 h-5 object-contain"
                 />
               </div>
-              <h3 className="font-bold text-[#01203f] text-[24px] mb-3">
+              <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] mb-3 break-words">
                 Engajamento Inteligente
               </h3>
               <p className="text-[16px] text-[rgba(1,32,63,0.7)] leading-relaxed">
@@ -339,17 +330,17 @@ const Fidelidades = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="container mx-auto max-w-[1280px] px-6 lg:px-20">
-          <div className="max-w-[576px]">
-            <h2 className="font-black text-4xl lg:text-[48px] lg:leading-[44px] text-white mb-6">
+          <div className="max-w-[576px] w-full">
+            <h2 className="font-black text-[28px] md:text-[36px] lg:text-[48px] leading-[32px] md:leading-[40px] lg:leading-[44px] text-white mb-6">
               Tudo conectado para crescer
             </h2>
-            <p className="text-lg lg:text-[20px] lg:leading-[27px] text-white/85 mb-12 max-w-[541px]">
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] leading-[22px] md:leading-[24px] lg:leading-[27px] text-white/85 mb-8 md:mb-12 max-w-[541px] w-full">
               Duas ferramentas poderosas em um só lugar: atraia com promoções e
               mantenha com fidelidade.
             </p>
 
             {/* Checklist */}
-            <ul className="space-y-6 mb-8">
+            <ul className="space-y-4 md:space-y-6 mb-6 md:mb-8">
               <li className="flex items-center gap-4">
                 <div className="w-6 h-6 rounded-full bg-[rgba(0,255,4,0.09)] flex items-center justify-center flex-shrink-0">
                   <img
@@ -419,12 +410,12 @@ const Fidelidades = () => {
       >
         <div className="container mx-auto max-w-[1280px] px-6">
           {/* Title */}
-          <h2 className="text-[40px] lg:text-[48px] leading-[44px] lg:leading-[54px] font-bold text-[#01203f] text-center mb-16">
+          <h2 className="text-[28px] md:text-[36px] lg:text-[48px] leading-[32px] md:leading-[40px] lg:leading-[54px] font-bold text-[#01203f] text-center mb-16 px-4">
             Resultados que você vê crescer
           </h2>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Card 1 - Aumento na recompra */}
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 rounded-full bg-[rgba(255,0,0,0.08)] flex items-center justify-center mb-6">
@@ -434,13 +425,13 @@ const Fidelidades = () => {
                   className="w-[30px] h-[30px] object-contain"
                 />
               </div>
-              <p className="text-[36px] leading-[40px] font-black text-[#01203f] mb-4">
+              <p className="text-[28px] md:text-[36px] leading-[32px] md:leading-[40px] font-black text-[#01203f] mb-4">
                 +40%
               </p>
-              <p className="text-[18px] leading-[24px] font-semibold text-[#01203f] mb-3">
+              <p className="text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] font-semibold text-[#01203f] mb-3">
                 aumento na recompra média
               </p>
-              <p className="text-[16px] leading-[22px] text-[rgba(1,32,63,0.7)]">
+              <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] text-[rgba(1,32,63,0.7)] px-4">
                 Estudos mostram que programas de fidelidade bem estruturados
                 elevam o ticket médio em até 40%.
               </p>
@@ -455,13 +446,13 @@ const Fidelidades = () => {
                   className="w-[30px] h-[30px] object-contain"
                 />
               </div>
-              <p className="text-[36px] leading-[40px] font-black text-[#01203f] mb-4">
+              <p className="text-[28px] md:text-[36px] leading-[32px] md:leading-[40px] font-black text-[#01203f] mb-4">
                 5 min
               </p>
-              <p className="text-[18px] leading-[24px] font-semibold text-[#01203f] mb-3">
+              <p className="text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] font-semibold text-[#01203f] mb-3">
                 de configuração
               </p>
-              <p className="text-[16px] leading-[22px] text-[rgba(1,32,63,0.7)]">
+              <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] text-[rgba(1,32,63,0.7)] px-4">
                 Configure sua campanha de cashback em menos de 5 minutos, sem
                 complexidade.
               </p>
@@ -476,13 +467,13 @@ const Fidelidades = () => {
                   className="w-[30px] h-[30px] object-contain"
                 />
               </div>
-              <p className="text-[36px] leading-[40px] font-black text-[#01203f] mb-4">
+              <p className="text-[28px] md:text-[36px] leading-[32px] md:leading-[40px] font-black text-[#01203f] mb-4">
                 Feedback real
               </p>
-              <p className="text-[18px] leading-[24px] font-semibold text-[#01203f] mb-3">
+              <p className="text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] font-semibold text-[#01203f] mb-3">
                 de quem usa
               </p>
-              <p className="text-[16px] leading-[22px] text-[rgba(1,32,63,0.7)]">
+              <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[22px] text-[rgba(1,32,63,0.7)] px-4">
                 "Com a Rooster, eu finalmente consegui criar uma campanha de
                 fidelidade que funciona de verdade."
               </p>
@@ -501,14 +492,14 @@ const Fidelidades = () => {
       >
         <div className="container mx-auto max-w-[1280px] px-6">
           {/* Title */}
-          <h2 className="text-[40px] lg:text-[48px] leading-[44px] lg:leading-[54px] font-bold text-[#01203f] text-center mb-12">
+          <h2 className="text-[28px] md:text-[36px] lg:text-[48px] leading-[32px] md:leading-[40px] lg:leading-[54px] font-bold text-[#01203f] text-center mb-12 px-4">
             Escolha o melhor caminho para seu crescimento
           </h2>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-[1200px] mx-auto">
             {/* Card 1 - Rooster Fidelidades */}
-            <div className="bg-[#01203f] text-white rounded-2xl p-8 lg:p-10 flex flex-col items-center text-center">
+            <div className="bg-[#01203f] text-white rounded-2xl p-6 md:p-8 lg:p-10 flex flex-col items-center text-center">
               {/* Icon */}
               <div className="w-16 h-16 rounded-full bg-[rgba(255,0,0,0.2)] flex items-center justify-center mb-6">
                 <svg
@@ -526,7 +517,7 @@ const Fidelidades = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-[28px] lg:text-[32px] leading-[32px] lg:leading-[36px] font-bold mb-4">
+              <h3 className="text-[24px] md:text-[28px] lg:text-[32px] leading-[28px] md:leading-[32px] lg:leading-[36px] font-bold mb-4">
                 Rooster Fidelidades
               </h3>
 
@@ -548,7 +539,7 @@ const Fidelidades = () => {
             </div>
 
             {/* Card 2 - Rooster Promoções */}
-            <div className="bg-white text-[#01203f] rounded-2xl p-8 lg:p-10 flex flex-col items-center text-center border border-[#01203f]/10">
+            <div className="bg-white text-[#01203f] rounded-2xl p-6 md:p-8 lg:p-10 flex flex-col items-center text-center border border-[#01203f]/10">
               {/* Icon */}
               <div className="w-16 h-16 rounded-full bg-[rgba(1,32,63,0.08)] flex items-center justify-center mb-6">
                 <img
@@ -559,7 +550,7 @@ const Fidelidades = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-[28px] lg:text-[32px] leading-[32px] lg:leading-[36px] font-bold mb-4">
+              <h3 className="text-[24px] md:text-[28px] lg:text-[32px] leading-[28px] md:leading-[32px] lg:leading-[36px] font-bold mb-4">
                 Rooster Promoções
               </h3>
 
