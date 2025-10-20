@@ -11,6 +11,7 @@ import * as z from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import InputMask from "react-input-mask";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres").max(100, "Nome deve ter no máximo 100 caracteres"),
@@ -137,13 +138,20 @@ const Contact = () => {
                   <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
                     Telefone
                   </label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="(00) 00000-0000"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                  <InputMask
+                    mask="(99) 99999-9999"
                     {...register("phone")}
-                  />
+                  >
+                    {(inputProps: any) => (
+                      <Input
+                        {...inputProps}
+                        id="phone"
+                        type="tel"
+                        placeholder="(00) 00000-0000"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                      />
+                    )}
+                  </InputMask>
                   {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>}
                 </div>
 
