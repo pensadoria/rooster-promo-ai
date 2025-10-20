@@ -1,25 +1,14 @@
-import Header from "@/components/Header";
+import hellmannsLogo from "@/assets/hellmanns-seeklogo.png";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import {
+  Sparkles
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const MotionButton = motion(Button);
-import { Link } from "react-router-dom";
-import hellmannsLogo from "@/assets/hellmanns-seeklogo.png";
-import {
-  Upload,
-  Sparkles,
-  TrendingUp,
-  Zap,
-  Shield,
-  Brain,
-  BarChart3,
-  Gift,
-  CheckCircle2,
-  Gauge,
-  ArrowRight,
-  Clock,
-} from "lucide-react";
 
 const Promocoes = () => {
   return (
@@ -77,7 +66,7 @@ const Promocoes = () => {
       </section>
 
       {/* Hero Section - Tablet Layout */}
-      <section className="hidden lg:block xl:hidden relative min-h-screen overflow-hidden bg-[#01203f] pt-24 pb-12 px-8">
+      <section className="hidden lg:block xl:hidden relative overflow-hidden bg-[#01203f] pt-24 pb-12 px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column */}
@@ -134,7 +123,7 @@ const Promocoes = () => {
       </section>
 
       {/* Hero Section - Mobile Layout */}
-      <section className="block lg:hidden relative min-h-screen overflow-hidden bg-[#01203f] pt-24 pb-12 px-6">
+      <section className="block lg:hidden relative overflow-hidden bg-[#01203f] pt-24 pb-12 px-6">
         <div className="max-w-md mx-auto text-center space-y-8">
           {/* Badge com ícone */}
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2">
@@ -151,17 +140,6 @@ const Promocoes = () => {
           <p className="text-lg text-white/85 leading-relaxed">
             A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo real — sem planilhas e sem complicação.
           </p>
-
-          {/* Background art */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden">
-              <img
-                src="https://www.figma.com/api/mcp/asset/08bcd011-3349-434a-844d-8c4fb4130a93"
-                alt="Rooster background art"
-                className="w-full h-auto object-cover rounded-2xl"
-              />
-            </div>
-          </div>
 
           {/* Botões CTA */}
           <div className="flex flex-col gap-4">

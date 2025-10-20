@@ -1,7 +1,7 @@
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Link } from "react-router-dom";
+import Header from "@/components/Header";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const MotionLink = motion(Link);
 
@@ -65,7 +65,7 @@ const Fidelidades = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative h-[800px] w-full overflow-hidden bg-[rgba(1,32,63,0.95)]">
+      <section className="relative h-[450px] md:h-[800px] w-full mt-[50px] md:mt-0 overflow-hidden bg-[rgba(1,32,63,0.95)]">
         {/* background art (left) positioned exactly like Figma */}
         <div
           className="absolute hidden lg:block"
