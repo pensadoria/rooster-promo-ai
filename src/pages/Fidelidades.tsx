@@ -42,7 +42,7 @@ const Fidelidades = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative md:h-[800px] w-full overflow-hidden bg-[rgba(1,32,63,0.95)]">
+      <section className="relative h-[800px] w-full overflow-hidden bg-[rgba(1,32,63,0.95)]">
         {/* background art (left) positioned exactly like Figma */}
         <div className="absolute hidden lg:block" style={{ left: 6, top: 68, width: 517.001, height: 757.578 }}>
           <img src={ASSETS.heroArt} alt="art" className="block max-w-none w-full h-full object-contain" />
