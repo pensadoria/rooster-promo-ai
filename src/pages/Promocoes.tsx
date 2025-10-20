@@ -88,23 +88,27 @@ const Promocoes = () => {
 
               {/* Botões CTA */}
               <div className="flex gap-4">
-                <MotionButton
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 28 }}
-                  className="h-16 px-8 rounded-xl bg-red-600 text-lg font-semibold text-white hover:bg-red-700"
-                >
-                  Criar promoção
-                </MotionButton>
-                <MotionButton
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 28 }}
-                  variant="outline"
-                  className="h-16 px-8 rounded-xl border-2 border-white bg-transparent text-lg font-semibold text-white hover:bg-white/10"
-                >
-                  Ver como funciona
-                </MotionButton>
+                <Link to="/contato">
+                  <MotionButton
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 28 }}
+                    className="h-16 px-8 rounded-xl bg-red-600 text-lg font-semibold text-white hover:bg-red-700"
+                  >
+                    Criar promoção
+                  </MotionButton>
+                </Link>
+                <Link to="/contato">
+                  <MotionButton
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 28 }}
+                    variant="outline"
+                    className="h-16 px-8 rounded-xl border-2 border-white bg-transparent text-lg font-semibold text-white hover:bg-white/10"
+                  >
+                    Ver como funciona
+                  </MotionButton>
+                </Link>
               </div>
             </div>
 
