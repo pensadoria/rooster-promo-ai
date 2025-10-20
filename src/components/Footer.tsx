@@ -1,9 +1,7 @@
 import { Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
-  return (
-    <footer className="bg-[#01203f] py-16 px-6">
+  return <footer className="bg-[#01203f] py-16 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           {/* Brand Column */}
@@ -16,17 +14,11 @@ const Footer = () => {
             <p className="text-white/70 max-w-md leading-relaxed">
               A Rooster usa tecnologia Premiafy e tem seus direitos reservados
             </p>
-            <a
-              href="mailto:comercial@rooster.app.br"
-              className="flex items-center gap-2 text-white/70 hover:text-white transition-colors w-fit"
-            >
+            <a href="mailto:comercial@rooster.app.br" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors w-fit">
               <Mail className="w-5 h-5" />
               <span>comercial@rooster.app.br</span>
             </a>
-            <a
-              href="tel:+5511976292960"
-              className="flex items-center gap-2 text-white/70 hover:text-white transition-colors w-fit"
-            >
+            <a href="tel:+5511976292960" className="flex items-center gap-2 text-white/70 hover:text-white transition-colors w-fit">
               <Phone className="w-5 h-5" />
               <span>(11) 97629-2960</span>
             </a>
@@ -54,7 +46,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/60 text-sm">© 2024 Rooster. Todos os direitos reservados.</p>
+          <p className="text-white/60 text-sm">© 2025 Rooster. Todos os direitos reservados.</p>
           <div className="flex items-center gap-6 text-sm">
             <a href="#" className="text-white/60 hover:text-white transition-colors">
               Privacidade
@@ -68,8 +60,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
