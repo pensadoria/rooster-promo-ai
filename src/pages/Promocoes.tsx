@@ -68,13 +68,9 @@ const Promocoes = () => {
       {/* Hero Section - Tablet Layout */}
       <section className="hidden lg:block xl:hidden relative overflow-hidden bg-[#01203f] pt-24 pb-12 px-8">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex min-h-[60vh] items-center">
             {/* Left Column */}
             <div className="space-y-8">
-              {/* Badge com ícone */}
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2">
-                <Sparkles className="h-4 w-4 text-white/90" />
-              </div>
 
               {/* Título Principal */}
               <h1 className="text-4xl lg:text-5xl font-black text-white leading-tight">
@@ -109,17 +105,6 @@ const Promocoes = () => {
                     Ver como funciona
                   </MotionButton>
                 </Link>
-              </div>
-            </div>
-
-            {/* Right Column - Background art */}
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/08bcd011-3349-434a-844d-8c4fb4130a93"
-                  alt="Rooster background art"
-                  className="w-full h-auto object-cover rounded-2xl"
-                />
               </div>
             </div>
           </div>

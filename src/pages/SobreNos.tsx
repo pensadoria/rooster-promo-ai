@@ -14,13 +14,14 @@ const SobreNos = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[800px] overflow-hidden bg-[#01203f]">
+      <section className="relative h-[600px] md:h-[800px] overflow-hidden bg-[#01203f]">
         {/* Background Rooster */}
-        <div className="absolute left-[6px] top-[68px] h-[757.578px] w-[517.001px]">
+        {/* Exibe o galo azul apenas em telas lg (>=1024px) para simular o corte em 900px */}
+        <div className="hidden lg:absolute lg:left-[6px] lg:top-[68px] lg:h-[757.578px] lg:w-[517.001px] lg:block">
           <img
-            src="https://www.figma.com/api/mcp/asset/26b0a719-004b-45a0-b513-dedc637a27f9"
+            src="https://wqrmsdwtsgcrrkqtpkbm.supabase.co/storage/v1/object/public/photos/galo.svg"
             alt=""
-            className="h-full w-full object-cover"
+            className="h-full w-full"
           />
         </div>
 
@@ -28,12 +29,12 @@ const SobreNos = () => {
         <div className="absolute inset-0 bg-black/20" />
 
         {/* Content */}
-        <div className="relative mx-auto flex h-full max-w-[1280px] items-center px-20">
-          <div className="mx-8 w-full text-center">
-            <h1 className="mx-auto mb-6 w-[872px] font-['Inter'] text-[72px] font-black leading-[72px] text-white">
+        <div className="relative mx-auto flex h-full max-w-[1280px] items-center px-4 md:px-20">
+          <div className="mx-2 md:mx-8 w-full text-center">
+            <h1 className="mx-auto mb-6 w-full max-w-[872px] font-['Inter'] text-[36px] md:text-[72px] font-black leading-[40px] md:leading-[72px] text-white">
               A Rooster nasceu para simplificar o marketing promocional
             </h1>
-            <p className="mx-auto w-[574px] font-['Inter'] text-[20px] font-normal leading-[27px] text-white/85">
+            <p className="mx-auto w-full max-w-[574px] font-['Inter'] text-[16px] md:text-[20px] font-normal leading-[22px] md:leading-[27px] text-white/85">
               Somos a plataforma que automatiza promoções e fidelidade, ajudando
               pequenos e médios negócios a crescerem mais rápido.
             </p>
@@ -49,12 +50,12 @@ const SobreNos = () => {
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="mx-auto max-w-[1280px] px-20">
-          <div className="mx-8">
-            <h2 className="mb-6 w-[589px] font-['Inter'] text-[48px] font-black leading-[44px] text-[#01203f]">
+        <div className="mx-auto max-w-[1280px] px-4 md:px-20">
+          <div className="mx-2 md:mx-8">
+            <h2 className="mb-6 w-full max-w-[589px] font-['Inter'] text-[28px] md:text-[48px] font-black leading-[32px] md:leading-[44px] text-[#01203f]">
               Mais que uma ferramenta, um parceiro de crescimento
             </h2>
-            <div className="w-[576px] space-y-6 font-['Inter'] text-[18px] leading-[25px] text-[rgba(1,32,63,0.8)]">
+            <div className="w-full max-w-[576px] space-y-6 font-['Inter'] text-[16px] md:text-[18px] leading-[22px] md:leading-[25px] text-[rgba(1,32,63,0.8)]">
               <p>
                 A Rooster é uma plataforma de automação de promoções e
                 fidelidade que ajuda empreendedores a criar campanhas de forma
@@ -82,14 +83,14 @@ const SobreNos = () => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="mx-auto max-w-[1280px] px-20">
-          <div className="mx-8">
+        <div className="mx-auto max-w-[1280px] px-4 md:px-20">
+          <div className="mx-2 md:mx-8">
             {/* Title */}
-            <div className="mb-16 text-center">
-              <h2 className="mb-4 font-['Inter'] text-[48px] font-black leading-[44px] text-[#01203f]">
+            <div className="mb-10 md:mb-16 text-center">
+              <h2 className="mb-4 font-['Inter'] text-[28px] md:text-[48px] font-black leading-[32px] md:leading-[44px] text-[#01203f]">
                 A história que começou com a Premiafy
               </h2>
-              <p className="mx-auto w-[844px] font-['Inter'] text-[20px] leading-[27px] text-[rgba(1,32,63,0.8)]">
+              <p className="mx-auto w-full max-w-[844px] font-['Inter'] text-[16px] md:text-[20px] leading-[22px] md:leading-[27px] text-[rgba(1,32,63,0.8)]">
                 A Rooster nasceu da tecnologia e da experiência da Premiafy —
                 uma das plataformas de promoções mais inteligentes do mercado,
                 com mais de 1 milhão de usuários impactados.
@@ -97,12 +98,12 @@ const SobreNos = () => {
             </div>
 
             {/* Timeline */}
-            <div className="relative mb-12">
+            <div className="relative mb-8 md:mb-12">
               {/* Gradient Line */}
               <div className="h-1 w-full rounded-full bg-gradient-to-r from-[#01203f] via-[#ff0000] to-[#ff5001]" />
 
               {/* Timeline Items */}
-              <div className="mt-9 grid grid-cols-4 gap-8">
+              <div className="mt-9 grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-8">
                 {/* 2017 */}
                 <div className="relative">
                   <div className="absolute left-1/2 top-[-36px] size-4 -translate-x-1/2 rounded-full border-4 border-white bg-[#ff0000]" />
@@ -158,8 +159,8 @@ const SobreNos = () => {
             </div>
 
             {/* Bottom Text */}
-            <div className="mx-auto w-[896px]">
-              <p className="text-center font-['Inter'] text-[18px] leading-[25px] text-[rgba(1,32,63,0.8)]">
+            <div className="mx-auto w-full max-w-[896px]">
+              <p className="text-center font-['Inter'] text-[16px] md:text-[18px] leading-[22px] md:leading-[25px] text-[rgba(1,32,63,0.8)]">
                 A partir desse know-how, criamos uma nova geração de soluções:
                 mais leves, rápidas e acessíveis para o varejo. Hoje, a Rooster
                 carrega o mesmo DNA de inovação, mas com foco total na
@@ -178,8 +179,8 @@ const SobreNos = () => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="mx-auto max-w-[1280px] px-20">
-          <div className="mx-48 text-center">
+        <div className="mx-auto max-w-[1280px] px-4 md:px-20">
+          <div className="mx-2 md:mx-48 text-center">
             {/* Icon */}
             <div className="mx-auto mb-8 flex size-20 items-center justify-center rounded-full bg-[#ff0000]">
               <img
@@ -190,12 +191,12 @@ const SobreNos = () => {
             </div>
 
             {/* Title */}
-            <h2 className="mb-6 font-['Inter'] text-[48px] font-black leading-[44px] text-white">
+            <h2 className="mb-6 font-['Inter'] text-[28px] md:text-[48px] font-black leading-[32px] md:leading-[44px] text-white">
               Simplificar o marketing promocional de forma rápida e eficiente
             </h2>
 
             {/* Description */}
-            <p className="mx-auto w-[714px] font-['Inter'] text-[24px] leading-[33px] text-white/85">
+            <p className="mx-auto w-full max-w-[714px] font-['Inter'] text-[16px] md:text-[24px] leading-[22px] md:leading-[33px] text-white/85">
               Ajudar negócios de todos os tamanhos a crescerem mais rápido, com
               promoções e programas de fidelidade que qualquer pessoa consegue
               usar.
@@ -212,15 +213,15 @@ const SobreNos = () => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="mx-auto max-w-[1280px] px-20">
-          <div className="mx-8">
+        <div className="mx-auto max-w-[1280px] px-4 md:px-20">
+          <div className="mx-2 md:mx-8">
             {/* Title */}
-            <h2 className="mb-16 text-center font-['Inter'] text-[48px] font-black leading-[44px] text-[#01203f]">
+            <h2 className="mb-10 md:mb-16 text-center font-['Inter'] text-[28px] md:text-[48px] font-black leading-[32px] md:leading-[44px] text-[#01203f]">
               O que guia cada linha de código
             </h2>
 
             {/* Values Grid */}
-            <div className="grid grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-8">
               {/* Confiança */}
               <div className="rounded-2xl border border-[rgba(1,32,63,0.1)] bg-white p-8 text-center">
                 <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full">
@@ -301,15 +302,15 @@ const SobreNos = () => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="mx-auto max-w-[1280px] px-20">
-          <div className="mx-8">
+        <div className="mx-auto max-w-[1280px] px-4 md:px-20">
+          <div className="mx-2 md:mx-8">
             {/* Title */}
-            <h2 className="mb-16 text-center font-['Inter'] text-[48px] font-black leading-[44px] text-[#01203f]">
+            <h2 className="mb-10 md:mb-16 text-center font-['Inter'] text-[28px] md:text-[48px] font-black leading-[32px] md:leading-[44px] text-[#01203f]">
               O que você pode esperar da Rooster
             </h2>
 
             {/* Features Grid */}
-            <div className="mx-16 mb-12 grid grid-cols-2 gap-8">
+            <div className="mx-2 md:mx-16 mb-8 md:mb-12 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
               {/* Linguagem humana */}
               <div className="rounded-2xl bg-white/80 p-8">
                 <div className="flex items-start gap-4">
@@ -396,8 +397,8 @@ const SobreNos = () => {
             </div>
 
             {/* Bottom Text */}
-            <div className="mx-auto w-[872px]">
-              <p className="text-center font-['Inter'] text-[20px] leading-[27px] text-[rgba(1,32,63,0.8)]">
+            <div className="mx-auto w-full max-w-[872px]">
+              <p className="text-center font-['Inter'] text-[16px] md:text-[20px] leading-[22px] md:leading-[27px] text-[rgba(1,32,63,0.8)]">
                 Na Rooster, cada recurso é feito para gerar impacto real — no
                 seu caixa, no seu tempo e no seu crescimento.
               </p>
@@ -414,14 +415,14 @@ const SobreNos = () => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="mx-auto max-w-[1280px] px-20">
-          <div className="mx-16">
-            <h2 className="mb-20 text-center font-['Inter'] text-[48px] font-black leading-[44px] text-white">
+        <div className="mx-auto max-w-[1280px] px-4 md:px-20">
+          <div className="mx-2 md:mx-16">
+            <h2 className="mb-10 md:mb-20 text-center font-['Inter'] text-[28px] md:text-[48px] font-black leading-[32px] md:leading-[44px] text-white">
               Escolha o melhor caminho para seu crescimento
             </h2>
 
             {/* Plans Grid */}
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               {/* Fidelidades Plan */}
               <div className="rounded-2xl border border-[rgba(1,32,63,0.1)] bg-[#00254c] p-8 text-center">
                 <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[rgba(255,0,0,0.35)]">
