@@ -29,10 +29,7 @@ const Promocoes = () => {
       {/* Hero Section - Desktop Layout Original */}
       <section className="hidden xl:block relative h-[800px] overflow-hidden bg-[#01203f]">
         {/* Background art - Galo (Rooster) */}
-        <div
-          className="absolute"
-          style={{ left: 6, top: 68, width: 517.001, height: 757.578 }}
-        >
+        <div className="absolute" style={{ left: 6, top: 68, width: 517.001, height: 757.578 }}>
           <img
             src="https://www.figma.com/api/mcp/asset/08bcd011-3349-434a-844d-8c4fb4130a93"
             alt="Rooster background art"
@@ -48,7 +45,7 @@ const Promocoes = () => {
         <div className="absolute inset-0 bg-black/20"></div>
 
         {/* Content Container */}
-        <div className="absolute left-[305px] top-[93px] h-[614px] w-[1280px]">
+        <div className="w-full">
           <div className="relative h-[614px] w-full px-8 ">
             <div className="absolute left-1/2 top-1/2 h-[492px] w-[1058px] -translate-x-1/2 -translate-y-1/2">
               {/* Título Principal */}
@@ -58,8 +55,7 @@ const Promocoes = () => {
 
               {/* Subtítulo */}
               <p className="absolute left-1/2 top-[342px] h-[54px] w-[558px] -translate-x-1/2 text-center font-['Inter'] text-[20px] font-normal leading-[27px] text-white/85">
-                A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo
-                real — sem planilhas e sem complicação.
+                A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo real — sem planilhas e sem complicação.
               </p>
 
               {/* Botões CTA */}
@@ -98,8 +94,7 @@ const Promocoes = () => {
 
               {/* Subtítulo */}
               <p className="text-lg lg:text-xl text-white/85 leading-relaxed">
-                A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo
-                real — sem planilhas e sem complicação.
+                A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo real — sem planilhas e sem complicação.
               </p>
 
               {/* Botões CTA */}
@@ -144,9 +139,7 @@ const Promocoes = () => {
           {/* Badge com ícone */}
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2">
             <Sparkles className="h-4 w-4 text-white/90" />
-            <span className="text-sm font-semibold text-white/90">
-              IA Integrada + 98% de precisão
-            </span>
+            <span className="text-sm font-semibold text-white/90">IA Integrada + 98% de precisão</span>
           </div>
 
           {/* Título Principal */}
@@ -156,8 +149,7 @@ const Promocoes = () => {
 
           {/* Subtítulo */}
           <p className="text-lg text-white/85 leading-relaxed">
-            A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo
-            real — sem planilhas e sem complicação.
+            A Rooster lê notas fiscais, valida cupons e mostra tudo em tempo real — sem planilhas e sem complicação.
           </p>
 
           {/* Background art */}
@@ -209,8 +201,7 @@ const Promocoes = () => {
               De notas fiscais a resultados em segundos
             </h2>
             <p className="mx-auto max-w-2xl md:max-w-3xl lg:max-w-[720px] text-lg md:text-xl lg:text-[20px] font-normal leading-relaxed text-[rgba(1,32,63,0.8)]">
-              Configure campanhas automáticas e veja sua promoção funcionar no
-              piloto automático.
+              Configure campanhas automáticas e veja sua promoção funcionar no piloto automático.
             </p>
           </div>
 
@@ -228,9 +219,7 @@ const Promocoes = () => {
               </div>
               {/* Number */}
               <div className="mb-3 md:mb-4 text-center">
-                <span className="text-sm font-semibold leading-normal text-[#ff0000]">
-                  01
-                </span>
+                <span className="text-sm font-semibold leading-normal text-[#ff0000]">01</span>
               </div>
               {/* Title */}
               <h3 className="mb-3 md:mb-4 text-center text-xl md:text-2xl font-bold leading-normal text-[#01203f]">
@@ -254,9 +243,7 @@ const Promocoes = () => {
               </div>
               {/* Number */}
               <div className="mb-3 md:mb-4 text-center">
-                <span className="text-sm font-semibold leading-normal text-[#ff0000]">
-                  02
-                </span>
+                <span className="text-sm font-semibold leading-normal text-[#ff0000]">02</span>
               </div>
               {/* Title */}
               <h3 className="mb-3 md:mb-4 text-center text-xl md:text-2xl font-bold leading-normal text-[#01203f]">
@@ -264,8 +251,7 @@ const Promocoes = () => {
               </h3>
               {/* Description */}
               <p className="text-center text-sm md:text-base font-normal leading-relaxed text-[rgba(1,32,63,0.7)]">
-                OCR + inteligência artificial verificam os critérios da
-                campanha.
+                OCR + inteligência artificial verificam os critérios da campanha.
               </p>
             </div>
 
@@ -281,9 +267,7 @@ const Promocoes = () => {
               </div>
               {/* Number */}
               <div className="mb-3 md:mb-4 text-center">
-                <span className="text-sm font-semibold leading-normal text-[#ff0000]">
-                  03
-                </span>
+                <span className="text-sm font-semibold leading-normal text-[#ff0000]">03</span>
               </div>
               {/* Title */}
               <h3 className="mb-3 md:mb-4 text-center text-xl md:text-2xl font-bold leading-normal text-[#01203f]">
@@ -291,8 +275,7 @@ const Promocoes = () => {
               </h3>
               {/* Description */}
               <p className="text-center text-sm md:text-base font-normal leading-relaxed text-[rgba(1,32,63,0.7)]">
-                Você acompanha cupons validados, participantes e métricas sem
-                esforço.
+                Você acompanha cupons validados, participantes e métricas sem esforço.
               </p>
             </div>
           </div>
@@ -327,8 +310,7 @@ const Promocoes = () => {
                 Leitura Inteligente (OCR + IA)
               </h3>
               <p className="text-sm md:text-base text-[#01203f]/70 leading-relaxed">
-                A Rooster identifica produtos, loja, CNPJ, data e valor com
-                precisão total.
+                A Rooster identifica produtos, loja, CNPJ, data e valor com precisão total.
               </p>
             </div>
 
@@ -341,12 +323,9 @@ const Promocoes = () => {
                   className="h-4 w-4 md:h-5 md:w-5"
                 />
               </div>
-              <h3 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-[#01203f]">
-                Gestão Automatizada
-              </h3>
+              <h3 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-[#01203f]">Gestão Automatizada</h3>
               <p className="text-sm md:text-base text-[#01203f]/70 leading-relaxed">
-                Sem planilhas — o sistema cuida da inscrição, validação e
-                premiação.
+                Sem planilhas — o sistema cuida da inscrição, validação e premiação.
               </p>
             </div>
 
@@ -359,9 +338,7 @@ const Promocoes = () => {
                   className="h-4 w-4 md:h-5 md:w-5"
                 />
               </div>
-              <h3 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-[#01203f]">
-                Analytics em Tempo Real
-              </h3>
+              <h3 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-[#01203f]">Analytics em Tempo Real</h3>
               <p className="text-sm md:text-base text-[#01203f]/70 leading-relaxed">
                 Acompanhe resultados, engajamento e ROI direto no painel.
               </p>
@@ -376,9 +353,7 @@ const Promocoes = () => {
                   className="h-4 w-4 md:h-5 md:w-5"
                 />
               </div>
-              <h3 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-[#01203f]">
-                Mecânicas Personalizadas
-              </h3>
+              <h3 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-[#01203f]">Mecânicas Personalizadas</h3>
               <p className="text-sm md:text-base text-[#01203f]/70 leading-relaxed">
                 Compre e Ganhe, Sorteios, Pontos ou experiências sob medida.
               </p>
@@ -403,9 +378,8 @@ const Promocoes = () => {
                 Tecnologia que trabalha por você
               </h2>
               <p className="mb-8 md:mb-12 text-lg md:text-xl lg:text-[20px] font-normal leading-relaxed text-white/85">
-                Por trás da Rooster, uma tecnologia de ponta feita para ser
-                simples. OCR integrado à IA, dashboards de alta performance e
-                segurança total.
+                Por trás da Rooster, uma tecnologia de ponta feita para ser simples. OCR integrado à IA, dashboards de
+                alta performance e segurança total.
               </p>
 
               {/* Tech Features Grid - 2x2 */}
@@ -420,12 +394,8 @@ const Promocoes = () => {
                     />
                   </div>
                   <div>
-                    <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">
-                      Segurança Total
-                    </h4>
-                    <p className="text-xs md:text-sm leading-5 text-white/70">
-                      Criptografia e conformidade enterprise
-                    </p>
+                    <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">Segurança Total</h4>
+                    <p className="text-xs md:text-sm leading-5 text-white/70">Criptografia e conformidade enterprise</p>
                   </div>
                 </div>
 
@@ -439,9 +409,7 @@ const Promocoes = () => {
                     />
                   </div>
                   <div>
-                    <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">
-                      Alta Performance
-                    </h4>
+                    <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">Alta Performance</h4>
                     <p className="text-xs md:text-sm leading-5 text-white/70">
                       Campanhas estáveis, mesmo com picos de acesso
                     </p>
@@ -458,9 +426,7 @@ const Promocoes = () => {
                     />
                   </div>
                   <div>
-                    <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">
-                      IA Integrada
-                    </h4>
+                    <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">IA Integrada</h4>
                     <p className="text-xs md:text-sm leading-5 text-white/70">
                       Leitura inteligente e análises automáticas
                     </p>
@@ -477,9 +443,7 @@ const Promocoes = () => {
                     />
                   </div>
                   <div>
-                    <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">
-                      Escalabilidade
-                    </h4>
+                    <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">Escalabilidade</h4>
                     <p className="text-xs md:text-sm leading-5 text-white/70">
                       Pronta para campanhas locais ou nacionais
                     </p>
@@ -516,19 +480,14 @@ const Promocoes = () => {
               Empresas que crescem com a Rooster
             </h2>
             <p className="mb-12 md:mb-16 text-base md:text-lg leading-relaxed text-[#01203f]/80 max-w-3xl mx-auto">
-              De pequenas lojas a grandes marcas — a Rooster está por trás de
-              promoções que fazem a diferença.
+              De pequenas lojas a grandes marcas — a Rooster está por trás de promoções que fazem a diferença.
             </p>
 
             {/* Logo Grid */}
             <div className="mb-12 flex justify-center gap-6 md:gap-8">
               {/* Hellmann's Logo */}
               <div className="flex h-16 md:h-20 items-center justify-center rounded-xl bg-white p-4 w-[250px]">
-                <img
-                  src={hellmannsLogo}
-                  alt="Hellmann's"
-                  className="max-h-12 md:max-h-16 w-auto object-contain"
-                />
+                <img src={hellmannsLogo} alt="Hellmann's" className="max-h-12 md:max-h-16 w-auto object-contain" />
               </div>
             </div>
 
@@ -536,9 +495,7 @@ const Promocoes = () => {
             <div className="flex justify-center">
               <div className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-3">
                 <Sparkles className="h-4 w-4 text-[#01203f]" />
-                <span className="text-base font-semibold text-[#01203f]">
-                  +1 milhão de cupons processados
-                </span>
+                <span className="text-base font-semibold text-[#01203f]">+1 milhão de cupons processados</span>
               </div>
             </div>
           </div>
@@ -563,13 +520,7 @@ const Promocoes = () => {
             {/* Fidelidades Plan */}
             <div className="rounded-2xl border border-[rgba(1,32,63,0.1)] bg-[#00254c] p-6 md:p-8 text-center">
               <div className="mx-auto mb-4 md:mb-6 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-full bg-[rgba(255,0,0,0.35)]">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
                     fill="#FF0000"
