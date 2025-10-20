@@ -65,7 +65,7 @@ const Fidelidades = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative h-[450px] md:h-[800px] w-full mt-[50px] md:mt-0 overflow-hidden bg-[rgba(1,32,63,0.95)]">
+      <section className="relative h-[450px] md:h-[800px] w-full mt-[50px] md:mt-0 overflow-hidden bg-[#01203f]">
         {/* background art (left) positioned exactly like Figma */}
         <div
           className="absolute hidden lg:block"
@@ -79,7 +79,8 @@ const Fidelidades = () => {
         </div>
 
         {/* dark overlay */}
-        <div className="absolute inset-0 bg-[rgba(0,0,0,0.2)]" />
+        <div className="absolute inset-0 bg-black/20" />
+
 
         {/* Centered content per Figma */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[611px] px-4 md:px-6 text-center">
