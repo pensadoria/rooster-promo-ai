@@ -56,19 +56,19 @@ const Hero = () => {
 
               {/* Right Column - Image */}
               <div className="relative">
-                {/* Badge - Positioned above image */}
-                <div className="absolute bg-[rgba(255,255,255,0.1)] left-0 -top-8 rounded-[8px] px-3 py-2 z-10">
-                  <p className="font-['Inter:Regular',_sans-serif] font-normal text-[14px] text-white">
-                    Pronto pra vender mais? 🚀
-                  </p>
-                </div>
-
                 {/* Image Container */}
-                <div className="relative rounded-[16px] overflow-hidden h-[384px]">
+                <div className="relative rounded-[16px] overflow-visible h-[384px]">
                   <img alt="" className="w-full h-full object-cover rounded-[16px]" src={imgImg} />
 
+                  {/* Badge - Positioned above image */}
+                  <div className="absolute bg-[rgba(255,255,255,0.1)] left-4 -top-12 rounded-[8px] px-3 py-2 z-10">
+                    <p className="font-['Inter:Regular',_sans-serif] font-normal text-[14px] text-white">
+                      Pronto pra vender mais? 🚀
+                    </p>
+                  </div>
+
                   {/* Play Button */}
-                  <div className="absolute bg-[red] right-3 -bottom-8 rounded-[9999px] size-[64px] cursor-pointer hover:bg-red-600/90 transition-colors flex items-center justify-center z-10">
+                  <div className="absolute bg-[red] right-4 bottom-4 rounded-[9999px] size-[64px] cursor-pointer hover:bg-red-600/90 transition-colors flex items-center justify-center z-10">
                     <div className="w-[20px] h-[20px]">
                       <img alt="" className="w-full h-full" src={iconImage} />
                     </div>
