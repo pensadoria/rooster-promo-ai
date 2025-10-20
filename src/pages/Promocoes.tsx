@@ -45,7 +45,7 @@ const Promocoes = () => {
         <div className="absolute inset-0 bg-black/20"></div>
 
         {/* Content Container */}
-        <div className="w-full h-[800px]">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[611px] text-center">
           <div className="relative h-[614px] w-full px-8 ">
             <div className="absolute left-1/2 top-1/2 h-[492px] w-[1058px] -translate-x-1/2 -translate-y-1/2">
               {/* Título Principal */}
