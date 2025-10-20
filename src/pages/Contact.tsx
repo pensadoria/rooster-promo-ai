@@ -3,13 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,13 +13,10 @@ import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
 const contactSchema = z.object({
-  name: z.string()
-    .min(2, "Nome deve ter pelo menos 2 caracteres")
-    .max(100, "Nome deve ter no máximo 100 caracteres"),
-  email: z.string()
-    .email("Email inválido")
-    .max(255, "Email deve ter no máximo 255 caracteres"),
-  phone: z.string()
+  name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres").max(100, "Nome deve ter no máximo 100 caracteres"),
+  email: z.string().email("Email inválido").max(255, "Email deve ter no máximo 255 caracteres"),
+  phone: z
+    .string()
     .refine((value) => {
       if (!value) return true; // Campo opcional
       // Remove tudo exceto números
@@ -37,9 +28,10 @@ const contactSchema = z.object({
     .or(z.literal("")),
   product_interest: z.enum(["rooster_fidelidade", "rooster_promocoes"], {
     required_error: "Por favor, selecione um produto",
-    invalid_type_error: "Por favor, selecione um produto válido"
+    invalid_type_error: "Por favor, selecione um produto válido",
   }),
-  message: z.string()
+  message: z
+    .string()
     .min(10, "Mensagem deve ter pelo menos 10 caracteres")
     .max(1000, "Mensagem deve ter no máximo 1000 caracteres"),
 });
@@ -49,7 +41,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const {
     register,
     handleSubmit,
@@ -62,17 +54,15 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
+
     try {
-      const { error } = await supabase
-        .from("contact_submissions")
-        .insert({
-          name: data.name,
-          email: data.email,
-          phone: data.phone || null,
-          product_interest: data.product_interest,
-          message: data.message,
-        });
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: data.name,
+        email: data.email,
+        phone: data.phone || null,
+        product_interest: data.product_interest,
+        message: data.message,
+      });
 
       if (error) throw error;
 
@@ -80,7 +70,7 @@ const Contact = () => {
         title: "Mensagem enviada!",
         description: "Obrigado pelo contato. Retornaremos em breve.",
       });
-      
+
       reset();
     } catch (error) {
       console.error("Erro ao enviar mensagem:", error);
@@ -96,7 +86,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-[#01203f]">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-6">
         <div className="container mx-auto max-w-6xl">
@@ -105,7 +95,8 @@ const Contact = () => {
               Entre em <span className="text-red-600">Contato</span>
             </h1>
             <p className="text-base md:text-xl text-white/80 max-w-3xl mx-auto">
-              Estamos aqui para ajudar. Fale com nossos especialistas e descubra como podemos transformar suas promoções.
+              Estamos aqui para ajudar. Fale com nossos especialistas e descubra como podemos transformar suas
+              promoções.
             </p>
           </div>
 
@@ -125,11 +116,9 @@ const Contact = () => {
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                     {...register("name")}
                   />
-                  {errors.name && (
-                    <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
-                  )}
+                  {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>}
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
                     E-mail
@@ -141,11 +130,9 @@ const Contact = () => {
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                     {...register("email")}
                   />
-                  {errors.email && (
-                    <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
-                  )}
+                  {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>}
                 </div>
-                
+
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
                     Telefone
@@ -157,9 +144,7 @@ const Contact = () => {
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                     {...register("phone")}
                   />
-                  {errors.phone && (
-                    <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>
-                  )}
+                  {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>}
                 </div>
 
                 <div>
@@ -175,10 +160,16 @@ const Contact = () => {
                           <SelectValue placeholder="Selecione um produto" />
                         </SelectTrigger>
                         <SelectContent className="bg-[#01203f] border-white/20 z-50">
-                          <SelectItem value="rooster_fidelidade" className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white">
+                          <SelectItem
+                            value="rooster_fidelidade"
+                            className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white"
+                          >
                             Rooster Fidelidade
                           </SelectItem>
-                          <SelectItem value="rooster_promocoes" className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white">
+                          <SelectItem
+                            value="rooster_promocoes"
+                            className="text-white hover:bg-white/10 focus:bg-white/10 focus:text-white"
+                          >
                             Rooster Promoções
                           </SelectItem>
                         </SelectContent>
@@ -189,7 +180,7 @@ const Contact = () => {
                     <p className="text-red-400 text-sm mt-1">{errors.product_interest.message}</p>
                   )}
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
                     Mensagem
@@ -201,11 +192,9 @@ const Contact = () => {
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                     {...register("message")}
                   />
-                  {errors.message && (
-                    <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
-                  )}
+                  {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>}
                 </div>
-                
+
                 <Button
                   type="submit"
                   disabled={isSubmitting}
@@ -228,7 +217,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-base md:text-lg font-semibold text-white mb-1">E-mail</h3>
-                      <p className="text-sm md:text-base text-white/70">comercial@rooster.app</p>
+                      <p className="text-sm md:text-base text-white/70">comercial@rooster.app.br</p>
                     </div>
                   </div>
 
@@ -238,7 +227,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-base md:text-lg font-semibold text-white mb-1">Telefone</h3>
-                      <a href="tel:+5511976292960" className="text-sm md:text-base text-white/70 hover:text-white transition-colors">(11) 97629-2960</a>
+                      <a
+                        href="tel:+5511976292960"
+                        className="text-sm md:text-base text-white/70 hover:text-white transition-colors"
+                      >
+                        (11) 97629-2960
+                      </a>
                     </div>
                   </div>
 
@@ -249,14 +243,14 @@ const Contact = () => {
                     <div>
                       <h3 className="text-base md:text-lg font-semibold text-white mb-1">Endereço</h3>
                       <p className="text-sm md:text-base text-white/70">
-                        São Paulo, SP<br />
+                        São Paulo, SP
+                        <br />
                         Brasil
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -268,4 +262,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
