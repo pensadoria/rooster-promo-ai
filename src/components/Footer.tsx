@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
 
         {/* Menu Column */}
-        <div className="md:col-span-2 md:col-start-10">
+        <div className="md:col-span-2 md:col-start-12">
           <h3 className="font-bold text-white mb-6">Menu</h3>
           <nav className="flex flex-col gap-3">
             <Link to="/promocoes" className="text-white/70 hover:text-white transition-colors">

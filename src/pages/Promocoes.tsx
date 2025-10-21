@@ -267,7 +267,7 @@ const Promocoes = () => {
           </h2>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-6 md:gap-8">
             {/* Feature 1 - Leitura Inteligente */}
             <div className="rounded-2xl bg-white/80 p-6 md:p-8">
               <div className="mb-4 md:mb-6 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-lg bg-[#ff5001]/20">

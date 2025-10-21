@@ -11,13 +11,13 @@ const PlatformSection = () => {
           </h2>
         </div>
 
-          <div className="relative">
+        <div className="relative">
           <div className="hidden md:block absolute left-0 right-0 top-[134px] h-[2px] bg-gradient-to-r from-[#ff0000] to-[#ff5001] rounded-full" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 relative z-[1]">
             {/* Card 01 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="relative flex flex-col items-center group transition-transform duration-300 ease-out hover:-translate-y-1">
-              <div className="relative -top-6 size-20 rounded-full bg-gradient-to-b from-[#1e66ff] to-[#01203f] flex items-center justify-center shadow-lg">
+              <div className="relative -top-3 size-20 rounded-full bg-gradient-to-b from-[#1e66ff] to-[#01203f] flex items-center justify-center shadow-lg">
                 <Edit3 className="w-6 h-6 text-white" />
               </div>
               <div className="w-full bg-white rounded-2xl shadow-sm group-hover:shadow-xl group-hover:shadow-black/10 px-6 py-8 border border-black/5 h-full min-h-[167px] transition-shadow duration-300">
@@ -31,7 +31,7 @@ const PlatformSection = () => {
 
             {/* Card 02 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.05 }} className="relative flex flex-col items-center group transition-transform duration-300 ease-out hover:-translate-y-1">
-              <div className="relative -top-6 size-20 rounded-full bg-gradient-to-b from-[#ff5001] to-[#ff0000] flex items-center justify-center shadow-lg">
+              <div className="relative -top-3 size-20 rounded-full bg-gradient-to-b from-[#ff5001] to-[#ff0000] flex items-center justify-center shadow-lg">
                 <Settings className="w-6 h-6 text-white" />
               </div>
               <div className="w-full bg-white rounded-2xl shadow-sm group-hover:shadow-xl group-hover:shadow-black/10 px-6 py-8 border border-black/5 h-full min-h-[167px] transition-shadow duration-300">
@@ -45,7 +45,7 @@ const PlatformSection = () => {
 
             {/* Card 03 */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="relative flex flex-col items-center group transition-transform duration-300 ease-out hover:-translate-y-1">
-              <div className="relative -top-6 size-20 rounded-full bg-gradient-to-b from-[#1e66ff] to-[#01203f] flex items-center justify-center shadow-lg">
+              <div className="relative -top-3 size-20 rounded-full bg-gradient-to-b from-[#1e66ff] to-[#01203f] flex items-center justify-center shadow-lg">
                 <LineChart className="w-6 h-6 text-white" />
               </div>
               <div className="w-full bg-white rounded-2xl shadow-sm group-hover:shadow-xl group-hover:shadow-black/10 px-6 py-8 border border-black/5 h-full min-h-[167px] transition-shadow duration-300">
