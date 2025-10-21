@@ -458,7 +458,7 @@ const Promocoes = () => {
             <div className="mb-12 flex justify-center gap-6 md:gap-8">
               {/* Hellmann's Logo */}
               <div className="flex h-16 md:h-20 items-center justify-center rounded-xl bg-white p-4 w-[250px]">
-                <a href="https://www.hellmanns-supreme.com.br/">
+                <a href="https://www.hellmanns-supreme.com.br/" target="_blank">
                   <img src={hellmannsLogo} alt="Hellmann's" className="max-h-12 md:max-h-16 w-auto object-contain" />
                 </a>
               </div>

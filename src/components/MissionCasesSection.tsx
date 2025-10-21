@@ -28,7 +28,7 @@ const MissionCasesSection = () => {
 
         {/* Single logo centered */}
         <div className="max-w-[1216px] mx-auto flex items-center justify-center">
-          <a href="https://www.hellmanns-supreme.com.br/">
+          <a href="https://www.hellmanns-supreme.com.br/" target="_blank">
             <img
               src={hellmannsLogo}
               alt="Hellmann’s"
