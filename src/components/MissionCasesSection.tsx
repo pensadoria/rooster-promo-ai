@@ -28,12 +28,14 @@ const MissionCasesSection = () => {
 
         {/* Single logo centered */}
         <div className="max-w-[1216px] mx-auto flex items-center justify-center">
-          <img
-            src={hellmannsLogo}
-            alt="Hellmann’s"
-            className="h-12 md:h-14 lg:h-16 object-contain"
-            loading="lazy"
-          />
+          <a href="https://www.hellmanns-supreme.com.br/" target="_blank">
+            <img
+              src={hellmannsLogo}
+              alt="Hellmann’s"
+              className="h-12 md:h-14 lg:h-16 object-contain"
+              loading="lazy"
+            />
+          </a>
         </div>
 
         {/* Bottom pill */}

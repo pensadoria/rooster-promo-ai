@@ -34,7 +34,7 @@ const StorytellingSection = () => {
         {/* Cards */}
         <div className="grid md:grid-cols-2 gap-8 max-w-[1240px] mx-auto mb-16">
           {/* Rooster Fidelidades */}
-          <MotionCard className="bg-white border border-[#01203F]/10 rounded-2xl p-8 shadow-sm h-[327px]">
+          <MotionCard className="bg-white border border-[#01203F]/10 rounded-2xl p-8 shadow-sm h-auto">
             <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-6">
               <Heart className="w-8 h-8 text-[#01203F]" />
             </div>
@@ -52,7 +52,7 @@ const StorytellingSection = () => {
             </MotionLink>
           </MotionCard>
           {/* Rooster Promoções */}
-          <MotionCard className="bg-[#01203F] rounded-2xl p-8 shadow-sm h-[327px]">
+          <MotionCard className="bg-[#01203F] rounded-2xl p-8 shadow-sm h-auto">
             <div className="w-16 h-16 rounded-full bg-[rgba(255,0,0,0.15)] flex items-center justify-center mb-6">
               <Gift className="w-8 h-8 text-[#FF0000]" />
             </div>
