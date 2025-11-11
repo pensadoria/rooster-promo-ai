@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Target, Shield, Sparkles, TrendingUp, Rocket, MessageCircle, Handshake, Cpu, Package } from "lucide-react";
 
 // Motion wrappers para interação
 const MotionButton = motion(Button);
@@ -183,11 +184,7 @@ const SobreNos = () => {
           <div className="mx-2 md:mx-48 text-center">
             {/* Icon */}
             <div className="mx-auto mb-8 flex size-20 items-center justify-center rounded-full bg-[#ff0000]">
-              <img
-                src="https://www.figma.com/api/mcp/asset/0fa9237b-235c-4354-b1b0-358455ff6ca6"
-                alt=""
-                className="h-8 w-8"
-              />
+              <Target className="h-8 w-8 text-white" />
             </div>
 
             {/* Title */}
@@ -224,12 +221,8 @@ const SobreNos = () => {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-8">
               {/* Confiança */}
               <div className="rounded-2xl border border-[rgba(1,32,63,0.1)] bg-white p-8 text-center">
-                <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full">
-                  <img
-                    src="https://www.figma.com/api/mcp/asset/0cb68945-a1c8-4672-94c5-e40feb953d34"
-                    alt=""
-                    className="h-6 w-6"
-                  />
+                <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-[rgba(1,32,63,0.05)]">
+                  <Shield className="h-7 w-7 text-[#01203f]" />
                 </div>
                 <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">
                   Confiança
@@ -241,12 +234,8 @@ const SobreNos = () => {
 
               {/* Simplicidade */}
               <div className="rounded-2xl border border-[rgba(1,32,63,0.1)] bg-white p-8 text-center">
-                <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full">
-                  <img
-                    src="https://www.figma.com/api/mcp/asset/6ca80325-f22d-4619-ba43-ecd2be4327e6"
-                    alt=""
-                    className="h-6 w-6"
-                  />
+                <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-[rgba(255,80,1,0.05)]">
+                  <Sparkles className="h-7 w-7 text-[#ff5001]" />
                 </div>
                 <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">
                   Simplicidade
@@ -258,12 +247,8 @@ const SobreNos = () => {
 
               {/* Resultado */}
               <div className="rounded-2xl border border-[rgba(1,32,63,0.1)] bg-white p-8 text-center">
-                <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full">
-                  <img
-                    src="https://www.figma.com/api/mcp/asset/2e4e8700-0658-44e4-849a-f2efe50d51db"
-                    alt=""
-                    className="h-6 w-6"
-                  />
+                <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-[rgba(255,0,0,0.05)]">
+                  <TrendingUp className="h-7 w-7 text-[#ff0000]" />
                 </div>
                 <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">
                   Resultado
@@ -275,12 +260,8 @@ const SobreNos = () => {
 
               {/* Escala */}
               <div className="rounded-2xl border border-[rgba(1,32,63,0.1)] bg-white p-8 text-center">
-                <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full">
-                  <img
-                    src="https://www.figma.com/api/mcp/asset/bda32991-d5ed-4a91-93d1-f0a23524f37a"
-                    alt=""
-                    className="h-6 w-6"
-                  />
+                <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-[rgba(1,32,63,0.05)]">
+                  <Rocket className="h-7 w-7 text-[#01203f]" />
                 </div>
                 <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">
                   Escala
@@ -315,11 +296,7 @@ const SobreNos = () => {
               <div className="rounded-2xl bg-white/80 p-8">
                 <div className="flex items-start gap-4">
                   <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[rgba(255,0,0,0.2)]">
-                    <img
-                      src="https://www.figma.com/api/mcp/asset/74a93686-f602-458d-aa03-dedb3907701a"
-                      alt=""
-                      className="h-5 w-5"
-                    />
+                    <MessageCircle className="h-6 w-6 text-[#ff0000]" />
                   </div>
                   <div>
                     <h3 className="mb-2 font-['Inter'] text-[20px] font-bold leading-[28px] text-[#01203f]">
@@ -336,11 +313,7 @@ const SobreNos = () => {
               <div className="rounded-2xl bg-white/80 p-8">
                 <div className="flex items-start gap-4">
                   <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[rgba(1,32,63,0.2)]">
-                    <img
-                      src="https://www.figma.com/api/mcp/asset/881bb692-8571-4466-b274-824561347928"
-                      alt=""
-                      className="h-5 w-5"
-                    />
+                    <Handshake className="h-6 w-6 text-[#01203f]" />
                   </div>
                   <div>
                     <h3 className="mb-2 font-['Inter'] text-[20px] font-bold leading-[28px] text-[#01203f]">
@@ -357,11 +330,7 @@ const SobreNos = () => {
               <div className="rounded-2xl bg-white/80 p-8">
                 <div className="flex items-start gap-4">
                   <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[rgba(255,80,1,0.2)]">
-                    <img
-                      src="https://www.figma.com/api/mcp/asset/7a7cb9a9-3058-4185-b714-fcaa6a0b7df0"
-                      alt=""
-                      className="h-4 w-4"
-                    />
+                    <Cpu className="h-6 w-6 text-[#ff5001]" />
                   </div>
                   <div>
                     <h3 className="mb-2 font-['Inter'] text-[20px] font-bold leading-[28px] text-[#01203f]">
@@ -378,11 +347,7 @@ const SobreNos = () => {
               <div className="rounded-2xl bg-white/80 p-8">
                 <div className="flex items-start gap-4">
                   <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-[rgba(255,0,0,0.2)]">
-                    <img
-                      src="https://www.figma.com/api/mcp/asset/ca3454f0-2ae2-4d50-bbea-70e7279ec661"
-                      alt=""
-                      className="h-4 w-4"
-                    />
+                    <Package className="h-6 w-6 text-[#ff0000]" />
                   </div>
                   <div>
                     <h3 className="mb-2 font-['Inter'] text-[20px] font-bold leading-[28px] text-[#01203f]">
@@ -464,11 +429,7 @@ const SobreNos = () => {
               {/* Promocoes Plan */}
               <div className="rounded-2xl bg-white p-8 text-center">
                 <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[rgba(1,32,63,0.23)]">
-                  <img
-                    src="https://www.figma.com/api/mcp/asset/dcdead4e-daec-46b3-90f1-f4fea5cc11a1"
-                    alt=""
-                    className="h-6 w-6"
-                  />
+                  <Sparkles className="h-7 w-7 text-[#01203f]" />
                 </div>
                 <h3 className="mb-4 font-['Inter'] text-[30px] font-bold leading-[normal] text-[#01203f]">
                   Rooster Promoções

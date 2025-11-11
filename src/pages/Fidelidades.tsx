@@ -2,62 +2,11 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Heart, Clock, Coins, BarChart3, Zap, Link as LinkIcon, MessageSquare, Check, TrendingUp, Users, DollarSign, Award, Sparkles } from "lucide-react";
+import roosterLogo from "@/assets/rooster-logo.png";
 
 const MotionLink = motion(Link);
 
-// Assets exported from the Figma MCP call (external URLs).
-const ASSETS = {
-  heroArt:
-    "https://www.figma.com/api/mcp/asset/faca1763-e644-43eb-9003-e60f2a81e93a",
-  heroPillIcon:
-    "https://www.figma.com/api/mcp/asset/41cbc6bd-7d69-4196-9e73-e1296a287d44",
-  feature1:
-    "https://www.figma.com/api/mcp/asset/427211fe-a1e3-4c37-a21b-9ae02167eb33",
-  feature2:
-    "https://www.figma.com/api/mcp/asset/d224945e-df8b-41fd-aa40-df654f999ca1",
-  feature3:
-    "https://www.figma.com/api/mcp/asset/e48a2849-ff71-4ecb-befa-84f0c770bb01",
-  // Precise icons for the post-hero feature cards
-  postHeroIcon1:
-    "https://www.figma.com/api/mcp/asset/106e80a6-c2b1-4b6d-badb-91b9d769be1a",
-  postHeroIcon2:
-    "https://www.figma.com/api/mcp/asset/6de02da6-f7c4-4063-ac47-459572bd598e",
-  postHeroIcon3:
-    "https://www.figma.com/api/mcp/asset/780812c5-c7bf-41a6-85d6-4c2727affba0",
-  // Icons for "Mais que pontos" section (node 40:2186)
-  experienceIcon1:
-    "https://www.figma.com/api/mcp/asset/292c0a2b-ce07-46d5-b6f3-2e6dd33ce1b5",
-  experienceIcon2:
-    "https://www.figma.com/api/mcp/asset/8dcaeeb9-cadf-44a1-a237-618374eb01a8",
-  experienceIcon3:
-    "https://www.figma.com/api/mcp/asset/fb46ed6a-636e-4361-bf3e-5e52dbf73609",
-  experienceIcon4:
-    "https://www.figma.com/api/mcp/asset/6091b5bc-bf32-415e-9989-f4f80d51e175",
-  // Icon for "Tudo conectado" section checkmarks (node 40:2234)
-  checkmarkIcon:
-    "https://www.figma.com/api/mcp/asset/6a1951f4-e991-4366-9df7-55d10deed34a",
-  // Icons for "Resultados" section (node 40:2263)
-  resultsIcon1:
-    "https://www.figma.com/api/mcp/asset/686b0d7b-852b-4c3f-ba27-96372816f3e6",
-  resultsIcon2:
-    "https://www.figma.com/api/mcp/asset/028c848d-2886-4e67-9d22-6921a18b8f9d",
-  resultsIcon3:
-    "https://www.figma.com/api/mcp/asset/6435dda7-0dd7-4697-afdd-9ef432c4e5c8",
-  badge1:
-    "https://www.figma.com/api/mcp/asset/0d30e596-6a59-44b8-a8b0-7921127c8174",
-  badge2:
-    "https://www.figma.com/api/mcp/asset/ec0d84f7-cd9b-479b-9b61-27bf2ab39af2",
-  statsIcon:
-    "https://www.figma.com/api/mcp/asset/42ff45a8-3bf6-4275-8ce9-82bc7f31857c",
-  cardIconA:
-    "https://www.figma.com/api/mcp/asset/7346a870-99d0-4ef9-b131-06b0d32e1088",
-  cardIconB:
-    "https://www.figma.com/api/mcp/asset/4936272b-af78-485b-a9c4-95734e6c7815",
-  cardIconC:
-    "https://www.figma.com/api/mcp/asset/e9e2f763-599e-4896-83c6-e3322237c5e6",
-  planLeft:
-    "https://www.figma.com/api/mcp/asset/292d4252-66b2-4865-91c9-e561c7c8438d",
-};
 
 const Fidelidades = () => {
   return (
@@ -72,9 +21,9 @@ const Fidelidades = () => {
           style={{ left: 6, top: 68, width: 517.001, height: 757.578 }}
         >
           <img
-            src={ASSETS.heroArt}
+            src={roosterLogo}
             alt="art"
-            className="block max-w-none w-full h-full object-contain"
+            className="block max-w-none w-full h-full object-contain opacity-20"
           />
         </div>
 
@@ -86,25 +35,17 @@ const Fidelidades = () => {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[611px] px-4 md:px-6 text-center">
           {/* pill - exact 201x40 with absolute inner icon/text */}
           <div
-            className="relative mx-auto rounded-full"
+            className="relative mx-auto rounded-full flex items-center justify-center gap-2"
             style={{
               width: 201.094,
               height: 40,
               background: "rgba(255,255,255,0.1)",
             }}
           >
-            <img
-              src={ASSETS.heroPillIcon}
-              alt="icon"
-              className="absolute"
-              style={{ left: 16, top: 8, width: 16, height: 24 }}
-            />
+            <Heart className="w-4 h-4 text-white/90" />
             <span
-              className="absolute font-semibold"
+              className="font-semibold"
               style={{
-                left: 40,
-                top: 10,
-                height: 20,
                 fontSize: 14,
                 color: "rgba(255,255,255,0.9)",
               }}
@@ -168,11 +109,7 @@ const Fidelidades = () => {
             {/* Card 1 */}
             <div className="bg-white border border-[rgba(1,32,63,0.1)] rounded-[16px] p-6 md:p-8 text-center flex flex-col items-center min-h-[240px] md:min-h-[280px]">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-8 bg-[rgba(1,32,63,0.05)]">
-                <img
-                  src={ASSETS.postHeroIcon1}
-                  alt="Configure"
-                  className="w-7 h-7 object-contain"
-                />
+                <Clock className="w-7 h-7 text-[#01203f]" />
               </div>
               <div className="text-[#FF0000] font-semibold text-sm mb-4">
                 01
@@ -189,11 +126,7 @@ const Fidelidades = () => {
             {/* Card 2 */}
             <div className="bg-white border border-[rgba(1,32,63,0.1)] rounded-[16px] p-6 md:p-8 text-center flex flex-col items-center min-h-[240px] md:min-h-[280px]">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-8 bg-[rgba(255,0,0,0.05)]">
-                <img
-                  src={ASSETS.postHeroIcon2}
-                  alt="Acúmulo"
-                  className="w-7 h-7 object-contain"
-                />
+                <Coins className="w-7 h-7 text-[#ff0000]" />
               </div>
               <div className="text-[#FF0000] font-semibold text-sm mb-4">
                 02
@@ -210,11 +143,7 @@ const Fidelidades = () => {
             {/* Card 3 */}
             <div className="bg-white border border-[rgba(1,32,63,0.1)] rounded-[16px] p-6 md:p-8 text-center flex flex-col items-center min-h-[240px] md:min-h-[280px]">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-8 bg-[rgba(1,32,63,0.05)]">
-                <img
-                  src={ASSETS.postHeroIcon3}
-                  alt="Dashboard"
-                  className="w-7 h-7 object-contain"
-                />
+                <BarChart3 className="w-7 h-7 text-[#01203f]" />
               </div>
               <div className="text-[#FF0000] font-semibold text-sm mb-4">
                 03
@@ -251,11 +180,7 @@ const Fidelidades = () => {
             {/* Card 1: Pontos + Cashback */}
             <div className="bg-white/80 rounded-[16px] p-6 md:p-8">
               <div className="w-12 h-12 rounded-[8px] bg-[rgba(255,80,1,0.2)] flex items-center justify-center mb-6">
-                <img
-                  src={ASSETS.experienceIcon1}
-                  alt="Pontos"
-                  className="w-5 h-5 object-contain"
-                />
+                <Zap className="w-6 h-6 text-[#ff5001]" />
               </div>
               <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] mb-3 break-words">
                 Pontos + Cashback Automático
@@ -269,11 +194,7 @@ const Fidelidades = () => {
             {/* Card 2: Integração */}
             <div className="bg-white/80 rounded-[16px] p-6 md:p-8">
               <div className="w-12 h-12 rounded-[8px] bg-[rgba(255,0,0,0.2)] flex items-center justify-center mb-6">
-                <img
-                  src={ASSETS.experienceIcon2}
-                  alt="Integração"
-                  className="w-6 h-5 object-contain"
-                />
+                <LinkIcon className="w-6 h-6 text-[#ff0000]" />
               </div>
               <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] mb-3 break-words">
                 Integração com Promoções
@@ -287,11 +208,7 @@ const Fidelidades = () => {
             {/* Card 3: Dashboard */}
             <div className="bg-white/80 rounded-[16px] p-6 md:p-8">
               <div className="w-12 h-12 rounded-[8px] bg-[rgba(1,32,63,0.2)] flex items-center justify-center mb-6">
-                <img
-                  src={ASSETS.experienceIcon3}
-                  alt="Dashboard"
-                  className="w-5 h-5 object-contain"
-                />
+                <BarChart3 className="w-6 h-6 text-[#01203f]" />
               </div>
               <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] mb-3 break-words">
                 Dashboard de Resultados
@@ -304,11 +221,7 @@ const Fidelidades = () => {
             {/* Card 4: Engajamento */}
             <div className="bg-white/80 rounded-[16px] p-6 md:p-8">
               <div className="w-12 h-12 rounded-[8px] bg-[rgba(255,80,1,0.2)] flex items-center justify-center mb-6">
-                <img
-                  src={ASSETS.experienceIcon4}
-                  alt="Engajamento"
-                  className="w-4 h-5 object-contain"
-                />
+                <MessageSquare className="w-6 h-6 text-[#ff5001]" />
               </div>
               <h3 className="font-bold text-[#01203f] text-[20px] md:text-[24px] mb-3 break-words">
                 Engajamento Inteligente
@@ -344,11 +257,7 @@ const Fidelidades = () => {
             <ul className="space-y-4 md:space-y-6 mb-6 md:mb-8">
               <li className="flex items-center gap-4">
                 <div className="w-6 h-6 rounded-full bg-[rgba(0,255,4,0.09)] flex items-center justify-center flex-shrink-0">
-                  <img
-                    src={ASSETS.checkmarkIcon}
-                    alt="check"
-                    className="w-3 h-3.5 object-contain"
-                  />
+                  <Check className="w-4 h-4 text-green-500" />
                 </div>
                 <span className="text-[16px] lg:leading-[22px] text-white/80">
                   Crie campanhas de pontos e promoções lado a lado
@@ -356,11 +265,7 @@ const Fidelidades = () => {
               </li>
               <li className="flex items-center gap-4">
                 <div className="w-6 h-6 rounded-full bg-[rgba(0,255,4,0.09)] flex items-center justify-center flex-shrink-0">
-                  <img
-                    src={ASSETS.checkmarkIcon}
-                    alt="check"
-                    className="w-3 h-3.5 object-contain"
-                  />
+                  <Check className="w-4 h-4 text-green-500" />
                 </div>
                 <span className="text-[16px] lg:leading-[22px] text-white/80">
                   Use o mesmo cadastro e dashboard
@@ -368,11 +273,7 @@ const Fidelidades = () => {
               </li>
               <li className="flex items-center gap-4">
                 <div className="w-6 h-6 rounded-full bg-[rgba(0,255,4,0.09)] flex items-center justify-center flex-shrink-0">
-                  <img
-                    src={ASSETS.checkmarkIcon}
-                    alt="check"
-                    className="w-3 h-3.5 object-contain"
-                  />
+                  <Check className="w-4 h-4 text-green-500" />
                 </div>
                 <span className="text-[16px] lg:leading-[22px] text-white/80">
                   Controle tudo com segurança e transparência
@@ -461,11 +362,7 @@ const Fidelidades = () => {
             <div className="bg-white text-[#01203f] rounded-2xl p-6 md:p-8 lg:p-10 flex flex-col items-center text-center border border-[#01203f]/10">
               {/* Icon */}
               <div className="w-16 h-16 rounded-full bg-[rgba(1,32,63,0.08)] flex items-center justify-center mb-6">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/dcdead4e-daec-46b3-90f1-f4fea5cc11a1"
-                  alt=""
-                  className="h-5 w-5 md:h-6 md:w-6"
-                />
+                <Sparkles className="h-6 w-6 text-[#01203f]" />
               </div>
 
               {/* Title */}

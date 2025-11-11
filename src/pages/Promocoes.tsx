@@ -4,9 +4,10 @@ import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
-  Sparkles
+  Sparkles, FileText, BrainCircuit, BarChart3, ScanText, Settings, Puzzle, Shield, Zap, TrendingUp, Headphones
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import roosterLogo from "@/assets/rooster-logo.png";
 
 const MotionButton = motion(Button);
 
@@ -20,9 +21,9 @@ const Promocoes = () => {
         {/* Background art - Galo (Rooster) */}
         <div className="absolute" style={{ left: 6, top: 68, width: 517.001, height: 757.578 }}>
           <img
-            src="https://www.figma.com/api/mcp/asset/08bcd011-3349-434a-844d-8c4fb4130a93"
+            src={roosterLogo}
             alt="Rooster background art"
-            className="block h-full w-full max-w-none object-contain"
+            className="block h-full w-full max-w-none object-contain opacity-20"
             // Mudar para ficar de acordo com a responsividade
             style={{ objectPosition: "left top" }}
           />
@@ -181,12 +182,8 @@ const Promocoes = () => {
             {/* Card 1 */}
             <div className="relative min-h-[280px] lg:h-[282px] rounded-2xl border border-[rgba(1,32,63,0.1)] bg-white px-6 md:px-8 pt-6 md:pt-8 lg:pt-[33px] flex flex-col justify-center py-9">
               {/* Icon */}
-              <div className="mx-auto mb-4 md:mb-6 flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/df3f780f-6152-40ca-9238-c60fe37dac5f"
-                  alt=""
-                  className="h-5 w-5 md:h-6 md:w-6"
-                />
+              <div className="mx-auto mb-4 md:mb-6 flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-[rgba(1,32,63,0.05)]">
+                <FileText className="h-6 w-6 text-[#01203f]" />
               </div>
               {/* Number */}
               <div className="mb-3 md:mb-4 text-center">
@@ -205,12 +202,8 @@ const Promocoes = () => {
             {/* Card 2 */}
             <div className="relative min-h-[280px] lg:h-[282px] rounded-2xl border border-[rgba(1,32,63,0.1)] bg-white px-6 md:px-8 pt-6 md:pt-8 lg:pt-[33px] flex flex-col justify-center py-8">
               {/* Icon */}
-              <div className="mx-auto mb-4 md:mb-6 flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/5513c31f-e282-451d-9032-bc4e055db179"
-                  alt=""
-                  className="h-5 w-5 md:h-6 md:w-6"
-                />
+              <div className="mx-auto mb-4 md:mb-6 flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-[rgba(255,80,1,0.05)]">
+                <BrainCircuit className="h-6 w-6 text-[#ff5001]" />
               </div>
               {/* Number */}
               <div className="mb-3 md:mb-4 text-center">
@@ -229,12 +222,8 @@ const Promocoes = () => {
             {/* Card 3 */}
             <div className="relative min-h-[280px] lg:h-[282px] rounded-2xl border border-[rgba(1,32,63,0.1)] bg-white px-6 md:px-8 pt-6 md:pt-8 lg:pt-[33px] flex flex-col justify-center md:col-span-2 lg:col-span-1 py-8">
               {/* Icon */}
-              <div className="mx-auto mb-4 md:mb-6 flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/e58a3ce9-6771-42bc-b3c1-00c0cc5d9f5f"
-                  alt=""
-                  className="h-5 w-5 md:h-6 md:w-6"
-                />
+              <div className="mx-auto mb-4 md:mb-6 flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-[rgba(1,32,63,0.05)]">
+                <BarChart3 className="h-6 w-6 text-[#01203f]" />
               </div>
               {/* Number */}
               <div className="mb-3 md:mb-4 text-center">
@@ -271,11 +260,7 @@ const Promocoes = () => {
             {/* Feature 1 - Leitura Inteligente */}
             <div className="rounded-2xl bg-white/80 p-6 md:p-8">
               <div className="mb-4 md:mb-6 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-lg bg-[#ff5001]/20">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/2b1b0b9b-b386-4018-98bb-d6c013742247"
-                  alt=""
-                  className="h-4 w-4 md:h-5 md:w-5"
-                />
+                <ScanText className="h-5 w-5 text-[#ff5001]" />
               </div>
               <h3 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-[#01203f]">
                 Leitura Inteligente (OCR + IA)
@@ -288,11 +273,7 @@ const Promocoes = () => {
             {/* Feature 2 - Gestão Automatizada */}
             <div className="rounded-2xl bg-white/80 p-6 md:p-8">
               <div className="mb-4 md:mb-6 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-lg bg-[#ff0000]/20">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/2acfff34-bd25-4ab3-aec5-f6ddfca6d3c9"
-                  alt=""
-                  className="h-4 w-4 md:h-5 md:w-5"
-                />
+                <Settings className="h-5 w-5 text-[#ff0000]" />
               </div>
               <h3 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-[#01203f]">Gestão Automatizada</h3>
               <p className="text-sm md:text-base text-[#01203f]/70 leading-relaxed">
@@ -303,11 +284,7 @@ const Promocoes = () => {
             {/* Feature 3 - Analytics em Tempo Real */}
             <div className="rounded-2xl bg-white/80 p-6 md:p-8">
               <div className="mb-4 md:mb-6 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-lg bg-[#01203f]/20">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/b82dd83e-ae52-4ec6-a4e1-11a8414aeff9"
-                  alt=""
-                  className="h-4 w-4 md:h-5 md:w-5"
-                />
+                <BarChart3 className="h-5 w-5 text-[#01203f]" />
               </div>
               <h3 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-[#01203f]">Analytics em Tempo Real</h3>
               <p className="text-sm md:text-base text-[#01203f]/70 leading-relaxed">
@@ -318,11 +295,7 @@ const Promocoes = () => {
             {/* Feature 4 - Mecânicas Personalizadas */}
             <div className="rounded-2xl bg-white/80 p-6 md:p-8">
               <div className="mb-4 md:mb-6 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-lg bg-[#ff5001]/20">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/0976de4f-1b3c-41ea-9701-e9b7551399b6"
-                  alt=""
-                  className="h-4 w-4 md:h-5 md:w-5"
-                />
+                <Puzzle className="h-5 w-5 text-[#ff5001]" />
               </div>
               <h3 className="mb-3 md:mb-4 text-xl md:text-2xl font-bold text-[#01203f]">Mecânicas Personalizadas</h3>
               <p className="text-sm md:text-base text-[#01203f]/70 leading-relaxed">
@@ -358,11 +331,7 @@ const Promocoes = () => {
                 {/* Feature 1 - Segurança Total */}
                 <div className="flex gap-3">
                   <div className="mt-1 flex h-7 w-7 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-lg bg-[#ff0000]/20">
-                    <img
-                      src="https://www.figma.com/api/mcp/asset/d7f54312-2513-4a6f-8fff-9b03c8e1959c"
-                      alt=""
-                      className="h-3 w-3 md:h-3.5 md:w-3.5"
-                    />
+                    <Shield className="h-4 w-4 text-[#ff0000]" />
                   </div>
                   <div>
                     <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">Segurança Total</h4>
@@ -373,11 +342,7 @@ const Promocoes = () => {
                 {/* Feature 2 - Alta Performance */}
                 <div className="flex gap-3">
                   <div className="mt-1 flex h-7 w-7 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-lg bg-[#ff0000]/20">
-                    <img
-                      src="https://www.figma.com/api/mcp/asset/7fad0be5-f877-4a42-99be-5e84d0b3dab6"
-                      alt=""
-                      className="h-3 w-3 md:h-3.5 md:w-3.5"
-                    />
+                    <Zap className="h-4 w-4 text-[#ff0000]" />
                   </div>
                   <div>
                     <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">Alta Performance</h4>
@@ -390,11 +355,7 @@ const Promocoes = () => {
                 {/* Feature 3 - IA Integrada */}
                 <div className="flex gap-3">
                   <div className="mt-1 flex h-7 w-7 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-lg bg-[#ff0000]/20">
-                    <img
-                      src="https://www.figma.com/api/mcp/asset/211f41e5-ab69-47e0-a5b9-65d81c4777c1"
-                      alt=""
-                      className="h-3 w-3 md:h-3.5 md:w-3.5"
-                    />
+                    <BrainCircuit className="h-4 w-4 text-[#ff0000]" />
                   </div>
                   <div>
                     <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">IA Integrada</h4>
@@ -407,11 +368,7 @@ const Promocoes = () => {
                 {/* Feature 4 - Escalabilidade */}
                 <div className="flex gap-3">
                   <div className="mt-1 flex h-7 w-7 md:h-8 md:w-8 shrink-0 items-center justify-center rounded-lg bg-[#ff0000]/20">
-                    <img
-                      src="https://www.figma.com/api/mcp/asset/07bb31ea-3641-4bf5-b25a-91e0c1ab788b"
-                      alt=""
-                      className="h-3.5 w-3.5"
-                    />
+                    <TrendingUp className="h-4 w-4 text-[#ff0000]" />
                   </div>
                   <div>
                     <h4 className="mb-2 text-sm md:text-base font-semibold leading-6 text-white">Escalabilidade</h4>
@@ -519,11 +476,7 @@ const Promocoes = () => {
             {/* Promocoes Plan */}
             <div className="rounded-2xl bg-white p-6 md:p-8 text-center">
               <div className="mx-auto mb-4 md:mb-6 flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-full bg-[rgba(1,32,63,0.23)]">
-                <img
-                  src="https://www.figma.com/api/mcp/asset/dcdead4e-daec-46b3-90f1-f4fea5cc11a1"
-                  alt=""
-                  className="h-5 w-5 md:h-6 md:w-6"
-                />
+                <Sparkles className="h-6 w-6 text-[#01203f]" />
               </div>
               <h3 className="mb-3 md:mb-4 text-2xl md:text-[30px] font-bold leading-tight text-[#01203f]">
                 Rooster Promoções
