@@ -14,7 +14,7 @@ const Fidelidades = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative h-[450px] md:h-[800px] w-full mt-[50px] md:mt-0 overflow-hidden bg-[#01203f]">
+      <section className="relative h-[450px] md:h-[800px] w-full overflow-hidden bg-[#01203f]">
         {/* background art (left) positioned exactly like Figma */}
         <div
           className="absolute hidden lg:block"
