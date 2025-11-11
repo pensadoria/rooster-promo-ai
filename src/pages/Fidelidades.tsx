@@ -32,7 +32,7 @@ const Fidelidades = () => {
 
 
         {/* Centered content per Figma */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[611px] px-4 md:px-6 text-center">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-4 md:px-6 text-center">
           {/* pill - exact 201x40 with absolute inner icon/text */}
           <div
             className="relative mx-auto rounded-full flex items-center justify-center gap-2"
@@ -54,11 +54,11 @@ const Fidelidades = () => {
             </span>
           </div>
 
-          <h1 className="mt-[33px] text-white text-[32px] md:text-[48px] lg:text-[72px] leading-[36px] md:leading-[52px] lg:leading-[72px] font-black max-w-[605px] w-full mx-auto">
+          <h1 className="mt-[33px] text-white text-[32px] md:text-[48px] lg:text-[72px] leading-[36px] md:leading-[52px] lg:leading-[72px] font-black w-full max-w-[1058px] mx-auto">
             Fidelize clientes em minutos
           </h1>
 
-          <p className="mt-4 text-white/90 mx-auto max-w-[611px] w-full text-[16px] md:text-[18px] lg:text-[20px] leading-[22px] md:leading-[24px] lg:leading-[27px]">
+          <p className="mt-4 text-white/90 mx-auto max-w-[558px] w-full text-[16px] md:text-[18px] lg:text-[20px] leading-[22px] md:leading-[24px] lg:leading-[27px]">
             A Rooster Fidelidades transforma cada compra em pontos automáticos
             que viram cashback. Tudo integrado à sua plataforma de promoções.
           </p>
