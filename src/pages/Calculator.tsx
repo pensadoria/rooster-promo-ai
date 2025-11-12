@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import {
@@ -41,6 +42,13 @@ function useAnimatedCounter(value: number, duration: number = 2000) {
 }
 
 const Calculator = () => {
+  const [activeTab, setActiveTab] = useState("pontos");
+  
+  const [pontosFormData, setPontosFormData] = useState({
+    investimento: "",
+    ticketMedio: ""
+  });
+
   const [formData, setFormData] = useState({
     campanhasAno: "",
     participantesCampanha: "",
@@ -144,8 +152,8 @@ const Calculator = () => {
 
       {/* Form Section */}
       <section className="pt-20 md:pt-24 pb-8 md:pb-12 px-6">
-        <div className="container mx-auto max-w-4xl">
-          {/* Header */}
+        <div className="container mx-auto max-w-6xl">
+          {/* Header - Dynamic based on active tab */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -153,154 +161,292 @@ const Calculator = () => {
           >
             <div className="inline-block">
               <span className="text-[#FF0000] text-sm font-bold tracking-widest uppercase">
-                Calculadora de ROI
+                {activeTab === "pontos" ? "Calculadora de Pontos" : "Calculadora de ROI"}
               </span>
             </div>
             <h1 className="text-3xl md:text-5xl font-black text-white leading-tight">
-              Descubra quanto você pode ganhar
+              {activeTab === "pontos" 
+                ? "Descubra quantos pontos você recebe"
+                : "Descubra quanto você pode ganhar"
+              }
             </h1>
             <p className="text-white/70 text-base md:text-lg max-w-2xl mx-auto">
-              Simule a economia anual com automação Rooster
+              {activeTab === "pontos"
+                ? "Informe quanto deseja investir e veja seu potencial de distribuição de pontos."
+                : "Simule a economia anual com automação Rooster"
+              }
             </p>
           </motion.div>
 
-          {/* Form Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8"
-          >
-            <form className="space-y-6">
-              {/* Row 1 */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="campanhasAno" className="text-white font-semibold">
-                    Campanhas por ano
-                  </Label>
-                  <Input
-                    id="campanhasAno"
-                    type="number"
-                    placeholder="Ex: 2"
-                    value={formData.campanhasAno}
-                    onChange={(e) => setFormData({ ...formData, campanhasAno: e.target.value })}
-                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="participantesCampanha" className="text-white font-semibold">
-                    Participantes por campanha
-                  </Label>
-                  <Input
-                    id="participantesCampanha"
-                    type="number"
-                    placeholder="Ex: 600"
-                    value={formData.participantesCampanha}
-                    onChange={(e) => setFormData({ ...formData, participantesCampanha: e.target.value })}
-                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
-                  />
-                </div>
-              </div>
+          {/* Tabs System */}
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            {/* Tabs List */}
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8 bg-white/5 border border-white/10 h-12">
+              <TabsTrigger 
+                value="pontos"
+                className="data-[state=active]:bg-[#FF0000] data-[state=active]:text-white text-white/70 font-semibold"
+              >
+                Pontos (simplificado)
+              </TabsTrigger>
+              <TabsTrigger 
+                value="roi"
+                className="data-[state=active]:bg-[#FF0000] data-[state=active]:text-white text-white/70 font-semibold"
+              >
+                Promoções (R/2 anual)
+              </TabsTrigger>
+            </TabsList>
 
-              {/* Row 2 */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="ticketMedio" className="text-white font-semibold">
-                    Valor médio por venda (R$)
-                  </Label>
-                  <Input
-                    id="ticketMedio"
-                    type="number"
-                    placeholder="Ex: 255"
-                    value={formData.ticketMedio}
-                    onChange={(e) => setFormData({ ...formData, ticketMedio: e.target.value })}
-                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="valorPremios" className="text-white font-semibold">
-                    Investimento em prêmios (R$)
-                  </Label>
-                  <Input
-                    id="valorPremios"
-                    type="number"
-                    placeholder="Ex: 10000"
-                    value={formData.valorPremios}
-                    onChange={(e) => setFormData({ ...formData, valorPremios: e.target.value })}
-                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
-                  />
-                </div>
-              </div>
-
-              {/* Method */}
-              <div className="space-y-2">
-                <Label htmlFor="metodoValidacao" className="text-white font-semibold">
-                  Como você valida hoje?
-                </Label>
-                <Select value={formData.metodoValidacao} onValueChange={(value) => setFormData({ ...formData, metodoValidacao: value })}>
-                  <SelectTrigger className="h-14 rounded-xl border-white/20 bg-white/10 text-white focus:border-[#FF0000] focus:bg-white/15">
-                    <SelectValue placeholder="Selecione..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="manual">Sistema Básico</SelectItem>
-                    <SelectItem value="planilha">Planilhas</SelectItem>
-                    <SelectItem value="sistema-basico">Verificação Manual</SelectItem>
-                    <SelectItem value="outro">Outro</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Row 3 */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="horasValidacao" className="text-white font-semibold">
-                    Horas gastas por campanha
-                  </Label>
-                  <Input
-                    id="horasValidacao"
-                    type="number"
-                    placeholder="Ex: 60"
-                    value={formData.horasValidacao}
-                    onChange={(e) => setFormData({ ...formData, horasValidacao: e.target.value })}
-                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="valorHora" className="text-white font-semibold">
-                    Custo por hora da equipe (R$)
-                  </Label>
-                  <Input
-                    id="valorHora"
-                    type="number"
-                    placeholder="Ex: 45"
-                    value={formData.valorHora}
-                    onChange={(e) => setFormData({ ...formData, valorHora: e.target.value })}
-                    className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
-                  />
-                </div>
-              </div>
-
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button
-                  type="button"
-                  onClick={handleCalculate}
-                  className="flex-1 bg-[#FF0000] hover:bg-[#FF5001] text-white h-14 rounded-full text-base font-bold shadow-lg hover:shadow-xl transition-all"
+            {/* TAB CONTENT: PONTOS */}
+            <TabsContent value="pontos">
+              <div className="grid lg:grid-cols-[1fr_400px] gap-8">
+                {/* Form Card - Left */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8"
                 >
-                  Calcular economia
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                <Button
-                  type="button"
-                  onClick={handleClear}
-                  variant="outline"
-                  className="h-14 px-8 rounded-full text-base border-white/30 text-white hover:bg-white/10"
+                  <form className="space-y-6">
+                    {/* Campo: Investimento */}
+                    <div className="space-y-2">
+                      <Label htmlFor="investimentoPontos" className="text-white font-semibold">
+                        Quanto você quer investir em pontos? (R$) *
+                      </Label>
+                      <Input
+                        id="investimentoPontos"
+                        type="number"
+                        placeholder="R$ 5,000"
+                        value={pontosFormData.investimento}
+                        onChange={(e) => setPontosFormData({ ...pontosFormData, investimento: e.target.value })}
+                        className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                      />
+                    </div>
+
+                    {/* Campo: Ticket Médio */}
+                    <div className="space-y-2">
+                      <Label htmlFor="ticketMedioPontos" className="text-white font-semibold">
+                        Ticket médio (opcional)
+                      </Label>
+                      <Input
+                        id="ticketMedioPontos"
+                        type="number"
+                        placeholder="R$ 75"
+                        value={pontosFormData.ticketMedio}
+                        onChange={(e) => setPontosFormData({ ...pontosFormData, ticketMedio: e.target.value })}
+                        className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                      />
+                    </div>
+
+                    {/* Botão */}
+                    <Button
+                      type="button"
+                      onClick={() => {
+                        console.log("Calcular pontos:", pontosFormData);
+                      }}
+                      className="w-full bg-[#FF0000] hover:bg-[#FF5001] text-white h-14 rounded-full text-base font-bold shadow-lg hover:shadow-xl transition-all"
+                    >
+                      Calcular meus pontos
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </form>
+                </motion.div>
+
+                {/* Como funciona? - Right */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8"
                 >
-                  Limpar
-                </Button>
+                  <h3 className="text-white font-bold text-xl mb-6">Como funciona?</h3>
+                  
+                  <div className="space-y-4">
+                    {/* Item 1 */}
+                    <div className="flex gap-3">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FF0000] flex items-center justify-center text-white font-bold text-sm">
+                        1
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Digite seu investimento</h4>
+                        <p className="text-white/60 text-sm">
+                          Informe quanto deseja investir em pontos para seus clientes.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Item 2 */}
+                    <div className="flex gap-3">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FF0000] flex items-center justify-center text-white font-bold text-sm">
+                        2
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Veja o alcance</h4>
+                        <p className="text-white/60 text-sm">
+                          Descubra quantos pontos você distribuirá e o potencial de clientes.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Item 3 */}
+                    <div className="flex gap-3">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#FF0000] flex items-center justify-center text-white font-bold text-sm">
+                        3
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Lance sua campanha</h4>
+                        <p className="text-white/60 text-sm">
+                          Receba o passo a passo para ativar sua campanha personalizada por WhatsApp.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
-            </form>
-          </motion.div>
+            </TabsContent>
+
+            {/* TAB CONTENT: ROI */}
+            <TabsContent value="roi">
+              <div className="max-w-4xl mx-auto">
+                {/* Form Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-8"
+                >
+                  <form className="space-y-6">
+                    {/* Row 1 */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="campanhasAno" className="text-white font-semibold">
+                          Campanhas por ano
+                        </Label>
+                        <Input
+                          id="campanhasAno"
+                          type="number"
+                          placeholder="Ex: 2"
+                          value={formData.campanhasAno}
+                          onChange={(e) => setFormData({ ...formData, campanhasAno: e.target.value })}
+                          className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="participantesCampanha" className="text-white font-semibold">
+                          Participantes por campanha
+                        </Label>
+                        <Input
+                          id="participantesCampanha"
+                          type="number"
+                          placeholder="Ex: 600"
+                          value={formData.participantesCampanha}
+                          onChange={(e) => setFormData({ ...formData, participantesCampanha: e.target.value })}
+                          className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Row 2 */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="ticketMedio" className="text-white font-semibold">
+                          Valor médio por venda (R$)
+                        </Label>
+                        <Input
+                          id="ticketMedio"
+                          type="number"
+                          placeholder="Ex: 255"
+                          value={formData.ticketMedio}
+                          onChange={(e) => setFormData({ ...formData, ticketMedio: e.target.value })}
+                          className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="valorPremios" className="text-white font-semibold">
+                          Investimento em prêmios (R$)
+                        </Label>
+                        <Input
+                          id="valorPremios"
+                          type="number"
+                          placeholder="Ex: 10000"
+                          value={formData.valorPremios}
+                          onChange={(e) => setFormData({ ...formData, valorPremios: e.target.value })}
+                          className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Method */}
+                    <div className="space-y-2">
+                      <Label htmlFor="metodoValidacao" className="text-white font-semibold">
+                        Como você valida hoje?
+                      </Label>
+                      <Select value={formData.metodoValidacao} onValueChange={(value) => setFormData({ ...formData, metodoValidacao: value })}>
+                        <SelectTrigger className="h-14 rounded-xl border-white/20 bg-white/10 text-white focus:border-[#FF0000] focus:bg-white/15">
+                          <SelectValue placeholder="Selecione..." />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="manual">Sistema Básico</SelectItem>
+                          <SelectItem value="planilha">Planilhas</SelectItem>
+                          <SelectItem value="sistema-basico">Verificação Manual</SelectItem>
+                          <SelectItem value="outro">Outro</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {/* Row 3 */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="horasValidacao" className="text-white font-semibold">
+                          Horas gastas por campanha
+                        </Label>
+                        <Input
+                          id="horasValidacao"
+                          type="number"
+                          placeholder="Ex: 60"
+                          value={formData.horasValidacao}
+                          onChange={(e) => setFormData({ ...formData, horasValidacao: e.target.value })}
+                          className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="valorHora" className="text-white font-semibold">
+                          Custo por hora da equipe (R$)
+                        </Label>
+                        <Input
+                          id="valorHora"
+                          type="number"
+                          placeholder="Ex: 45"
+                          value={formData.valorHora}
+                          onChange={(e) => setFormData({ ...formData, valorHora: e.target.value })}
+                          className="h-14 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 focus:border-[#FF0000] focus:bg-white/15"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                      <Button
+                        type="button"
+                        onClick={handleCalculate}
+                        className="flex-1 bg-[#FF0000] hover:bg-[#FF5001] text-white h-14 rounded-full text-base font-bold shadow-lg hover:shadow-xl transition-all"
+                      >
+                        Calcular economia
+                        <ArrowRight className="ml-2 w-5 h-5" />
+                      </Button>
+                      <Button
+                        type="button"
+                        onClick={handleClear}
+                        variant="outline"
+                        className="h-14 px-8 rounded-full text-base border-white/30 text-white hover:bg-white/10"
+                      >
+                        Limpar
+                      </Button>
+                    </div>
+                  </form>
+                </motion.div>
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
