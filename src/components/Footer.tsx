@@ -56,9 +56,9 @@ const Footer = () => {
       <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-white/60 text-sm">© 2025 Rooster. Todos os direitos reservados.</p>
         <div className="flex items-center gap-6 text-sm">
-          <a href="#" className="text-white/60 hover:text-white transition-colors">
+          <Link to="/privacidade" className="text-white/60 hover:text-white transition-colors">
             Privacidade
-          </a>
+          </Link>
           <a href="#" className="text-white/60 hover:text-white transition-colors">
             Termos
           </a>

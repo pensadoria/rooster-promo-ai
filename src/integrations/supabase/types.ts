@@ -445,19 +445,6 @@ export type Database = {
       match_documents:
         | {
             Args: {
-              filter?: Json
-              match_count?: number
-              query_embedding: string
-            }
-            Returns: {
-              content: string
-              id: number
-              metadata: Json
-              similarity: number
-            }[]
-          }
-        | {
-            Args: {
               chat_session_filter?: string
               match_count?: number
               query_embedding: string
@@ -469,6 +456,19 @@ export type Database = {
               file_name: string
               file_type: string
               id: number
+              similarity: number
+            }[]
+          }
+        | {
+            Args: {
+              filter?: Json
+              match_count?: number
+              query_embedding: string
+            }
+            Returns: {
+              content: string
+              id: number
+              metadata: Json
               similarity: number
             }[]
           }

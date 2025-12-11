@@ -11,6 +11,7 @@ import Calculator from "./pages/Calculator";
 import Contact from "./pages/Contact";
 import History from "./pages/History";
 import QRRedirect from "./pages/QRRedirect";
+import Privacidade from "./pages/Privacidade";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/contato" element={<Contact />} />
           <Route path="/historia" element={<History />} />
           <Route path="/qr" element={<QRRedirect />} />
+          <Route path="/privacidade" element={<Privacidade />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
