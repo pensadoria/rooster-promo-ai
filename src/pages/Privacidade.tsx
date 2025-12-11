@@ -29,9 +29,6 @@ const Privacidade = () => {
               A Rooster Fidelidades valoriza a confiança que você deposita em nós. 
               Este documento explica como coletamos, usamos e protegemos seus dados pessoais.
             </p>
-            <p className="text-white/60 text-sm mt-6">
-              Última atualização: 11 de dezembro de 2024
-            </p>
           </motion.div>
         </div>
       </section>
