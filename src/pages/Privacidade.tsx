@@ -212,7 +212,7 @@ const Privacidade = () => {
               <ul className="list-disc pl-6 space-y-1 mb-4">
                 <li>Criar e gerenciar sua conta de usuário</li>
                 <li>Processar e registrar transações de cashback</li>
-                <li>Creditar valores em sua carteira digital</li>
+                
                 <li>Permitir o resgate de créditos em estabelecimentos parceiros</li>
               </ul>
 
