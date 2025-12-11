@@ -531,11 +531,6 @@ const Privacidade = () => {
                 Recomendamos que você revise esta política regularmente para se manter informado 
                 sobre como protegemos seus dados.
               </p>
-              <div className="bg-gray-100 rounded-lg p-4 text-center">
-                <p className="font-medium text-[#01203f]">
-                  <strong>Última atualização:</strong> 11 de dezembro de 2024
-                </p>
-              </div>
             </div>
           </motion.div>
 
