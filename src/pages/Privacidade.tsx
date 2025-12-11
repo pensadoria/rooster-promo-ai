@@ -125,7 +125,7 @@ const Privacidade = () => {
 
               <p><strong>Dados de Transações de Cashback:</strong></p>
               <ul className="list-disc pl-6 space-y-1 mb-4">
-                <li>Histórico de compras realizadas em estabelecimentos parceiros</li>
+                <li>Histórico de transações de pontos</li>
                 <li>Valores das transações e cashback acumulado</li>
                 <li>Dados de notas fiscais (quando utilizadas para validação)</li>
                 <li>Estabelecimentos frequentados</li>
