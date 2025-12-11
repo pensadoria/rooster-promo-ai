@@ -131,14 +131,6 @@ const Privacidade = () => {
                 <li>Estabelecimentos frequentados</li>
               </ul>
 
-              <p><strong>Informações de Navegação e Dispositivo:</strong></p>
-              <ul className="list-disc pl-6 space-y-1 mb-4">
-                <li>Endereço IP</li>
-                <li>Tipo de navegador e sistema operacional</li>
-                <li>Páginas acessadas e tempo de permanência</li>
-                <li>Identificadores de dispositivo</li>
-                <li>Dados de geolocalização (quando autorizado)</li>
-              </ul>
 
               <div className="bg-[#01203f]/5 rounded-lg p-4 border-l-4 border-[#01203f]">
                 <p className="font-medium text-[#01203f]">
