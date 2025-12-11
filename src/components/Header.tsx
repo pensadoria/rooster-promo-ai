@@ -13,6 +13,7 @@ const Header = () => {
     { to: "/fidelidades", label: "Fidelidades" },
     { to: "/calculadora", label: "Calculadora" },
     { to: "/sobre-nos", label: "Sobre nós" },
+    { to: "/privacidade", label: "Privacidade" },
   ];
 
   return (
