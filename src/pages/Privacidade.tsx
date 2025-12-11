@@ -494,10 +494,6 @@ const Privacidade = () => {
               
               <div className="bg-[#01203f]/5 rounded-lg p-6 space-y-3">
                 <p className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-[#01203f]" />
-                  <span><strong>E-mail:</strong> privacidade@rooster.app.br</span>
-                </p>
-                <p className="flex items-center gap-3">
                   <span className="w-5 h-5 flex items-center justify-center text-[#01203f]">📞</span>
                   <span><strong>Telefone:</strong> (11) 97629-2960</span>
                 </p>
