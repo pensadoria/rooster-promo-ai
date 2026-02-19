@@ -20,7 +20,7 @@ const SobreNos = () => {
         {/* Exibe o galo azul apenas em telas lg (>=1024px) para simular o corte em 900px */}
         <div className="hidden lg:absolute lg:left-[6px] lg:top-[68px] lg:h-[757.578px] lg:w-[517.001px] lg:block">
           <img
-            src="https://wqrmsdwtsgcrrkqtpkbm.supabase.co/storage/v1/object/public/photos/galo.svg"
+            src="https://shjkcgpvgsbnuervhicf.supabase.co/storage/v1/object/public/photos/galo.svg"
             alt=""
             className="h-full w-full"
           />
@@ -36,8 +36,8 @@ const SobreNos = () => {
               A Rooster nasceu para simplificar o marketing promocional
             </h1>
             <p className="mx-auto w-full max-w-[574px] font-['Inter'] text-[16px] md:text-[20px] font-normal leading-[22px] md:leading-[27px] text-white/85">
-              Somos a plataforma que automatiza promoções e fidelidade, ajudando
-              pequenos e médios negócios a crescerem mais rápido.
+              Somos a plataforma que automatiza promoções e fidelidade, ajudando pequenos e médios negócios a crescerem
+              mais rápido.
             </p>
           </div>
         </div>
@@ -58,18 +58,16 @@ const SobreNos = () => {
             </h2>
             <div className="w-full max-w-[576px] space-y-6 font-['Inter'] text-[16px] md:text-[18px] leading-[22px] md:leading-[25px] text-[rgba(1,32,63,0.8)]">
               <p>
-                A Rooster é uma plataforma de automação de promoções e
-                fidelidade que ajuda empreendedores a criar campanhas de forma
-                prática e eficiente.
+                A Rooster é uma plataforma de automação de promoções e fidelidade que ajuda empreendedores a criar
+                campanhas de forma prática e eficiente.
               </p>
               <p>
-                Tudo acontece em um só lugar: leitura automática de notas
-                fiscais, dashboards em tempo real e suporte inteligente com o
-                Rook.
+                Tudo acontece em um só lugar: leitura automática de notas fiscais, dashboards em tempo real e suporte
+                inteligente com o Rook.
               </p>
               <p>
-                Nosso propósito é simples — transformar tecnologia em resultado
-                acessível para quem faz o varejo acontecer.
+                Nosso propósito é simples — transformar tecnologia em resultado acessível para quem faz o varejo
+                acontecer.
               </p>
             </div>
           </div>
@@ -92,9 +90,8 @@ const SobreNos = () => {
                 A história que começou com a Premiafy
               </h2>
               <p className="mx-auto w-full max-w-[844px] font-['Inter'] text-[16px] md:text-[20px] leading-[22px] md:leading-[27px] text-[rgba(1,32,63,0.8)]">
-                A Rooster nasceu da tecnologia e da experiência da Premiafy —
-                uma das plataformas de promoções mais inteligentes do mercado,
-                com mais de 1 milhão de usuários impactados.
+                A Rooster nasceu da tecnologia e da experiência da Premiafy — uma das plataformas de promoções mais
+                inteligentes do mercado, com mais de 1 milhão de usuários impactados.
               </p>
             </div>
 
@@ -109,12 +106,8 @@ const SobreNos = () => {
                 <div className="relative">
                   <div className="absolute left-1/2 top-[-36px] size-4 -translate-x-1/2 rounded-full border-4 border-white bg-[#ff0000]" />
                   <div className="rounded-2xl bg-white p-6 text-center shadow-sm">
-                    <h3 className="mb-2 font-['Inter'] text-[24px] font-bold text-[#01203f]">
-                      2017
-                    </h3>
-                    <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">
-                      Nascimento da Premiafy
-                    </p>
+                    <h3 className="mb-2 font-['Inter'] text-[24px] font-bold text-[#01203f]">2017</h3>
+                    <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">Nascimento da Premiafy</p>
                   </div>
                 </div>
 
@@ -122,12 +115,8 @@ const SobreNos = () => {
                 <div className="relative">
                   <div className="absolute left-1/2 top-[-36px] size-4 -translate-x-1/2 rounded-full border-4 border-white bg-[#ff0000]" />
                   <div className="rounded-2xl bg-white p-6 text-center shadow-sm">
-                    <h3 className="mb-2 font-['Inter'] text-[24px] font-bold text-[#01203f]">
-                      2020
-                    </h3>
-                    <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">
-                      Escalabilidade nacional
-                    </p>
+                    <h3 className="mb-2 font-['Inter'] text-[24px] font-bold text-[#01203f]">2020</h3>
+                    <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">Escalabilidade nacional</p>
                   </div>
                 </div>
 
@@ -135,12 +124,8 @@ const SobreNos = () => {
                 <div className="relative">
                   <div className="absolute left-1/2 top-[-36px] size-4 -translate-x-1/2 rounded-full border-4 border-white bg-[#ff0000]" />
                   <div className="rounded-2xl bg-white p-6 text-center shadow-sm">
-                    <h3 className="mb-2 font-['Inter'] text-[24px] font-bold text-[#01203f]">
-                      2024
-                    </h3>
-                    <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">
-                      Surge a Rooster com o Rook
-                    </p>
+                    <h3 className="mb-2 font-['Inter'] text-[24px] font-bold text-[#01203f]">2024</h3>
+                    <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">Surge a Rooster com o Rook</p>
                   </div>
                 </div>
 
@@ -148,9 +133,7 @@ const SobreNos = () => {
                 <div className="relative">
                   <div className="absolute left-1/2 top-[-36px] size-4 -translate-x-1/2 rounded-full border-4 border-white bg-[#ff0000]" />
                   <div className="rounded-2xl bg-white p-6 text-center shadow-sm">
-                    <h3 className="mb-2 font-['Inter'] text-[24px] font-bold text-[#01203f]">
-                      2025
-                    </h3>
+                    <h3 className="mb-2 font-['Inter'] text-[24px] font-bold text-[#01203f]">2025</h3>
                     <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">
                       Fidelidades + Promoções integradas
                     </p>
@@ -162,10 +145,9 @@ const SobreNos = () => {
             {/* Bottom Text */}
             <div className="mx-auto w-full max-w-[896px]">
               <p className="text-center font-['Inter'] text-[16px] md:text-[18px] leading-[22px] md:leading-[25px] text-[rgba(1,32,63,0.8)]">
-                A partir desse know-how, criamos uma nova geração de soluções:
-                mais leves, rápidas e acessíveis para o varejo. Hoje, a Rooster
-                carrega o mesmo DNA de inovação, mas com foco total na
-                simplicidade e eficiência.
+                A partir desse know-how, criamos uma nova geração de soluções: mais leves, rápidas e acessíveis para o
+                varejo. Hoje, a Rooster carrega o mesmo DNA de inovação, mas com foco total na simplicidade e
+                eficiência.
               </p>
             </div>
           </div>
@@ -194,9 +176,8 @@ const SobreNos = () => {
 
             {/* Description */}
             <p className="mx-auto w-full max-w-[714px] font-['Inter'] text-[16px] md:text-[24px] leading-[22px] md:leading-[33px] text-white/85">
-              Ajudar negócios de todos os tamanhos a crescerem mais rápido, com
-              promoções e programas de fidelidade que qualquer pessoa consegue
-              usar.
+              Ajudar negócios de todos os tamanhos a crescerem mais rápido, com promoções e programas de fidelidade que
+              qualquer pessoa consegue usar.
             </p>
           </div>
         </div>
@@ -224,9 +205,7 @@ const SobreNos = () => {
                 <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-[rgba(1,32,63,0.05)]">
                   <Shield className="h-7 w-7 text-[#01203f]" />
                 </div>
-                <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">
-                  Confiança
-                </h3>
+                <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">Confiança</h3>
                 <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">
                   Tecnologia segura, transparente e confiável.
                 </p>
@@ -237,9 +216,7 @@ const SobreNos = () => {
                 <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-[rgba(255,80,1,0.05)]">
                   <Sparkles className="h-7 w-7 text-[#ff5001]" />
                 </div>
-                <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">
-                  Simplicidade
-                </h3>
+                <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">Simplicidade</h3>
                 <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">
                   Design intuitivo e processos sem complicação.
                 </p>
@@ -250,9 +227,7 @@ const SobreNos = () => {
                 <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-[rgba(255,0,0,0.05)]">
                   <TrendingUp className="h-7 w-7 text-[#ff0000]" />
                 </div>
-                <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">
-                  Resultado
-                </h3>
+                <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">Resultado</h3>
                 <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">
                   Cada promoção deve gerar crescimento real.
                 </p>
@@ -263,9 +238,7 @@ const SobreNos = () => {
                 <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-[rgba(1,32,63,0.05)]">
                   <Rocket className="h-7 w-7 text-[#01203f]" />
                 </div>
-                <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">
-                  Escala
-                </h3>
+                <h3 className="mb-4 font-['Inter'] text-[24px] font-bold text-[#01203f]">Escala</h3>
                 <p className="font-['Inter'] text-[16px] text-[rgba(1,32,63,0.7)]">
                   Feita para evoluir com o seu negócio.
                 </p>
@@ -364,8 +337,8 @@ const SobreNos = () => {
             {/* Bottom Text */}
             <div className="mx-auto w-full max-w-[872px]">
               <p className="text-center font-['Inter'] text-[16px] md:text-[20px] leading-[22px] md:leading-[27px] text-[rgba(1,32,63,0.8)]">
-                Na Rooster, cada recurso é feito para gerar impacto real — no
-                seu caixa, no seu tempo e no seu crescimento.
+                Na Rooster, cada recurso é feito para gerar impacto real — no seu caixa, no seu tempo e no seu
+                crescimento.
               </p>
             </div>
           </div>
@@ -391,13 +364,7 @@ const SobreNos = () => {
               {/* Fidelidades Plan */}
               <div className="rounded-2xl border border-[rgba(1,32,63,0.1)] bg-[#00254c] p-8 text-center">
                 <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[rgba(255,0,0,0.35)]">
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
                       fill="#FF0000"
