@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import iconImage from "@/assets/icon.png";
 
 // Imagem do bucket Supabase
-const imgImg = "https://shjkcgpvgsbnuervhicf.supabase.co/storage/v1/object/public/photos/header-02.png";
+const imgImg = "https://shjkcgpvgsbnuervhicf.supabase.co/storage/v1/object/public/rooster/photos/header-02.png";
 
 const Hero = () => {
   return (

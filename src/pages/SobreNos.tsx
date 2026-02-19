@@ -20,7 +20,7 @@ const SobreNos = () => {
         {/* Exibe o galo azul apenas em telas lg (>=1024px) para simular o corte em 900px */}
         <div className="hidden lg:absolute lg:left-[6px] lg:top-[68px] lg:h-[757.578px] lg:w-[517.001px] lg:block">
           <img
-            src="https://shjkcgpvgsbnuervhicf.supabase.co/storage/v1/object/public/photos/galo.svg"
+            src="https://shjkcgpvgsbnuervhicf.supabase.co/storage/v1/object/public/rooster/photos/galo.svg"
             alt=""
             className="h-full w-full"
           />

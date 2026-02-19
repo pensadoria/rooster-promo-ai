@@ -392,7 +392,7 @@ const Promocoes = () => {
             <div className="flex items-center">
               <div className="h-80 md:h-96 w-full overflow-hidden rounded-2xl">
                 <img
-                  src="https://shjkcgpvgsbnuervhicf.supabase.co/storage/v1/object/public/photos/header-03.png"
+                  src="https://shjkcgpvgsbnuervhicf.supabase.co/storage/v1/object/public/rooster/photos/header-03.png"
                   alt="Dashboard Analytics"
                   className="h-full w-full object-cover"
                 />
