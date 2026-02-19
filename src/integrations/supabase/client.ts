@@ -2,9 +2,8 @@
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "./types";
 
-const SUPABASE_URL = "https://shjkcgpvgsbnuervhicf.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNoamtjZ3B2Z3NibnVlcnZoaWNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNTU0OTgsImV4cCI6MjA3NDgzMTQ5OH0.lIEDMu8lsxk8Cf1fvv2nBgS83uYx5RGkt2lYUFiXo90";
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
@@ -14,6 +13,6 @@ export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABL
     storage: localStorage,
     persistSession: true,
     autoRefreshToken: true,
-    db: { schema: "rooster" },
   },
+  db: { schema: "rooster" },
 });
