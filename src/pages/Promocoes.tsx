@@ -4,7 +4,17 @@ import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
-  Sparkles, FileText, BrainCircuit, BarChart3, ScanText, Settings, Puzzle, Shield, Zap, TrendingUp, Headphones
+  Sparkles,
+  FileText,
+  BrainCircuit,
+  BarChart3,
+  ScanText,
+  Settings,
+  Puzzle,
+  Shield,
+  Zap,
+  TrendingUp,
+  Headphones,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import roosterLogo from "@/assets/rooster-logo.png";
@@ -30,7 +40,6 @@ const Promocoes = () => {
         </div>
 
         {/* Overlays escuros */}
-
 
         <div className="absolute inset-0 bg-black/20"></div>
 
@@ -72,7 +81,6 @@ const Promocoes = () => {
           <div className="flex min-h-[60vh] items-center">
             {/* Left Column */}
             <div className="space-y-8">
-
               {/* Título Principal */}
               <h1 className="text-4xl lg:text-5xl font-black text-white leading-tight">
                 A plataforma que transforma suas promoções em resultados
@@ -384,7 +392,7 @@ const Promocoes = () => {
             <div className="flex items-center">
               <div className="h-80 md:h-96 w-full overflow-hidden rounded-2xl">
                 <img
-                  src="https://wqrmsdwtsgcrrkqtpkbm.supabase.co/storage/v1/object/public/photos/header-03.png"
+                  src="https://shjkcgpvgsbnuervhicf.supabase.co/storage/v1/object/public/photos/header-03.png"
                   alt="Dashboard Analytics"
                   className="h-full w-full object-cover"
                 />

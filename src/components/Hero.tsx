@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import iconImage from "@/assets/icon.png";
 
 // Imagem do bucket Supabase
-const imgImg = "https://wqrmsdwtsgcrrkqtpkbm.supabase.co/storage/v1/object/public/photos/header-02.png";
+const imgImg = "https://shjkcgpvgsbnuervhicf.supabase.co/storage/v1/object/public/photos/header-02.png";
 
 const Hero = () => {
   return (
@@ -26,7 +26,6 @@ const Hero = () => {
             {/* Coluna da esquerda com texto */}
             <div className="flex flex-col justify-center space-y-12 max-w-[576px]">
               {/* Badge */}
-
 
               {/* Main Title */}
               <h1 className="font-['Inter:Black',_sans-serif] font-black text-[72px] leading-[72px] text-white">
@@ -70,11 +69,7 @@ const Hero = () => {
                 <div className="relative">
                   {/* Imagem principal */}
                   <div className="rounded-[16px] overflow-hidden h-[384px]">
-                    <img
-                      alt=""
-                      className="w-full h-full object-cover rounded-[16px]"
-                      src={imgImg}
-                    />
+                    <img alt="" className="w-full h-full object-cover rounded-[16px]" src={imgImg} />
                   </div>
 
                   {/* Play Button */}
@@ -106,8 +101,6 @@ const Hero = () => {
               <h1 className="font-['Inter:Black',_sans-serif] font-black text-[48px] lg:text-[56px] leading-[1.1] text-white">
                 Crie promoções que vendem — com sites automáticos e inteligentes
               </h1>
-
-
 
               {/* Subtitle */}
               <p className="font-['Inter:Regular',_sans-serif] font-normal text-[18px] lg:text-[20px] leading-[27px] text-[rgba(255,255,255,0.85)]">
@@ -168,9 +161,7 @@ const Hero = () => {
         <div className="max-w-md mx-auto text-center space-y-8">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2">
-            <span className="text-[14px] font-semibold text-white/90">
-              Pronto pra vender mais? 🚀
-            </span>
+            <span className="text-[14px] font-semibold text-white/90">Pronto pra vender mais? 🚀</span>
           </div>
 
           {/* Title */}
@@ -186,11 +177,7 @@ const Hero = () => {
           {/* Image */}
           <div className="relative">
             <div className="relative rounded-[16px] overflow-hidden">
-              <img
-                alt=""
-                className="w-full h-auto object-cover rounded-[16px]"
-                src={imgImg}
-              />
+              <img alt="" className="w-full h-auto object-cover rounded-[16px]" src={imgImg} />
               {/* Play Button */}
               <div className="absolute bg-[red] right-4 bottom-4 rounded-[9999px] size-[56px] cursor-pointer hover:bg-red-600/90 transition-colors flex items-center justify-center">
                 <div className="w-[18px] h-[18px]">
